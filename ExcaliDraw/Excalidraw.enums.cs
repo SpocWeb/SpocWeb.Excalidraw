@@ -167,13 +167,13 @@ static partial class Excalidraw {
 	/// <summary>Horizontal alignment of text within its bounding box.</summary>
 	public enum TextAlign {
 		/// <summary>Text is aligned to the left edge of the bounding box.</summary>
-		Left,
+		left,
 
 		/// <summary>Text is horizontally centred within the bounding box.</summary>
-		Center,
+		center,
 
 		/// <summary>Text is aligned to the right edge of the bounding box.</summary>
-		Right
+		right
 	}
 
 	/// <summary>Vertical alignment of text within its bounding box or container shape.</summary>
