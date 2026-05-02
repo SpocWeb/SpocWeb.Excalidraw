@@ -1,6 +1,6 @@
 ﻿namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 
-/// <summary> Alternative to <see cref="System.Drawing.Rectangle"/> </summary>
+/// <summary> Similar to <see cref="System.Drawing.Rectangle"/> but with <see cref="AngleRadians"/> </summary>
 public record struct ElementBounds {
 	public ElementBounds(double x, double y, double width, double height, double angleRad) {
 		X = x;
