@@ -275,44 +275,59 @@ public static partial class Excalidraw{
 
 		public LinearElement() { }
 
-		protected LinearElement(string Id
-			, ElementType ElementType
-			, string? FrameId
-			, double X
-			, double Y
-			, double StrokeWidth
-			, StrokeStyle StrokeStyle
-			, string? StrokeColor
-			, double Opacity
-			//, string? StartElementId
-			//, string? EndElementId
-			//, Excalidraw.Arrowhead StartArrowhead
-			//, Excalidraw.Arrowhead EndArrowhead
-			//, string? Label
-			) : base(Id, ElementType, FrameId, X, Y, StrokeWidth, StrokeStyle, StrokeColor, null, Opacity) {
-			//this.StartElementId = StartElementId;
-			//this.EndElementId = EndElementId;
-			//this.StartArrowhead = StartArrowhead;
-			//this.EndArrowhead = EndArrowhead;
-			//this.Label = Label;
+		protected LinearElement(string id
+			, ElementType elementType
+			, string? frameId
+			, double x
+			, double y
+			, double strokeWidth
+			, StrokeStyle strokeStyle
+			, string? strokeColor
+			, double opacity
+			, string? startElementId
+			, string? endElementId
+			, Arrowhead startArrowhead
+			, Arrowhead endArrowhead
+			, string? label
+			) : base(id, elementType, frameId, x, y, strokeWidth, strokeStyle, strokeColor, null, opacity) {
+			StartElementId = startElementId;
+			EndElementId = endElementId;
+			StartArrowhead = startArrowhead;
+			EndArrowhead = endArrowhead;
+			Label = label;
 		}
 
 
 		public LinearElement(   ElementType ElementType
 			, ElementBounds bounds
 			, IHaveSequence<int> context, string[] groupIds
-			//, string? StartElementId
-			//, string? EndElementId
-			//, Excalidraw.Arrowhead StartArrowhead
-			//, Excalidraw.Arrowhead EndArrowhead
-			//, string? Label
+			, string? StartElementId
+			, string? EndElementId
+			, Arrowhead StartArrowhead
+			, Arrowhead EndArrowhead
+			, string? Label
 		) : base(ElementType, bounds, context, groupIds) {
-			//this.StartElementId = StartElementId;
-			//this.EndElementId = EndElementId;
-			//this.StartArrowhead = StartArrowhead;
-			//this.EndArrowhead = EndArrowhead;
-			//this.Label = Label;
+			this.StartElementId = StartElementId;
+			this.EndElementId = EndElementId;
+			this.StartArrowhead = StartArrowhead;
+			this.EndArrowhead = EndArrowhead;
+			this.Label = Label;
 		}
+
+		#region temp
+
+		[JsonIgnore]
+		public string? StartElementId { get; set; }
+		[JsonIgnore]
+		public string? EndElementId { get; set; }
+		[JsonIgnore]
+		public Arrowhead StartArrowhead { get; set; }
+		[JsonIgnore]
+		public Arrowhead EndArrowhead { get; set; }
+		[JsonIgnore]
+		public string? Label { get; set; }
+
+		#endregion temp
 
 		/// <summary>
 		/// Ordered array of [x, y] point pairs in element-local coordinates.
@@ -372,34 +387,25 @@ public static partial class Excalidraw{
 			, StrokeStyle StrokeStyle
 			, string? StrokeColor
 			, double Opacity
-			//, string? StartElementId
-			//, string? EndElementId
-			//, Excalidraw.Arrowhead StartArrowhead
-			//, Excalidraw.Arrowhead EndArrowhead
+			, string? StartElementId
+			, string? EndElementId
+			, Arrowhead StartArrowhead
+			, Arrowhead EndArrowhead
 			, string? Label)
-			: base(Id, ElementType.Line, FrameId, X, Y, StrokeWidth, StrokeStyle, StrokeColor, Opacity//, Label
-				  ) {
-			//this.StartElementId = StartElementId;
-			//this.EndElementId = EndElementId;
-			//this.StartArrowhead = StartArrowhead;
-			//this.EndArrowhead = EndArrowhead;
-			//this.Label = Label;
+			: base(Id, ElementType.Line, FrameId, X, Y, StrokeWidth, StrokeStyle, StrokeColor, Opacity
+				  , StartElementId,EndElementId,StartArrowhead,EndArrowhead,Label) {
 		}
 
 
 		public LineElement(ElementBounds bounds
 			, IHaveSequence<int> context, string[] groupIds
-			//, string? StartElementId
-			//, string? EndElementId
-			//, Excalidraw.Arrowhead StartArrowhead
-			//, Excalidraw.Arrowhead EndArrowhead
-			//, string? Label
-		) : base( ElementType.Line, bounds, context, groupIds) {
-			//this.StartElementId = StartElementId;
-			//this.EndElementId = EndElementId;
-			//this.StartArrowhead = StartArrowhead;
-			//this.EndArrowhead = EndArrowhead;
-			//this.Label = Label;
+			, string? StartElementId
+			, string? EndElementId
+			, Excalidraw.Arrowhead StartArrowhead
+			, Excalidraw.Arrowhead EndArrowhead
+			, string? Label
+		) : base(ElementType.Line, bounds, context, groupIds
+			, StartElementId, EndElementId, StartArrowhead, EndArrowhead, Label) {
 		}
 
 	}
@@ -417,34 +423,25 @@ public static partial class Excalidraw{
 			, string? StrokeColor
 			, double Opacity
 
-			//, string? StartElementId
-			//, string? EndElementId
-			//, Arrowhead StartArrowhead
-			//, Arrowhead EndArrowhead
-			//, string? Label
-			) : base(Id, ElementType.Arrow, FrameId, X, Y, StrokeWidth, StrokeStyle, StrokeColor, Opacity//, Label
-				) {
-			//this.StartElementId = StartElementId;
-			//this.EndElementId = EndElementId;
-			//this.StartArrowhead = StartArrowhead;
-			//this.EndArrowhead = EndArrowhead;
-			//this.Label = Label;
+			, string? StartElementId
+			, string? EndElementId
+			, Arrowhead StartArrowhead
+			, Arrowhead EndArrowhead
+			, string? Label
+			) : base(Id, ElementType.Arrow, FrameId, X, Y, StrokeWidth, StrokeStyle, StrokeColor, Opacity
+			, StartElementId, EndElementId, StartArrowhead, EndArrowhead, Label) {
 		}
 
 
 		public Arrow(ElementBounds bounds
 			, IHaveSequence<int> context, string[] groupIds
-			//, string? StartElementId
-			//, string? EndElementId
-			//, Excalidraw.Arrowhead StartArrowhead
-			//, Excalidraw.Arrowhead EndArrowhead
-			//, string? Label
-			) : base(Excalidraw.ElementType.Arrow, bounds, context, groupIds) {
-			//this.StartElementId = StartElementId;
-			//this.EndElementId = EndElementId;
-			//this.StartArrowhead = StartArrowhead;
-			//this.EndArrowhead = EndArrowhead;
-			//this.Label = Label;
+			, string? StartElementId
+			, string? EndElementId
+			, Excalidraw.Arrowhead StartArrowhead
+			, Excalidraw.Arrowhead EndArrowhead
+			, string? Label
+			) : base(Excalidraw.ElementType.Arrow, bounds, context, groupIds
+			, StartElementId, EndElementId, StartArrowhead, EndArrowhead, Label) {
 		}
 
 		/// <summary>
