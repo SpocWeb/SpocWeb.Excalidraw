@@ -1,0 +1,223 @@
+﻿using Newtonsoft.Json;
+
+namespace org.SpocWeb.PptxToJson.ExcaliDraw; 
+
+static partial class Excalidraw {
+
+	/// <summary>A 2-D point [x, y].</summary>
+	public sealed class Point2D {
+		public double X { get; set; }
+		public double Y { get; set; }
+	}
+
+
+	/// <summary>
+	/// Corner-rounding configuration attached to any closed shape element.
+	/// Serializes to <c>{ "type": number, "value"?: number }</c>.
+	/// Source: <c>_ExcalidrawElementBase.roundness</c> in types.ts.
+	/// </summary>
+	public sealed class Roundness {
+		/// <summary>
+		/// Algorithm used to compute the corner radius.
+		/// See <see cref="RoundnessType"/> for values.
+		/// JSON key: <c>"type"</c>.
+		/// </summary>
+		public RoundnessType type { get; set; }
+
+		/// <summary>
+		/// Optional explicit radius value whose meaning depends on
+		/// <see cref="type"/>. Absent when not applicable.
+		/// JSON key: <c>"value"</c>.
+		/// </summary>
+		public double? value { get; set; }
+	}
+
+	/// <summary>
+	/// Reference from a container element to a bound arrow or text element.
+	/// Stored in <c>ExcalidrawElement.boundElements</c>.
+	/// Source: <c>BoundElement</c> type in types.ts.
+	/// </summary>
+	public sealed class BoundElement {
+		/// <summary>
+		/// ID of the bound element (arrow or text).
+		/// JSON key: <c>"id"</c>.
+		/// </summary>
+		public string id { get; set; }
+
+		/// <summary>
+		/// Type of the bound element: <c>"arrow"</c> or <c>"text"</c>.
+		/// JSON key: <c>"type"</c>.
+		/// </summary>
+		public string type { get; set; }
+	}
+
+	/// <summary>
+	/// Arrow endpoint binding that attaches an arrow tip to a specific
+	/// point on a bindable element.
+	/// Source: <c>FixedPointBinding</c> in types.ts.
+	/// </summary>
+	public sealed class PointBinding {
+		/// <summary>
+		/// ID of the bound target element.
+		/// JSON key: <c>"elementId"</c>.
+		/// </summary>
+		public string elementId { get; set; }
+
+		/// <summary>
+		/// Normalized [x, y] fixed point as fractions of the bound element's
+		/// width and height (typically 0.0–1.0).
+		/// JSON key: <c>"fixedPoint"</c>.
+		/// </summary>
+		public double[] fixedPoint { get; set; }
+
+		/// <summary>
+		/// Binding mode: <c>"inside"</c> allows the arrow tip inside the shape;
+		/// <c>"orbit"</c> keeps it on the outline; <c>"skip"</c> disables attachment.
+		/// JSON key: <c>"mode"</c>.
+		/// </summary>
+		public string mode { get; set; }
+	}
+
+	/// <summary>
+	/// Binary file entry stored in the document-level <c>files</c> map.
+	/// Keyed by a SHA-1 FileId string.
+	/// Source: <c>BinaryFileData</c> in excalidraw/types.ts.
+	/// </summary>
+	public sealed class BinaryFileData {
+		/// <summary>
+		/// MIME type of the file, e.g. <c>"image/png"</c>, <c>"image/svg+xml"</c>.
+		/// JSON key: <c>"mimeType"</c>.
+		/// </summary>
+		public string mimeType { get; set; }
+
+		/// <summary>
+		/// SHA-1 FileId that matches the key in the <c>files</c> map.
+		/// JSON key: <c>"id"</c>.
+		/// </summary>
+		public string id { get; set; }
+
+		/// <summary>
+		/// Base-64 data URL of the file content, e.g.
+		/// <c>"data:image/png;base64,..."</c>.
+		/// JSON key: <c>"dataURL"</c>.
+		/// <para>
+		/// Note: C# name <c>DataURL</c> → first char lowercased → <c>dataURL</c>. ✓
+		/// </para>
+		/// </summary>
+		public string DataURL { get; set; }
+
+		/// <summary>
+		/// Unix epoch timestamp (ms) when this file was created.
+		/// JSON key: <c>"created"</c>.
+		/// </summary>
+		public long created { get; set; }
+
+		/// <summary>
+		/// Unix epoch timestamp (ms) of the last retrieval from storage.
+		/// Used to decide whether unused files may be deleted.
+		/// JSON key: <c>"lastRetrieved"</c>.
+		/// </summary>
+		public long? lastRetrieved { get; set; }
+
+		/// <summary>
+		/// Optional schema version of the file data.
+		/// Incremented when the dataURL changes due to a restore migration.
+		/// JSON key: <c>"version"</c>.
+		/// </summary>
+		public int? version { get; set; }
+	}
+
+	/// <summary> Serializable subset of editor application state written to disk. </summary>
+	/// <remarks>
+	/// Ephemeral UI state (selection, cursor, viewport offsets) is stripped
+	/// by <c>cleanAppStateForExport()</c> before serialisation.
+	/// 
+	/// Source: <c>AppState</c> interface in excalidraw/types.ts.
+	/// (background colour, grid size, theme, tool preferences, etc.).
+	/// </remarks>
+	public sealed class AppState {
+		/// <summary>
+		/// Background colour of the canvas viewport (CSS colour string).
+		/// JSON key: <c>"viewBackgroundColor"</c>.
+		/// </summary>
+		public string viewBackgroundColor { get; set; }
+
+		/// <summary>
+		/// Grid cell size in pixels. <c>null</c> indicates grid is disabled.
+		/// JSON key: <c>"gridSize"</c>.
+		/// </summary>
+		public int? gridSize { get; set; }
+
+		/// <summary>
+		/// Number of grid cells per major grid line.
+		/// JSON key: <c>"gridStep"</c>.
+		/// </summary>
+		public int? gridStep { get; set; }
+
+		/// <summary>
+		/// Active UI theme: <c>"light"</c> or <c>"dark"</c>.
+		/// JSON key: <c>"theme"</c>.
+		/// </summary>
+		public string theme { get; set; }
+
+		/// <summary>Stroke colour applied to newly created items. JSON key: <c>"currentItemStrokeColor"</c>.</summary>
+		public string currentItemStrokeColor { get; set; }
+
+		/// <summary>Fill colour applied to newly created items. JSON key: <c>"currentItemBackgroundColor"</c>.</summary>
+		public string currentItemBackgroundColor { get; set; }
+
+		/// <summary>Fill style applied to newly created items. JSON key: <c>"currentItemFillStyle"</c>.</summary>
+		public string currentItemFillStyle { get; set; }
+
+		/// <summary>Stroke width applied to newly created items (px). JSON key: <c>"currentItemStrokeWidth"</c>.</summary>
+		public int? currentItemStrokeWidth { get; set; }
+
+		/// <summary>Stroke dash style for newly created items. JSON key: <c>"currentItemStrokeStyle"</c>.</summary>
+		public string currentItemStrokeStyle { get; set; }
+
+		/// <summary>
+		/// RoughJS roughness level (0 = architect, 1 = artist, 2 = cartoonist)
+		/// for newly created items. JSON key: <c>"currentItemRoughness"</c>.
+		/// </summary>
+		public int? currentItemRoughness { get; set; }
+
+		/// <summary>Opacity (0–100) for newly created items. JSON key: <c>"currentItemOpacity"</c>.</summary>
+		public int? currentItemOpacity { get; set; }
+
+		/// <summary>Font family numeric ID for newly created text. JSON key: <c>"currentItemFontFamily"</c>.</summary>
+		public int? currentItemFontFamily { get; set; }
+
+		/// <summary>Font size (px) for newly created text. JSON key: <c>"currentItemFontSize"</c>.</summary>
+		public int? currentItemFontSize { get; set; }
+
+		/// <summary>Text alignment for newly created text elements. JSON key: <c>"currentItemTextAlign"</c>.</summary>
+		public string currentItemTextAlign { get; set; }
+
+		/// <summary>
+		/// Horizontal canvas scroll offset in pixels.
+		/// JSON key: <c>"scrollX"</c>.
+		/// </summary>
+		public double? scrollX { get; set; }
+
+		/// <summary>
+		/// Vertical canvas scroll offset in pixels.
+		/// JSON key: <c>"scrollY"</c>.
+		/// </summary>
+		public double? scrollY { get; set; }
+
+		/// <summary>
+		/// Current zoom level as <c>{ "value": number }</c>.
+		/// Stored as <c>object</c> to handle both the legacy plain-number format
+		/// and the current object format without a custom converter.
+		/// JSON key: <c>"zoom"</c>.
+		/// </summary>
+		public object zoom { get; set; }
+
+		/// <summary>
+		/// Bucket for any additional appState fields not explicitly modelled here.
+		/// Preserved during round-trips via Newtonsoft's extension-data mechanism.
+		/// </summary>
+		[JsonExtensionData]
+		public IDictionary<string, object> AdditionalData { get; set; }
+	}
+}

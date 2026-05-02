@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <DefaultItemExcludes>$(DefaultItemExcludes);**\*.bak;**\*.vrn;**\*.vrn.zip</DefaultItemExcludes>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net48;net10.0</TargetFrameworks>
+    <RootNamespace>org.SpocWeb.PptxToJson</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <!--8.0 with Classes, except Interfaces Default Implementations!-->
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\org.SpocWeb.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DefineConstants>$(DefineConstants);noNUNIT</DefineConstants>
+    <StartupObject>org.SpocWeb.PptxToJson.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Data\**" />
+    <Compile Remove="db\**" />
+    <Compile Remove="logging\**" />
+    <EmbeddedResource Remove="Data\**" />
+    <EmbeddedResource Remove="db\**" />
+    <EmbeddedResource Remove="logging\**" />
+    <None Remove="Data\**" />
+    <None Remove="db\**" />
+    <None Remove="logging\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="proxies\DependencyVisualizerTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\GlobalUsings.cs" Link="Properties\GlobalUsings.cs" />
+    <Compile Include="..\..\CompanyInfo.cs" Link="Properties\CompanyInfo.cs" />
+    <Compile Include="..\..\SolutionInfo.sdk.cs" Link="Properties\SolutionInfo.sdk.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="_Links\" />
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+</Project>

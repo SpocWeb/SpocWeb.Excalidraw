@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SpocWeb.PptxToJson": {
+      "commandName": "Project",
+      "commandLineArgs": "D:\\Statics.LpaOL\\DWKit.Statics\\_Docs\\_Arch\\LpaDocProcessingChain.pptx 61"
+    }
+  }
+}
