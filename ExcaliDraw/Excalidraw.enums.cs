@@ -1,4 +1,6 @@
-﻿namespace org.SpocWeb.PptxToJson.ExcaliDraw; 
+﻿using System.Runtime.Serialization;
+
+namespace org.SpocWeb.PptxToJson.ExcaliDraw; 
 
 /// <summary> Enums and static Helper Methods to parse Excalidraw JSON </summary>
 static partial class Excalidraw {
@@ -8,112 +10,97 @@ static partial class Excalidraw {
 	/// </summary>
 	public enum ElementType {
 		/// <summary>Axis-aligned rectangle shape.</summary>
-		Rectangle,
+		rectangle,
 
 		/// <summary>Ellipse (or circle when width == height) shape.</summary>
-		Ellipse,
+		ellipse,
 
 		/// <summary>Diamond (rotated square) shape.</summary>
-		Diamond,
+		diamond,
 
 		/// <summary>
 		/// Directed arrow between two points or bound elements.
 		/// Supports start/end arrowheads and optional endpoint bindings.
 		/// </summary>
-		Arrow,
+		arrow,
 
 		/// <summary>
 		/// Undirected polyline or curved line between two or more points.
 		/// No arrowheads; no endpoint bindings.
 		/// </summary>
-		Line,
+		line,
 
 		/// <summary>
 		/// Freehand stroke captured from pointer input.
 		/// Stores raw points and optional pressure values.
 		/// </summary>
-		Freedraw,
+		freedraw,
 
 		/// <summary>Standalone or container-bound text label.</summary>
-		Text,
+		text,
 
-		/// <summary>
-		/// Raster image referenced by a FileId key in the document's files map.
-		/// </summary>
-		Image,
+		/// <summary> Raster image referenced by a FileId key in the document's files map. </summary>
+		image,
 
-		/// <summary>
-		/// Named frame that visually groups and clips a set of child elements.
-		/// Children reference the frame via their frameId property.
-		/// </summary>
-		Frame,
+		/// <summary> Named frame that visually groups and clips a set of child elements. </summary>
+		/// <remarks>
+		/// Children reference the frame via their <see cref="Element.frameId"/> property.
+		/// </remarks>
+		frame,
 
 		/// <summary>
 		/// AI-generated magic frame; behaves like Frame but is produced
 		/// by Excalidraw's generative features.
 		/// </summary>
-		MagicFrame,
+		magicframe,
 
 		/// <summary>
 		/// Embeds an external web resource (URL) rendered inside the canvas
 		/// via an interactive widget.
 		/// </summary>
-		Embeddable,
+		embeddable,
 
-		/// <summary>
-		/// Inline iframe element for embedding arbitrary HTML content
-		/// directly on the canvas.
-		/// </summary>
-		IFrame
+		/// <summary> Inline iframe element for embedding arbitrary HTML content directly on the canvas. </summary>
+		iframe
 	}
 
-	/// <summary>
-	/// Controls how the interior of a closed shape is filled.
+	/// <summary> Filling of the interior of a closed shape </summary>
+	/// <remarks>
 	/// Rendered via RoughJS fill algorithms.
-	/// </summary>
+	/// </remarks>
 	public enum FillStyle {
-		/// <summary>
-		/// Diagonal parallel lines drawn across the interior (hatching).
-		/// The default fill style; gives a hand-drawn, sketchy appearance.
-		/// </summary>
+		/// <summary> Single Diagonal parallel lines drawn across the interior (hatching). </summary>
+		/// <remarks>
+		/// This is the default fill style; gives a hand-drawn, sketchy appearance.
+		/// </remarks>
 		Hachure,
 
-		/// <summary>
-		/// Two overlapping sets of diagonal lines at 90° to each other,
-		/// forming a grid-like cross-hatched pattern.
-		/// </summary>
-		CrossHatch,
+		/// <summary> Two overlapping sets of diagonal lines at 90° to each other, forming a grid-like cross-hatched pattern. </summary>
+		[EnumMember(Value = "cross-hatch")] CrossHatch,
 
-		/// <summary>
-		/// The interior is filled with a flat, opaque colour.
+		/// <summary> The interior is filled with a flat, opaque colour. </summary>
+		/// <remarks>
 		/// No line pattern — cleanest, most print-friendly option.
-		/// </summary>
+		/// </remarks>
 		Solid,
 
-		/// <summary>
-		/// Interior is filled with a zigzag line pattern.
+		/// <summary> Interior is filled with a zigzag line pattern. </summary>
+		/// <remarks>
 		/// Produces a more irregular, energetic texture than Hachure.
-		/// </summary>
-		ZigZag
+		/// </remarks>
+		Zigzag
 	}
 
-	/// <summary>
-	/// Controls the dash pattern applied to an element's stroke (outline).
-	/// </summary>
+	/// <summary> dash pattern applied to an element's stroke (outline). </summary>
 	public enum StrokeStyle {
+
 		/// <summary>Continuous, unbroken line. The default stroke style.</summary>
 		Solid,
 
-		/// <summary>
-		/// Stroke is broken into evenly spaced dashes.
-		/// Useful for indicating optional or secondary relationships.
-		/// </summary>
+		/// <summary> evenly spaced dashes, to indicate optional or secondary relationships. </summary>
 		Dashed,
 
-		/// <summary>
-		/// Stroke is broken into closely spaced dots.
-		/// Typically used for tentative or background elements.
-		/// </summary>
+		/// <summary> closely spaced dots; for tentative or background elements. </summary>
 		Dotted
 	}
 
@@ -125,41 +112,40 @@ static partial class Excalidraw {
 		/// <summary>No decoration; the line ends without any marker.</summary>
 		None,
 
-		/// <summary>
-		/// A classic filled triangular arrowhead pointing in the direction
-		/// of travel. The most common endpoint marker.
-		/// </summary>
+		/// <summary> A classic filled triangular arrowhead pointing in the direction of travel. </summary>
+		/// <remarks>
+		/// The most common endpoint marker.
+		/// </remarks>
 		Arrow,
 
-		/// <summary>
-		/// A short perpendicular bar ("|") drawn across the endpoint.
-		/// Commonly used in entity-relationship or UML diagrams to denote
-		/// "one" in cardinality notation.
-		/// </summary>
+		/// <summary> A short perpendicular bar ("|") drawn across the endpoint. </summary>
+		/// <remarks>
+		/// Commonly used in entity-relationship or UML diagrams to denote "one" in cardinality notation.
+		/// </remarks>
 		Bar,
 
-		/// <summary>
-		/// A filled circle drawn at the endpoint.
+		/// <summary> A filled circle drawn at the endpoint. </summary>
+		/// <remarks>
 		/// Used in UML aggregation and ERD "zero or one" notations.
-		/// </summary>
+		/// </remarks>
 		Circle,
 
-		/// <summary>
-		/// A filled triangle larger than Arrow, pointing in the direction
-		/// of travel. Used in UML class diagrams for inheritance.
-		/// </summary>
+		/// <summary> A filled triangle larger than Arrow, pointing in the direction of travel. </summary>
+		/// <remarks>
+		/// Used in UML class diagrams for references and dependencies.
+		/// </remarks>
 		Triangle,
 
-		/// <summary>
-		/// An outlined (hollow) circle at the endpoint.
+		/// <summary> An outlined (hollow) circle at the endpoint. </summary>
+		/// <remarks>
 		/// Used in ERD "zero or many" / "zero or one" notations.
-		/// </summary>
+		/// </remarks>
 		CircleOutline,
 
-		/// <summary>
-		/// An outlined (hollow) triangle at the endpoint.
-		/// Used in UML for interface realization / dependency arrows.
-		/// </summary>
+		/// <summary> An outlined (hollow) triangle at the endpoint. </summary>
+		/// <remarks>
+		/// Used in UML for inheritance and interface realization arrows.
+		/// </remarks>
 		TriangleOutline
 	}
 

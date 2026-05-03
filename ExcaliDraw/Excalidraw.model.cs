@@ -4,13 +4,6 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 
 static partial class Excalidraw {
 
-	/// <summary>A 2-D point [x, y].</summary>
-	public sealed class Point2D {
-		public double X { get; set; }
-		public double Y { get; set; }
-	}
-
-
 	/// <summary>
 	/// Corner-rounding configuration attached to any closed shape element.
 	/// Serializes to <c>{ "type": number, "value"?: number }</c>.
@@ -26,49 +19,40 @@ static partial class Excalidraw {
 		public double? value { get; set; }
 	}
 
-	/// <summary>
-	/// Reference from a container element to a bound arrow or text element.
-	/// Stored in <c>ExcalidrawElement.boundElements</c>.
-	/// Source: <c>BoundElement</c> type in types.ts.
-	/// </summary>
+	/// <summary> Reference from a container element to a bound arrow or text element. </summary>
+	/// <remarks>
+	/// Stored in <see cref="Excalidraw.Element.boundElements"/>.
+	/// Unlike <see cref="PointBinding"/> which describes attached Lines.
+	/// </remarks>
 	public sealed class BoundElement {
-		/// <summary>
-		/// ID of the bound element (arrow or text).
-		/// JSON key: <c>"id"</c>.
-		/// </summary>
+		/// <summary> ID of the bound element (arrow or text). </summary>
 		public string id { get; set; }
 
-		/// <summary>
-		/// Type of the bound element: <c>"arrow"</c> or <c>"text"</c>.
-		/// JSON key: <c>"type"</c>.
-		/// </summary>
-		public string type { get; set; }
+		/// <summary> Type of the bound element: <c>"arrow"</c> or <c>"text"</c>. </summary>
+		public ElementType type { get; set; }
 	}
 
-	/// <summary>
-	/// Arrow endpoint binding that attaches an arrow tip to a specific
-	/// point on a bindable element.
-	/// Source: <c>FixedPointBinding</c> in types.ts.
-	/// </summary>
+	/// <summary> binding that attaches an arrow tip to a specific point on a bindable Shape. </summary>
+	/// <remarks>
+	/// Unlike <see cref="BoundElement"/> which describes nested Elements.
+	/// </remarks>
 	public sealed class PointBinding {
-		/// <summary>
-		/// ID of the bound target element.
-		/// JSON key: <c>"elementId"</c>.
-		/// </summary>
+
+		public PointBinding(){}
+		public PointBinding(string ElementId) { elementId= ElementId; }
+
+		/// <summary> ID of the bound target element. </summary>
 		public string elementId { get; set; }
 
-		/// <summary>
-		/// Normalized [x, y] fixed point as fractions of the bound element's
-		/// width and height (typically 0.0–1.0).
-		/// JSON key: <c>"fixedPoint"</c>.
-		/// </summary>
+		/// <summary> [x, y] fixed point Normalized to the bound element's width and height (typically 0.0–1.0). </summary>
 		public double[] fixedPoint { get; set; }
 
-		/// <summary>
-		/// Binding mode: <c>"inside"</c> allows the arrow tip inside the shape;
+		/// <summary> Binding mode: <c>"inside"</c> allows the arrow tip inside the shape;
 		/// <c>"orbit"</c> keeps it on the outline; <c>"skip"</c> disables attachment.
-		/// JSON key: <c>"mode"</c>.
 		/// </summary>
+		/// <remarks>
+		/// it is ephemeral and never written to the file.
+		/// </remarks>
 		public string mode { get; set; }
 	}
 

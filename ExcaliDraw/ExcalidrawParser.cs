@@ -20,22 +20,22 @@ public static class ExcalidrawParser {
 			, Converters = { new ExcalidrawElementConverter() }
 		};
 
-	/// <summary> Parses an <c>.excalidraw</c> JSON string into an <see cref="ExcalidrawDocument"/>. </summary>
+	/// <summary> Parses an <c>.excalidraw</c> JSON string into an <see cref="Document"/>. </summary>
 	/// <param name="json">The full JSON text of the scene file.</param>
-	/// <returns>A populated <see cref="ExcalidrawDocument"/> instance.</returns>
+	/// <returns>A populated <see cref="Document"/> instance.</returns>
 	/// <exception cref="JsonException">Thrown when deserialisation returns null or the JSON is malformed.</exception>
-	public static ExcalidrawDocument ParseExcalidraw(string json) =>
-		JsonConvert.DeserializeObject<ExcalidrawDocument>(json, ExcalidrawSettings())
+	public static Document ParseExcalidraw(string json) =>
+		JsonConvert.DeserializeObject<Document>(json, ExcalidrawSettings())
 		?? throw new JsonException("Deserialisation returned null.");
 
-	/// <summary> Parses an <c>excalidraw/clipboard</c> JSON string into an <see cref="ExcalidrawClipboard"/> payload. </summary>
+	/// <summary> Parses an <c>excalidraw/clipboard</c> JSON string into an <see cref="Clipboard"/> payload. </summary>
 	/// <param name="json">The clipboard JSON string.</param>
-	public static ExcalidrawClipboard ParseClipboard(string json) =>
-		JsonConvert.DeserializeObject<ExcalidrawClipboard>(json, ExcalidrawSettings())
+	public static Clipboard ParseClipboard(string json) =>
+		JsonConvert.DeserializeObject<Clipboard>(json, ExcalidrawSettings())
 		?? throw new JsonException("Deserialisation returned null.");
 
-	/// <summary> Synchronously reads an <paramref name="excalidraw"/> file from disk and parses it into an <see cref="ExcalidrawDocument"/>. </summary>
-	public static ExcalidrawDocument ParseExcalidraw(this FileInfo excalidraw)
+	/// <summary> Synchronously reads an <paramref name="excalidraw"/> file from disk and parses it into an <see cref="Document"/>. </summary>
+	public static Document ParseExcalidraw(this FileInfo excalidraw)
 		=> ParseExcalidraw(File.ReadAllText(excalidraw.FullName));
 
 	/// <summary>
@@ -43,7 +43,7 @@ public static class ExcalidrawParser {
 	/// scene document (<c>type == "excalidraw"</c>, <c>version == 2</c>).
 	/// </summary>
 	/// <param name="json">JSON string to validate.</param>
-	public static ExcalidrawDocument? IsValid(string json) {
+	public static Document? IsValid(string json) {
 		try {
 			return ParseExcalidraw(json);
 			// doc.type == "excalidraw" && doc.version == 2;

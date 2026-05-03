@@ -83,7 +83,7 @@ public static partial class Excalidraw{
 		/// Corner-rounding configuration, or <c>null</c> for sharp corners.
 		/// JSON key: <c>"roundness"</c>.
 		/// </summary>
-		public Roundness roundness { get; set; }
+		public Roundness? roundness { get; set; }
 
 		/// <summary>
 		/// Random seed integer used by RoughJS to produce a stable hand-drawn shape
@@ -97,11 +97,8 @@ public static partial class Excalidraw{
 		/// </summary>
 		public bool isDeleted { get; set; }
 
-		/// <summary>
-		/// ID of the frame element that contains this element, or <c>null</c>.
-		/// JSON key: <c>"frameId"</c>.
-		/// </summary>
-		public string frameId { get; set; }
+		/// <summary> ID of the frame element that contains this element, or <c>null</c>. </summary>
+		public string? frameId { get; set; }
 
 		/// <summary>
 		/// Ordered list of group IDs this element belongs to,
@@ -113,7 +110,7 @@ public static partial class Excalidraw{
 		public List<BoundElement>? boundElements { get; set; }
 
 		/// <summary> Hyperlink URL attached to the element, or <c>null</c>. </summary>
-		public string link { get; set; }
+		public string? link { get; set; }
 
 		/// <summary> When <c>true</c>, the element cannot be selected or moved interactively. </summary>
 		public bool locked { get; set; }
@@ -154,7 +151,7 @@ public static partial class Excalidraw{
 		/// <summary> Minimum Constructor </summary>
 		protected Element(ElementType elementType) { type = elementType; }
 
-		protected Element(
+		public Element(
 			string Id
 			, ElementType Type
 			, string? FrameId
@@ -233,10 +230,10 @@ public static partial class Excalidraw{
 	/// JSON type: <c>"rectangle"</c>.
 	/// </summary>
 	public sealed class RectangleElement : Element {
-		public RectangleElement() : base(ElementType.Rectangle) { }
+		public RectangleElement() : base(ElementType.rectangle) { }
 
 		public RectangleElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
-			: base(ElementType.Ellipse, bounds, context, groupIds) {
+			: base(ElementType.ellipse, bounds, context, groupIds) {
 		}
 
 
@@ -248,10 +245,10 @@ public static partial class Excalidraw{
 	/// JSON type: <c>"ellipse"</c>.
 	/// </summary>
 	public sealed class EllipseElement : Element {
-		public EllipseElement() : base(ElementType.Ellipse) { }
+		public EllipseElement() : base(ElementType.ellipse) { }
 
 		public EllipseElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
-			: base(ElementType.Ellipse, bounds, context, groupIds) {
+			: base(ElementType.ellipse, bounds, context, groupIds) {
 		}
 
 	}
@@ -262,16 +259,16 @@ public static partial class Excalidraw{
 	/// JSON type: <c>"diamond"</c>.
 	/// </summary>
 	public sealed class DiamondElement : Element {
-		public DiamondElement() : base(ElementType.Diamond) { }
+		public DiamondElement() : base(ElementType.diamond) { }
 
 		public DiamondElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
-			: base(ElementType.Diamond, bounds, context, groupIds) {
+			: base(ElementType.diamond, bounds, context, groupIds) {
 		}
 
 	}
 
 	/// <summary> Base class for elements composed of an ordered array of points: lines and arrows. </summary>
-	public abstract class LinearElement : Element {
+	public class LinearElement : Element {
 
 		protected LinearElement(ElementType type) : base(type) { }
 
@@ -323,9 +320,11 @@ public static partial class Excalidraw{
 		#region temp
 
 		[JsonIgnore]
+		[Obsolete("use " + nameof(startBinding))]
 		public string? startElementId { get; set; }
 
 		[JsonIgnore]
+		[Obsolete("use " + nameof(endBinding))]
 		public string? endElementId { get; set; }
 
 		[JsonIgnore]
@@ -345,7 +344,7 @@ public static partial class Excalidraw{
 		///// during interactive creation. Used internally; may be <c>null</c>.
 		///// JSON key: <c>"lastCommittedPoint"</c>.
 		///// </summary>
-		//public double[] lastCommittedPoint { get; set; }
+		//public double[]? lastCommittedPoint { get; set; }
 
 		/// <summary> Arrow endpoint binding to the element at the start of the line.
 		/// <c>null</c> when the start is unbound. JSON key: <c>"startBinding"</c>.
@@ -368,7 +367,7 @@ public static partial class Excalidraw{
 		/// </summary>
 		public bool polygon { get; set; }
 
-		public LineElement() : base(ElementType.Line) { }
+		public LineElement() : base(ElementType.line) { }
 
 		public LineElement(string Id
 			, string? FrameId
@@ -379,7 +378,7 @@ public static partial class Excalidraw{
 			, string? StrokeColor
 			, double Opacity
 			, string? Label)
-			: base(Id, ElementType.Line, FrameId, X, Y, StrokeWidth, StrokeStyle, StrokeColor, Opacity
+			: base(Id, ElementType.line, FrameId, X, Y, StrokeWidth, StrokeStyle, StrokeColor, Opacity
 				  , null, null, null, null, Label) {
 		}
 
@@ -387,7 +386,7 @@ public static partial class Excalidraw{
 		public LineElement(ElementBounds bounds
 			, IHaveSequence<int> context, List<string> groupIds
 			, string? Label
-		) : base(ElementType.Line, bounds, context, groupIds
+		) : base(ElementType.line, bounds, context, groupIds
 			, null, null, null, null, Label) {
 		}
 
@@ -396,7 +395,7 @@ public static partial class Excalidraw{
 	/// <summary> Directed arrow with optional endpoint bindings and arrowhead decorations. </summary>
 	public sealed class Arrow : LinearElement {
 
-		public Arrow() : base(ElementType.Arrow) { }
+		public Arrow() : base(ElementType.arrow) { }
 
 		public Arrow(string Id
 			, string? FrameId
@@ -411,7 +410,7 @@ public static partial class Excalidraw{
 			, string? Label = null
 			, string? StartElementId = null
 			, string? EndElementId = null
-		) : base(Id, ElementType.Arrow, FrameId, X, Y, StrokeWidth, StrokeStyle, StrokeColor, Opacity
+		) : base(Id, ElementType.arrow, FrameId, X, Y, StrokeWidth, StrokeStyle, StrokeColor, Opacity
 			, StartArrowhead, EndArrowhead, StartElementId, EndElementId, Label) {
 		}
 
@@ -423,7 +422,7 @@ public static partial class Excalidraw{
 			, string? Label
 			, string? StartElementId = null
 			, string? EndElementId = null
-		) : base(ElementType.Arrow, bounds, context, groupIds
+		) : base(ElementType.arrow, bounds, context, groupIds
 			, StartArrowhead, EndArrowhead, StartElementId, EndElementId, Label) {
 		}
 
@@ -436,10 +435,10 @@ public static partial class Excalidraw{
 
 	/// <summary> Freehand stroke captured from pointer input. </summary>
 	public sealed class FreedrawElement : Element {
-		public FreedrawElement() : base(ElementType.Freedraw) { }
+		public FreedrawElement() : base(ElementType.freedraw) { }
 
 		public FreedrawElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
-			: base(ElementType.Freedraw, bounds, context, groupIds) {
+			: base(ElementType.freedraw, bounds, context, groupIds) {
 		}
 
 		/// <summary>
@@ -465,10 +464,10 @@ public static partial class Excalidraw{
 	/// <summary> Text label element, either standalone or bound to a container shape. </summary>
 	public sealed class TextElement : Element {
 
-		public TextElement() : base(ElementType.Text) { }
+		public TextElement() : base(ElementType.text) { }
 
 		public TextElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
-			: base(ElementType.Text, bounds, context, groupIds) {
+			: base(ElementType.text, bounds, context, groupIds) {
 		}
 
 		/// <summary> Display text content (may be wrapped). JSON key: <c>"text"</c>. </summary>
@@ -501,7 +500,7 @@ public static partial class Excalidraw{
 		/// <summary> ID of the container shape this text is bound to,
 		/// or <c>null</c> for standalone text. JSON key: <c>"containerId"</c>.
 		/// </summary>
-		public string containerId { get; set; }
+		public string? containerId { get; set; }
 
 		/// <summary>
 		/// When <c>true</c>, the container shape resizes to fit the text.
@@ -522,16 +521,16 @@ public static partial class Excalidraw{
 	/// <summary> Raster image whose binary content is stored in the document-level <c>files</c> map keyed by <see cref="fileId"/>. </summary>
 	public sealed class ImageElement : Element {
 
-		public ImageElement() : base(ElementType.Image) { }
+		public ImageElement() : base(ElementType.image) { }
 
 		public ImageElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
-			: base(ElementType.Image, bounds, context, groupIds) {
+			: base(ElementType.image, bounds, context, groupIds) {
 		}
 
 		/// <summary> SHA-1 FileId referencing the binary data in <c>ExcalidrawDocument.files</c>.
 		/// <c>null</c> when the image has not yet been assigned a file. JSON key: <c>"fileId"</c>.
 		/// </summary>
-		public string fileId { get; set; }
+		public string? fileId { get; set; }
 
 		/// <summary>
 		/// Load/persistence state of the image binary data.
@@ -588,14 +587,22 @@ public static partial class Excalidraw{
 	/// Children reference this frame via their <c>frameId</c> property.
 	/// </remarks>
 	public sealed class FrameElement : Element {
-		public FrameElement() : base(ElementType.Frame) { }
+		public FrameElement() : base(ElementType.frame) { }
+
+		public FrameElement(string id
+			, double x
+			, double y
+			, string? Name
+		) : base(id, ElementType.frame, null, x, y, 0, StrokeStyle.Solid, null, null, 0) {
+			name = Name;
+		}
 
 		public FrameElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
-			: base(ElementType.Frame, bounds, context, groupIds) {
+			: base(ElementType.frame, bounds, context, groupIds) {
 		}
 
 		/// <summary> Human-readable label displayed in the frame's header, or <c>null</c>. </summary>
-		public string name { get; set; }
+		public string? name { get; set; }
 	}
 
 	/// <summary> AI-generated magic frame. </summary>
@@ -603,23 +610,23 @@ public static partial class Excalidraw{
 	/// Behaves like <see cref="FrameElement"/> but is produced by Excalidraw's text-to-diagram / generative features.
 	/// </remarks>
 	public sealed class MagicFrameElement : Element {
-		public MagicFrameElement() : base(ElementType.MagicFrame) { }
+		public MagicFrameElement() : base(ElementType.magicframe) { }
 
 		public MagicFrameElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
-			: base(ElementType.MagicFrame, bounds, context, groupIds) {
+			: base(ElementType.magicframe, bounds, context, groupIds) {
 		}
 
 		/// <summary> Human-readable label displayed in the frame's header, or <c>null</c>. </summary>
-		public string name { get; set; }
+		public string? name { get; set; }
 	}
 
 	/// <summary> Embeds an external web resource (URL) rendered as an interactive widget. </summary>
 	public sealed class EmbeddableElement : Element {
 
-		public EmbeddableElement() : base(ElementType.Embeddable) { }
+		public EmbeddableElement() : base(ElementType.embeddable) { }
 
 		public EmbeddableElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
-			: base(ElementType.Embeddable, bounds, context, groupIds) {
+			: base(ElementType.embeddable, bounds, context, groupIds) {
 		}
 
 	}
@@ -629,10 +636,10 @@ public static partial class Excalidraw{
 	/// May carry AI generation metadata in <c>customData.generationData</c>.
 	/// </remarks>
 	public sealed class IFrameElement : Element {
-		public IFrameElement() : base(ElementType.IFrame) { }
+		public IFrameElement() : base(ElementType.iframe) { }
 
 		public IFrameElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
-			: base(ElementType.IFrame, bounds, context, groupIds) {
+			: base(ElementType.iframe, bounds, context, groupIds) {
 		}
 
 
