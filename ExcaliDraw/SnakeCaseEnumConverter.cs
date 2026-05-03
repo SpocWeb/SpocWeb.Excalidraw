@@ -1,0 +1,56 @@
+﻿namespace org.SpocWeb.PptxToJson.ExcaliDraw;
+
+using Newtonsoft.Json;
+using System;
+
+/// <summary> Newtonsoft.Json converter that... </summary>
+/// <remarks>
+/// - serialises enum values by converting their PascalCase C# name to snake_case, <br/>
+/// - and deserializes by the reverse mapping. <br/>
+/// 
+/// Note: this converter does NOT handle values whose JSON key uses a hyphen (e.g. "cross-hatch").
+/// Those still require [<see cref="System.Runtime.Serialization.EnumMemberAttribute"/>].
+/// </remarks>
+public sealed class SnakeCaseEnumConverter : JsonConverter {
+
+	/// <summary>Handles any enum type.</summary>
+	public override bool CanConvert(Type objectType)
+		=> objectType.IsEnum
+		   || (Nullable.GetUnderlyingType(objectType)?.IsEnum ?? false);
+
+	/// <summary>Writes the snake_case string for the enum value.</summary>
+	public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer) {
+		var enumType = value.GetType();
+		var memberName = Enum.GetName(enumType, value)
+		                 ?? throw new JsonException(
+			                 $"No name found for value {value} in {enumType.Name}");
+
+		var snake = enumType.ToSnakeCase(memberName);
+		writer.WriteValue(snake);
+	}
+
+	/// <summary>Reads a snake_case string and returns the matching enum value.</summary>
+	/// <remarks>
+	/// <paramref name="existingValue"/> is filled when re-using an object Reference.
+	/// </remarks>
+	public override object? ReadJson(JsonReader reader, Type objectType, object existingValue
+		, JsonSerializer serializer) {
+		var underlyingType = Nullable.GetUnderlyingType(objectType) ?? objectType;
+		if (reader.TokenType == JsonToken.Null) {
+			if (Nullable.GetUnderlyingType(objectType) is null) {
+				throw new JsonException(
+					$"Cannot assign null to non-nullable enum {objectType.Name}");
+			}
+			return null;
+		}
+		if (reader.TokenType != JsonToken.String) {
+			throw new JsonException(
+				$"Expected string token for enum {underlyingType.Name}, " +
+				$"got {reader.TokenType}");
+		}
+		var snake = (string) reader.Value!;
+		var memberName = underlyingType.FromSnakeCase(snake);
+		return Enum.Parse(underlyingType, memberName, ignoreCase: false);
+	}
+
+}

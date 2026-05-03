@@ -17,22 +17,29 @@ public static class ExcalidrawParser {
 		new() {
 			ContractResolver = new CamelCasePropertyNamesContractResolver()
 			, NullValueHandling = NullValueHandling.Ignore
-			, Converters = { new ExcalidrawElementConverter() }
+			, Converters = { new ExcalidrawElementConverter(), new SnakeCaseEnumConverter() }
 		};
 
 	/// <summary> Parses an <c>.excalidraw</c> JSON string into an <see cref="Document"/>. </summary>
 	/// <param name="json">The full JSON text of the scene file.</param>
 	/// <returns>A populated <see cref="Document"/> instance.</returns>
 	/// <exception cref="JsonException">Thrown when deserialisation returns null or the JSON is malformed.</exception>
-	public static Document ParseExcalidraw(string json) =>
-		JsonConvert.DeserializeObject<Document>(json, ExcalidrawSettings())
-		?? throw new JsonException("Deserialisation returned null.");
+	public static Document ParseExcalidraw(string json)
+		=> JsonConvert.DeserializeObject<Document>(json, ExcalidrawSettings())
+		   ?? throw new JsonException("Deserialisation returned null.");
+
+	/// <summary> Converts the <paramref name="excaliDraw"/> <see cref="Document"/> to a JSON String </summary>
+	public static string ToJson(this Document excaliDraw)
+		=> JsonConvert.SerializeObject(excaliDraw, ExcalidrawSettings());
+
+	public static string ToFile(this Document excaliDraw, string filePath)
+		=> JsonConvert.SerializeObject(excaliDraw, ExcalidrawSettings());
 
 	/// <summary> Parses an <c>excalidraw/clipboard</c> JSON string into an <see cref="Clipboard"/> payload. </summary>
 	/// <param name="json">The clipboard JSON string.</param>
-	public static Clipboard ParseClipboard(string json) =>
-		JsonConvert.DeserializeObject<Clipboard>(json, ExcalidrawSettings())
-		?? throw new JsonException("Deserialisation returned null.");
+	public static Clipboard ParseClipboard(string json)
+		=> JsonConvert.DeserializeObject<Clipboard>(json, ExcalidrawSettings())
+		   ?? throw new JsonException("Deserialisation returned null.");
 
 	/// <summary> Synchronously reads an <paramref name="excalidraw"/> file from disk and parses it into an <see cref="Document"/>. </summary>
 	public static Document ParseExcalidraw(this FileInfo excalidraw)

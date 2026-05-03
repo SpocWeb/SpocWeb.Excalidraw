@@ -3,16 +3,14 @@ using Newtonsoft.Json.Linq;
 
 namespace org.SpocWeb.PptxToJson.ExcaliDraw; 
 
-/// <summary>
-/// Custom Newtonsoft.Json converter that reads the <c>"type"</c> discriminator
+/// <summary> Custom Newtonsoft.Json converter that reads the <c>"type"</c> discriminator
 /// from each element token and instantiates the correct
 /// <see cref="Excalidraw.Element"/> subclass before populating it.
-/// Write is intentionally disabled; the default serialiser handles output.
+/// Write is intentionally disabled; the default serializer handles output.
 /// </summary>
 public sealed class ExcalidrawElementConverter : JsonConverter<Excalidraw.Element> {
-	/// <summary>
-	/// Disable custom write path; default serialisation is sufficient.
-	/// </summary>
+
+	/// <summary> Disable custom write path; default serialisation should be sufficient. </summary>
 	public override bool CanWrite => false;
 
 	/// <summary>
