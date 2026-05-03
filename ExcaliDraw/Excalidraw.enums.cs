@@ -3,8 +3,7 @@
 /// <summary> Enums and static Helper Methods to parse Excalidraw JSON </summary>
 static partial class Excalidraw {
 
-	/// <summary>
-	/// Discriminates the concrete element subtype stored in the elements array.
+	/// <summary> AKA ShapeType; Discriminates the concrete element subtype stored in the elements array.
 	/// Maps 1-to-1 with the JSON "type" string field.
 	/// </summary>
 	public enum ElementType {
@@ -193,25 +192,22 @@ static partial class Excalidraw {
 	/// The integer values match the fontFamily field in the JSON.
 	/// </summary>
 	public enum FontFamily {
-		/// <summary>
-		/// Virgil — Excalidraw's default hand-drawn / sketch font.
+		/// <summary> 1. Virgil — Excalidraw's default hand-drawn / sketch font. </summary>
+		/// <remarks>
 		/// Gives diagrams their characteristic informal appearance.
-		/// JSON value: 1.
-		/// </summary>
+		/// </remarks>
 		Virgil = 1,
 
-		/// <summary>
-		/// Helvetica (system sans-serif fallback).
+		/// <summary> 2. Helvetica (system sans-serif fallback). </summary>
+		/// <remarks>
 		/// Produces clean, professional-looking text labels.
-		/// JSON value: 2.
-		/// </summary>
+		/// </remarks>
 		Helvetica = 2,
 
-		/// <summary>
-		/// Cascadia Code — a monospace / code font.
+		/// <summary> Cascadia Code — a monospace / code font. </summary>
+		/// <remarks>
 		/// Ideal for labelling technical or code-related diagrams.
-		/// JSON value: 3.
-		/// </summary>
+		/// </remarks>
 		Cascadia = 3
 	}
 
@@ -236,31 +232,27 @@ static partial class Excalidraw {
 		Error
 	}
 
-	/// <summary>
-	/// Determines how corner rounding is computed for a shape.
+	/// <summary> Determines how corner rounding is computed for a shape. </summary>
+	/// <remarks>
 	/// Maps to the "type" field of the Roundness object on each element.
-	/// </summary>
+	/// </remarks>
 	public enum RoundnessType {
-		/// <summary>
-		/// Legacy fixed-radius rounding used by older Excalidraw versions.
+
+		/// <summary> 1. Legacy fixed-radius rounding used by older Excalidraw versions. </summary>
+		/// <remarks>
 		/// A constant pixel radius is applied regardless of element size.
-		/// JSON value: 1.
-		/// </summary>
+		/// </remarks>
 		Legacy = 1,
 
-		/// <summary>
-		/// Corner radius is computed as a fixed proportion of the shorter
-		/// side of the element's bounding box.
-		/// JSON value: 2.
-		/// </summary>
+		/// <summary> 2. Corner radius is computed as a fixed proportion of the shorter side of the element's bounding box. </summary>
 		ProportionalRadius = 2,
 
-		/// <summary>
-		/// Corner radius adapts to both element size and the value stored
-		/// in Roundness.Value, giving the most natural-looking corners.
-		/// Used by rectangles and diamonds in current Excalidraw versions.
-		/// JSON value: 3.
+		/// <summary> Corner radius adapts to both element size and the value stored in Roundness.Value,
+		/// giving the most natural-looking corners.
 		/// </summary>
+		/// <remarks>
+		/// Used by rectangles and diamonds in current Excalidraw versions.
+		/// </remarks>
 		AdaptiveRadius = 3
 	}
 }

@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using System.Reflection.Emit;
 
 namespace org.SpocWeb.PptxToJson.ExcaliDraw; 
 
@@ -10,14 +9,14 @@ public static partial class Excalidraw{
 	public static double Round(double value, int digits = 2)
 		=> Math.Round(value, digits, MidpointRounding.AwayFromZero);
 
-	/// <summary> Graphic Element Base-Class of <paramref name="Type"/> </summary>
+	/// <summary> Graphic Element Base-Class of <see cref="type"/> </summary>
 	/// <summary>
 	/// Properties shared by every Excalidraw element regardless of type.
 	/// Corresponds to <c>_ExcalidrawElementBase</c> in types.ts.
 	/// Property names match JSON camelCase keys exactly via <see cref="CamelCasePropertyNamesContractResolver"/>
 	/// (first char lowercased).
 	/// </summary>
-	public abstract class Element {
+	public class Element {
 
 		/// <summary>Unique element identifier (random string). JSON key: <c>"id"</c>.</summary>
 		public string id { get; set; }
@@ -107,30 +106,19 @@ public static partial class Excalidraw{
 		/// <summary>
 		/// Ordered list of group IDs this element belongs to,
 		/// from deepest (innermost) to shallowest (outermost).
-		/// JSON key: <c>"groupIds"</c>.
 		/// </summary>
 		public List<string> groupIds { get; set; } = new();
 
-		/// <summary>
-		/// References to arrows or text elements bound to this element.
-		/// JSON key: <c>"boundElements"</c>.
-		/// </summary>
+		/// <summary> References to arrows or text elements bound to this element. </summary>
 		public List<BoundElement>? boundElements { get; set; }
 
-		/// <summary>
-		/// Hyperlink URL attached to the element, or <c>null</c>.
-		/// JSON key: <c>"link"</c>.
-		/// </summary>
+		/// <summary> Hyperlink URL attached to the element, or <c>null</c>. </summary>
 		public string link { get; set; }
 
-		/// <summary>
-		/// When <c>true</c>, the element cannot be selected or moved interactively.
-		/// JSON key: <c>"locked"</c>.
-		/// </summary>
+		/// <summary> When <c>true</c>, the element cannot be selected or moved interactively. </summary>
 		public bool locked { get; set; }
 
-		/// <summary>
-		/// Sequential integer incremented on every change.
+		/// <summary> Sequential integer incremented on every change.
 		/// Used for collaborative reconciliation. JSON key: <c>"version"</c>.
 		/// </summary>
 		public int version { get; set; }
@@ -138,26 +126,18 @@ public static partial class Excalidraw{
 		/// <summary>
 		/// Random integer regenerated on every change, used for deterministic
 		/// reconciliation when two peers have the same version counter.
-		/// JSON key: <c>"versionNonce"</c>.
 		/// </summary>
 		public int versionNonce { get; set; }
 
-		/// <summary>
-		/// Unix epoch timestamp (ms) of the last element mutation.
-		/// JSON key: <c>"updated"</c>.
-		/// </summary>
+		/// <summary> Unix epoch timestamp (ms) of the last element mutation. </summary>
 		public long updated { get; set; }
 
-		/// <summary>
-		/// Fractional index string (rocicorp/fractional-indexing) used for
+		/// <summary> Fractional index string (rocicorp/fractional-indexing) used for
 		/// stable ordering in multiplayer scenarios. JSON key: <c>"index"</c>.
 		/// </summary>
 		public string index { get; set; }
 
-		/// <summary>
-		/// Arbitrary host-app or plugin data attached to this element.
-		/// JSON key: <c>"customData"</c>.
-		/// </summary>
+		/// <summary> Arbitrary host-app or plugin data attached to this element. </summary>
 		public Dictionary<string, object> customData { get; set; }
 
 		/// <summary>
@@ -198,8 +178,8 @@ public static partial class Excalidraw{
 			opacity = (int)Opacity;
 		}
 
-		protected Element(ElementType type, ElementBounds bounds
-			, IHaveSequence<int> context, params string[] groupIds) : this(
+		public Element(ElementType type, ElementBounds bounds
+			, IHaveSequence<int> context, List<string> GroupIds) : this(
 			context.NextId(type.ToString()), type, null, Round(bounds.X), Round(bounds.Y)
 			, 1d, StrokeStyle.Solid
 			, DefaultStrokeColor
@@ -209,7 +189,7 @@ public static partial class Excalidraw{
 			height = Round(bounds.Height);
 			angle = Round(bounds.AngleRadians, 6);
 			fillStyle = FillStyle.Solid;
-			GroupIds = groupIds;
+			groupIds = GroupIds;
 			frameId = null;
 			roundness = null;
 			seed = context.NextPositiveInt();
@@ -221,9 +201,6 @@ public static partial class Excalidraw{
 			link = null;
 			locked = false;
 		}
-
-		[JsonIgnore]
-		public string[] GroupIds { get ; set ; }
 
 
 		public void Deconstruct(out string Id
@@ -258,7 +235,7 @@ public static partial class Excalidraw{
 	public sealed class RectangleElement : Element {
 		public RectangleElement() : base(ElementType.Rectangle) { }
 
-		public RectangleElement(ElementBounds bounds, IHaveSequence<int> context, params string[] groupIds)
+		public RectangleElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.Ellipse, bounds, context, groupIds) {
 		}
 
@@ -273,7 +250,7 @@ public static partial class Excalidraw{
 	public sealed class EllipseElement : Element {
 		public EllipseElement() : base(ElementType.Ellipse) { }
 
-		public EllipseElement(ElementBounds bounds, IHaveSequence<int> context, params string[] groupIds)
+		public EllipseElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.Ellipse, bounds, context, groupIds) {
 		}
 
@@ -287,7 +264,7 @@ public static partial class Excalidraw{
 	public sealed class DiamondElement : Element {
 		public DiamondElement() : base(ElementType.Diamond) { }
 
-		public DiamondElement(ElementBounds bounds, IHaveSequence<int> context, params string[] groupIds)
+		public DiamondElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.Diamond, bounds, context, groupIds) {
 		}
 
@@ -307,48 +284,52 @@ public static partial class Excalidraw{
 			, StrokeStyle strokeStyle
 			, string? strokeColor
 			, double opacity
-			, string? startElementId
-			, string? endElementId
-			, Arrowhead startArrowhead
-			, Arrowhead endArrowhead
+			, Arrowhead? StartArrowhead
+			, Arrowhead? EndArrowhead
+			, string? StartElementId
+			, string? EndElementId
 			, string? label
 			) : base(id, elementType, frameId, x, y, strokeWidth, strokeStyle, strokeColor, null, opacity) {
-			StartElementId = startElementId;
-			EndElementId = endElementId;
-			StartArrowhead = startArrowhead;
-			EndArrowhead = endArrowhead;
-			Label = label;
+			startElementId = StartElementId;
+			endElementId = EndElementId;
+			startArrowhead = StartArrowhead;
+			endArrowhead = EndArrowhead;
+			this.label = label;
 		}
 
 
 		public LinearElement(ElementType ElementType
 			, ElementBounds bounds
-			, IHaveSequence<int> context, string[] groupIds
+			, IHaveSequence<int> context, List<string> groupIds
+			, Arrowhead? StartArrowhead
+			, Arrowhead? EndArrowhead
 			, string? StartElementId
 			, string? EndElementId
-			, Arrowhead StartArrowhead
-			, Arrowhead EndArrowhead
 			, string? Label
 		) : base(ElementType, bounds, context, groupIds) {
-			this.StartElementId = StartElementId;
-			this.EndElementId = EndElementId;
-			this.StartArrowhead = StartArrowhead;
-			this.EndArrowhead = EndArrowhead;
-			this.Label = Label;
+			startElementId = StartElementId;
+			endElementId = EndElementId;
+			startArrowhead = StartArrowhead;
+			endArrowhead = EndArrowhead;
+			label = Label;
 		}
+
+		[JsonIgnore]
+		public Arrowhead? startArrowhead { get; set; }
+
+		[JsonIgnore]
+		public Arrowhead? endArrowhead { get; set; }
 
 		#region temp
 
 		[JsonIgnore]
-		public string? StartElementId { get; set; }
+		public string? startElementId { get; set; }
+
 		[JsonIgnore]
-		public string? EndElementId { get; set; }
+		public string? endElementId { get; set; }
+
 		[JsonIgnore]
-		public Arrowhead StartArrowhead { get; set; }
-		[JsonIgnore]
-		public Arrowhead EndArrowhead { get; set; }
-		[JsonIgnore]
-		public string? Label { get; set; }
+		public string? label { get; set; }
 
 		#endregion temp
 
@@ -359,36 +340,23 @@ public static partial class Excalidraw{
 		/// </summary>
 		public List<double[]> points { get; set; } = new();
 
-		/// <summary>
-		/// The last point that was committed to the <see cref="points"/> array
-		/// during interactive creation. Used internally; may be <c>null</c>.
-		/// JSON key: <c>"lastCommittedPoint"</c>.
-		/// </summary>
-		public double[] lastCommittedPoint { get; set; }
+		///// <summary>
+		///// The last point that was committed to the <see cref="points"/> array
+		///// during interactive creation. Used internally; may be <c>null</c>.
+		///// JSON key: <c>"lastCommittedPoint"</c>.
+		///// </summary>
+		//public double[] lastCommittedPoint { get; set; }
 
-		/// <summary>
-		/// Arrow endpoint binding to the element at the start of the line.
+		/// <summary> Arrow endpoint binding to the element at the start of the line.
 		/// <c>null</c> when the start is unbound. JSON key: <c>"startBinding"</c>.
 		/// </summary>
-		public PointBinding startBinding { get; set; }
+		public PointBinding? startBinding { get; set; }
 
-		/// <summary>
-		/// Arrow endpoint binding to the element at the end of the line.
+		/// <summary> Arrow endpoint binding to the element at the end of the line.
 		/// <c>null</c> when the end is unbound. JSON key: <c>"endBinding"</c>.
 		/// </summary>
-		public PointBinding endBinding { get; set; }
+		public PointBinding? endBinding { get; set; }
 
-		/// <summary>
-		/// Arrowhead decoration at the start point, or <c>null</c> for none.
-		/// JSON key: <c>"startArrowhead"</c>.
-		/// </summary>
-		public string startArrowhead { get; set; }
-
-		/// <summary>
-		/// Arrowhead decoration at the end point, or <c>null</c> for none.
-		/// JSON key: <c>"endArrowhead"</c>.
-		/// </summary>
-		public string endArrowhead { get; set; }
 	}
 
 	/// <summary> Undirected straight or curved line through two or more points. </summary>
@@ -410,25 +378,17 @@ public static partial class Excalidraw{
 			, StrokeStyle StrokeStyle
 			, string? StrokeColor
 			, double Opacity
-			, string? StartElementId
-			, string? EndElementId
-			, Arrowhead StartArrowhead
-			, Arrowhead EndArrowhead
 			, string? Label)
 			: base(Id, ElementType.Line, FrameId, X, Y, StrokeWidth, StrokeStyle, StrokeColor, Opacity
-				  , StartElementId,EndElementId,StartArrowhead,EndArrowhead,Label) {
+				  , null, null, null, null, Label) {
 		}
 
 
 		public LineElement(ElementBounds bounds
-			, IHaveSequence<int> context, string[] groupIds
-			, string? StartElementId
-			, string? EndElementId
-			, Arrowhead StartArrowhead
-			, Arrowhead EndArrowhead
+			, IHaveSequence<int> context, List<string> groupIds
 			, string? Label
 		) : base(ElementType.Line, bounds, context, groupIds
-			, StartElementId, EndElementId, StartArrowhead, EndArrowhead, Label) {
+			, null, null, null, null, Label) {
 		}
 
 	}
@@ -437,6 +397,7 @@ public static partial class Excalidraw{
 	public sealed class Arrow : LinearElement {
 
 		public Arrow() : base(ElementType.Arrow) { }
+
 		public Arrow(string Id
 			, string? FrameId
 			, double X
@@ -445,40 +406,39 @@ public static partial class Excalidraw{
 			, StrokeStyle StrokeStyle
 			, string? StrokeColor
 			, double Opacity
-
-			, string? StartElementId
-			, string? EndElementId
 			, Arrowhead StartArrowhead
 			, Arrowhead EndArrowhead
-			, string? Label
-			) : base(Id, ElementType.Arrow, FrameId, X, Y, StrokeWidth, StrokeStyle, StrokeColor, Opacity
-			, StartElementId, EndElementId, StartArrowhead, EndArrowhead, Label) {
+			, string? Label = null
+			, string? StartElementId = null
+			, string? EndElementId = null
+		) : base(Id, ElementType.Arrow, FrameId, X, Y, StrokeWidth, StrokeStyle, StrokeColor, Opacity
+			, StartArrowhead, EndArrowhead, StartElementId, EndElementId, Label) {
 		}
 
 
 		public Arrow(ElementBounds bounds
-			, IHaveSequence<int> context, string[] groupIds
-			, string? StartElementId
-			, string? EndElementId
+			, IHaveSequence<int> context, List<string> groupIds
 			, Arrowhead StartArrowhead
 			, Arrowhead EndArrowhead
 			, string? Label
-			) : base(ElementType.Arrow, bounds, context, groupIds
-			, StartElementId, EndElementId, StartArrowhead, EndArrowhead, Label) {
+			, string? StartElementId = null
+			, string? EndElementId = null
+		) : base(ElementType.Arrow, bounds, context, groupIds
+			, StartArrowhead, EndArrowhead, StartElementId, EndElementId, Label) {
 		}
 
-		/// <summary>
-		/// When <c>true</c>, the arrow uses 90-degree elbow routing instead of
-		/// straight or curved segments. JSON key: <c>"elbowed"</c>.
+		/// <summary> When <c>true</c>, the arrow uses 90-degree elbow routing
+		/// instead of straight or curved segments. JSON key: <c>"elbowed"</c>.
 		/// </summary>
 		public bool elbowed { get; set; }
+
 	}
 
 	/// <summary> Freehand stroke captured from pointer input. </summary>
 	public sealed class FreedrawElement : Element {
 		public FreedrawElement() : base(ElementType.Freedraw) { }
 
-		public FreedrawElement(ElementBounds bounds, IHaveSequence<int> context, params string[] groupIds)
+		public FreedrawElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.Freedraw, bounds, context, groupIds) {
 		}
 
@@ -507,7 +467,7 @@ public static partial class Excalidraw{
 
 		public TextElement() : base(ElementType.Text) { }
 
-		public TextElement(ElementBounds bounds, IHaveSequence<int> context, params string[] groupIds)
+		public TextElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.Text, bounds, context, groupIds) {
 		}
 
@@ -554,6 +514,9 @@ public static partial class Excalidraw{
 		/// Multiply by <see cref="fontSize"/> to obtain the line height in pixels.
 		/// </summary>
 		public double lineHeight { get; set; }
+
+		/// <summary> Position of the first Text Line; typ: FontSize </summary>
+		public double baseline { get ; set ; }
 	}
 
 	/// <summary> Raster image whose binary content is stored in the document-level <c>files</c> map keyed by <see cref="fileId"/>. </summary>
@@ -561,7 +524,7 @@ public static partial class Excalidraw{
 
 		public ImageElement() : base(ElementType.Image) { }
 
-		public ImageElement(ElementBounds bounds, IHaveSequence<int> context, params string[] groupIds)
+		public ImageElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.Image, bounds, context, groupIds) {
 		}
 
@@ -587,7 +550,7 @@ public static partial class Excalidraw{
 		/// Active crop rectangle applied to the image, or <c>null</c> if uncropped.
 		/// JSON key: <c>"crop"</c>.
 		/// </summary>
-		public ImageCrop crop { get; set; }
+		public ImageCrop? crop { get; set; }
 	}
 
 	/// <summary> Crop rectangle applied to an image element </summary>
@@ -627,7 +590,7 @@ public static partial class Excalidraw{
 	public sealed class FrameElement : Element {
 		public FrameElement() : base(ElementType.Frame) { }
 
-		public FrameElement(ElementBounds bounds, IHaveSequence<int> context, params string[] groupIds)
+		public FrameElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.Frame, bounds, context, groupIds) {
 		}
 
@@ -642,7 +605,7 @@ public static partial class Excalidraw{
 	public sealed class MagicFrameElement : Element {
 		public MagicFrameElement() : base(ElementType.MagicFrame) { }
 
-		public MagicFrameElement(ElementBounds bounds, IHaveSequence<int> context, params string[] groupIds)
+		public MagicFrameElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.MagicFrame, bounds, context, groupIds) {
 		}
 
@@ -655,7 +618,7 @@ public static partial class Excalidraw{
 
 		public EmbeddableElement() : base(ElementType.Embeddable) { }
 
-		public EmbeddableElement(ElementBounds bounds, IHaveSequence<int> context, params string[] groupIds)
+		public EmbeddableElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.Embeddable, bounds, context, groupIds) {
 		}
 
@@ -668,7 +631,7 @@ public static partial class Excalidraw{
 	public sealed class IFrameElement : Element {
 		public IFrameElement() : base(ElementType.IFrame) { }
 
-		public IFrameElement(ElementBounds bounds, IHaveSequence<int> context, params string[] groupIds)
+		public IFrameElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.IFrame, bounds, context, groupIds) {
 		}
 

@@ -17,17 +17,11 @@ static partial class Excalidraw {
 	/// Source: <c>_ExcalidrawElementBase.roundness</c> in types.ts.
 	/// </summary>
 	public sealed class Roundness {
-		/// <summary>
-		/// Algorithm used to compute the corner radius.
-		/// See <see cref="RoundnessType"/> for values.
-		/// JSON key: <c>"type"</c>.
-		/// </summary>
+		/// <summary> Algorithm used to compute the corner radius. <see cref="RoundnessType"/> for values. </summary>
 		public RoundnessType type { get; set; }
 
-		/// <summary>
-		/// Optional explicit radius value whose meaning depends on
-		/// <see cref="type"/>. Absent when not applicable.
-		/// JSON key: <c>"value"</c>.
+		/// <summary> Optional explicit radius value whose meaning depends on <see cref="type"/>.
+		/// Absent when not applicable.
 		/// </summary>
 		public double? value { get; set; }
 	}
