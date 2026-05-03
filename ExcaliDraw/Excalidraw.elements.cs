@@ -311,10 +311,8 @@ public static partial class Excalidraw{
 			label = Label;
 		}
 
-		[JsonIgnore]
 		public Arrowhead? startArrowhead { get; set; }
 
-		[JsonIgnore]
 		public Arrowhead? endArrowhead { get; set; }
 
 		#region temp
