@@ -1,5 +1,5 @@
 ---
-uid: SpocWeb.PptxToJson.md
+uid: SpocWeb.Excalidraw.md
 tags: [arch, dev ]
 ---
 
@@ -8,10 +8,10 @@ tags: [arch, dev ]
 
 </details>
 
-# SpocWeb.PptxToJson
-This Project provides Methods to convert powerpoint Slides to Markdown and/or Excalidraw.
-
-
+# SpocWeb.Excalidraw
+This Project provides for [Excalidraw](https://excalidraw.com/) Graphics:
+- Data Model 
+- Parser and Serializer using Newtonsoft JSON
 
 
 # License

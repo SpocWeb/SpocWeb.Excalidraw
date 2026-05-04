@@ -1,9 +1,9 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace org.SpocWeb.PptxToJson.ExcaliDraw; 
+namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 
-/// <summary> Custom Newtonsoft.Json converter that reads the <c>"type"</c> discriminator
+/// <summary> Custom Newtonsoft <see cref="JsonConverter{T}"/> that reads the <c>"type"</c> discriminator
 /// from each element token and instantiates the correct
 /// <see cref="Excalidraw.Element"/> subclass before populating it.
 /// Write is intentionally disabled; the default serializer handles output.
