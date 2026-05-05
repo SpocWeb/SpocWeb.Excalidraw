@@ -19,6 +19,13 @@ public static class ExcalidrawParser {
 			, Converters = { new ExcalidrawElementConverter(), new SnakeCaseEnumConverter() }
 		};
 
+	/// <summary> Converts the <paramref name="excaliDraw"/> <see cref="Document"/> to a JSON String </summary>
+	public static string ToJson(this Document excaliDraw, Formatting formatting = Formatting.Indented)
+		=> JsonConvert.SerializeObject(excaliDraw, formatting, ExcalidrawSettings());
+
+	public static string ToFile(this Document excaliDraw, string filePath, Formatting formatting = Formatting.Indented)
+		=> JsonConvert.SerializeObject(excaliDraw, formatting, ExcalidrawSettings());
+
 	/// <summary> Parses an <c>.excalidraw</c> JSON string into an <see cref="Document"/>. </summary>
 	/// <param name="json">The full JSON text of the scene file.</param>
 	/// <returns>A populated <see cref="Document"/> instance.</returns>
@@ -26,13 +33,6 @@ public static class ExcalidrawParser {
 	public static Document ParseExcalidraw(string json)
 		=> JsonConvert.DeserializeObject<Document>(json, ExcalidrawSettings())
 		   ?? throw new JsonException("Deserialisation returned null.");
-
-	/// <summary> Converts the <paramref name="excaliDraw"/> <see cref="Document"/> to a JSON String </summary>
-	public static string ToJson(this Document excaliDraw)
-		=> JsonConvert.SerializeObject(excaliDraw, ExcalidrawSettings());
-
-	public static string ToFile(this Document excaliDraw, string filePath)
-		=> JsonConvert.SerializeObject(excaliDraw, ExcalidrawSettings());
 
 	/// <summary> Parses an <c>excalidraw/clipboard</c> JSON string into an <see cref="Clipboard"/> payload. </summary>
 	/// <param name="json">The clipboard JSON string.</param>
