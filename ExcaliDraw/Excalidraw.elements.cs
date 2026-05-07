@@ -18,6 +18,9 @@ public static partial class Excalidraw{
 	/// </summary>
 	public class Element {
 
+		/// <summary> Debuggable String Representation </summary>
+		public override string ToString() => JsonConvert.SerializeObject(this, Formatting.None, ExcalidrawParser.ExcalidrawSettings());
+
 		/// <summary>Unique element identifier (random string). JSON key: <c>"id"</c>.</summary>
 		public string id { get; set; }
 

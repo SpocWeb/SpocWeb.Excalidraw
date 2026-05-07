@@ -13,7 +13,7 @@ public static class ExcalidrawParser {
 	/// - null-ignoring,  <BR/>
 	/// - polymorphic element converter. <BR/>
 	/// </summary>
-	private static JsonSerializerSettings ExcalidrawSettings() => new() {
+	public static JsonSerializerSettings ExcalidrawSettings() => new() {
 			ContractResolver = new CamelCasePropertyNamesContractResolver()
 			, NullValueHandling = NullValueHandling.Ignore
 			, Converters = { new ExcalidrawElementConverter(), new SnakeCaseEnumConverter() }
