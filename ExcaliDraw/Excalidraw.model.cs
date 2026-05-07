@@ -32,6 +32,8 @@ static partial class Excalidraw {
 		public ElementType type { get; set; }
 	}
 
+	//record BindingObject(string ElementId, double Focus, double gap);
+
 	/// <summary> binding that attaches an arrow tip to a specific point on a bindable Shape. </summary>
 	/// <remarks>
 	/// Unlike <see cref="BoundElement"/> which describes nested Elements.
@@ -39,21 +41,34 @@ static partial class Excalidraw {
 	public sealed class PointBinding {
 
 		public PointBinding(){}
-		public PointBinding(string ElementId) { elementId= ElementId; }
+		public PointBinding(string ElementId, double Focus = 0, double Gap = 0) {
+			elementId= ElementId;
+			focus = Focus;
+			gap = Gap;
+		}
 
 		/// <summary> ID of the bound target element. </summary>
 		public string elementId { get; set; }
 
-		/// <summary> [x, y] fixed point Normalized to the bound element's width and height (typically 0.0–1.0). </summary>
-		public double[] fixedPoint { get; set; }
+		/// <summary> indicates where along the bound element’s perimeter/axis the arrow attaches </summary>
+		public double focus { get; set; }
 
-		/// <summary> Binding mode: <c>"inside"</c> allows the arrow tip inside the shape;
-		/// <c>"orbit"</c> keeps it on the outline; <c>"skip"</c> disables attachment.
-		/// </summary>
-		/// <remarks>
-		/// it is ephemeral and never written to the file.
-		/// </remarks>
-		public string mode { get; set; }
+		/// <summary> distance between the arrow endpoint and the bound element. Commonly this is 0 for a visually attached connector </summary>
+		public double gap { get; set; }
+
+		///// <summary> [x, y] fixed point Normalized to the bound element's width and height (typically 0.0–1.0). </summary>
+		///// <remarks>
+		///// used when the binding should stay attached to a specific point rather than being freely recalculated
+		///// </remarks>
+		//public double[]? fixedPoint { get; set; }
+
+		///// <summary> Binding mode: <c>"inside"</c> allows the arrow tip inside the shape;
+		///// <c>"orbit"</c> keeps it on the outline; <c>"skip"</c> disables attachment.
+		///// </summary>
+		///// <remarks>
+		///// it is ephemeral and never written to the file.
+		///// </remarks>
+		//public string? mode { get; set; }
 	}
 
 	/// <summary>
