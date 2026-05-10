@@ -423,8 +423,7 @@ public static partial class Excalidraw{
 		}
 
 		/// <summary> When <c>true</c>, the arrow uses 90-degree elbow routing
-		/// instead of straight or curved segments. JSON key: <c>"elbowed"</c>.
-		/// </summary>
+		/// instead of straight or curved segments. </summary>
 		public bool elbowed { get; set; }
 
 	}

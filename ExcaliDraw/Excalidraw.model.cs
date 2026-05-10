@@ -58,19 +58,19 @@ static partial class Excalidraw {
 		/// <summary> distance between the arrow endpoint and the bound element. Commonly this is 0 for a visually attached connector </summary>
 		public double gap { get; set; }
 
-		///// <summary> [x, y] fixed point Normalized to the bound element's width and height (typically 0.0–1.0). </summary>
-		///// <remarks>
-		///// used when the binding should stay attached to a specific point rather than being freely recalculated
-		///// </remarks>
-		//public double[]? fixedPoint { get; set; }
+		/// <summary> [x, y] fixed point Normalized to the bound element's width and height (typically 0.0–1.0). </summary>
+		/// <remarks>
+		/// used when the binding should stay attached to a specific point rather than being freely recalculated around the Border.
+		/// </remarks>
+		public double[]? fixedPoint { get; set; }
 
-		///// <summary> Binding mode: <c>"inside"</c> allows the arrow tip inside the shape;
-		///// <c>"orbit"</c> keeps it on the outline; <c>"skip"</c> disables attachment.
-		///// </summary>
-		///// <remarks>
-		///// it is ephemeral and never written to the file.
-		///// </remarks>
-		//public string? mode { get; set; }
+		/// <summary> Binding mode: <c>"inside"</c> allows the arrow tip inside the shape;
+		/// <c>"orbit"</c> keeps it on the outline; <c>"skip"</c> disables attachment.
+		/// </summary>
+		/// <remarks>
+		/// it is ephemeral and never written to the file.
+		/// </remarks>
+		public string? mode { get; set; } = "orbit";
 	}
 
 	/// <summary>
