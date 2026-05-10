@@ -401,8 +401,8 @@ public static partial class Excalidraw{
 			, StrokeStyle StrokeStyle
 			, string? StrokeColor
 			, double Opacity
-			, Arrowhead StartArrowhead
-			, Arrowhead EndArrowhead
+			, Arrowhead? StartArrowhead
+			, Arrowhead? EndArrowhead
 			, string? Label = null
 			, string? StartElementId = null
 			, string? EndElementId = null
@@ -413,8 +413,8 @@ public static partial class Excalidraw{
 
 		public Arrow(ElementBounds bounds
 			, IHaveSequence<int> context, List<string> groupIds
-			, Arrowhead StartArrowhead
-			, Arrowhead EndArrowhead
+			, Arrowhead? StartArrowhead
+			, Arrowhead? EndArrowhead
 			, string? Label
 			, string? StartElementId = null
 			, string? EndElementId = null

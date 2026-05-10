@@ -109,14 +109,14 @@ static partial class Excalidraw {
 	/// The JSON field stores these as lowercase strings (e.g. "arrow", "bar").
 	/// </summary>
 	public enum Arrowhead {
-		/// <summary>No decoration; the line ends without any marker.</summary>
-		None,
+		///// <summary>No decoration; the line ends without any marker.</summary>
+		//None,
 
 		/// <summary> A classic filled triangular arrowhead pointing in the direction of travel. </summary>
 		/// <remarks>
 		/// The most common endpoint marker.
 		/// </remarks>
-		Arrow,
+		Arrow = 1,
 
 		/// <summary> A short perpendicular bar ("|") drawn across the endpoint. </summary>
 		/// <remarks>
@@ -130,23 +130,67 @@ static partial class Excalidraw {
 		/// </remarks>
 		Circle,
 
-		/// <summary> A filled triangle larger than Arrow, pointing in the direction of travel. </summary>
-		/// <remarks>
-		/// Used in UML class diagrams for references and dependencies.
-		/// </remarks>
-		Triangle,
-
 		/// <summary> An outlined (hollow) circle at the endpoint. </summary>
 		/// <remarks>
 		/// Used in ERD "zero or many" / "zero or one" notations.
 		/// </remarks>
 		CircleOutline,
 
+		/// <summary> A filled triangle larger than Arrow, pointing in the direction of travel. </summary>
+		/// <remarks>
+		/// Used in UML class diagrams for references and dependencies.
+		/// </remarks>
+		Triangle,
+
 		/// <summary> An outlined (hollow) triangle at the endpoint. </summary>
 		/// <remarks>
 		/// Used in UML for inheritance and interface realization arrows.
 		/// </remarks>
-		TriangleOutline
+		TriangleOutline,
+
+		/// <summary>A filled diamond at the endpoint.</summary>
+		/// <remarks>
+		/// Used in UML for composition relationships.
+		/// </remarks>
+		Diamond,
+
+		/// <summary>An outlined (hollow) diamond at the endpoint.</summary>
+		/// <remarks>
+		/// Used in UML for aggregation relationships.
+		/// </remarks>
+		DiamondOutline,
+
+		// ── Cardinality markers (ERD) ─────────────────────────────────
+
+		/// <summary>Exactly one — a single vertical bar.</summary>
+		CardinalityOne,
+
+		/// <summary>Many — a crow's-foot (three-pronged) marker.</summary>
+		CardinalityMany,
+
+		/// <summary>One or many — crow's-foot with a single bar.</summary>
+		CardinalityOneOrMany,
+
+		/// <summary>Exactly one (mandatory) — double bar.</summary>
+		CardinalityExactlyOne,
+
+		/// <summary>Zero or one (optional one) — bar with a circle.</summary>
+		CardinalityZeroOrOne,
+
+		/// <summary>Zero or many (optional many) — crow's-foot with a circle.</summary>
+		CardinalityZeroOrMany,
+
+		[Obsolete("Use " + nameof(Circle))]
+		Dot = Circle,
+
+		[Obsolete("Use " + nameof(CardinalityOne))]
+		CrowfootOne = CardinalityOne,
+
+		[Obsolete("Use " + nameof(CardinalityMany))]
+		CrowfootMany = CardinalityMany,
+
+		[Obsolete("Use " + nameof(CardinalityOneOrMany))]
+		CrowfootOneOrMany = CardinalityOneOrMany,
 	}
 
 	/// <summary>Horizontal alignment of text within its bounding box.</summary>
