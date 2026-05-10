@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+// ReSharper disable UnusedAutoPropertyAccessor.Global
 
 namespace org.SpocWeb.PptxToJson.ExcaliDraw; 
 
@@ -290,8 +291,8 @@ public static partial class Excalidraw{
 			, string? EndElementId
 			, string? label
 			) : base(id, elementType, frameId, x, y, strokeWidth, strokeStyle, strokeColor, null, opacity) {
-			startElementId = StartElementId;
-			endElementId = EndElementId;
+			startBinding = new PointBinding(StartElementId);
+			endBinding = new PointBinding(EndElementId);
 			startArrowhead = StartArrowhead;
 			endArrowhead = EndArrowhead;
 			this.label = label;
@@ -307,42 +308,36 @@ public static partial class Excalidraw{
 			, string? EndElementId
 			, string? Label
 		) : base(ElementType, bounds, context, groupIds) {
-			startElementId = StartElementId;
-			endElementId = EndElementId;
+			startBinding = new PointBinding(StartElementId);
+			endBinding = new PointBinding(EndElementId);
 			startArrowhead = StartArrowhead;
 			endArrowhead = EndArrowhead;
 			label = Label;
 		}
 
+		/// <summary> Type of <see cref="Arrowhead"/> at the Line Start </summary>
 		public Arrowhead? startArrowhead { get; set; }
 
+		/// <summary> Type of <see cref="Arrowhead"/> at the Line End </summary>
 		public Arrowhead? endArrowhead { get; set; }
 
 		#region temp
-
-		[JsonIgnore]
-		[Obsolete("use " + nameof(startBinding))]
-		public string? startElementId { get; set; }
-
-		[JsonIgnore]
-		[Obsolete("use " + nameof(endBinding))]
-		public string? endElementId { get; set; }
 
 		[JsonIgnore]
 		public string? label { get; set; }
 
 		#endregion temp
 
-		/// <summary>
-		/// Ordered array of [x, y] point pairs in element-local coordinates.
+		/// <summary> Ordered array of [x, y] point pairs in element-local coordinates. </summary>
+		/// <remarks>
 		/// The first point is always [0, 0]; subsequent points are relative offsets.
 		/// JSON key: <c>"points"</c>.
-		/// </summary>
+		/// </remarks>
 		public List<double[]> points { get; set; } = new();
 
-		///// <summary>
-		///// The last point that was committed to the <see cref="points"/> array
-		///// during interactive creation. Used internally; may be <c>null</c>.
+		///// <summary> The last point that was committed to the <see cref="points"/> array during interactive creation. </summary>
+		///// <remarks>
+		///// Used internally; may be <c>null</c>.
 		///// JSON key: <c>"lastCommittedPoint"</c>.
 		///// </summary>
 		//public double[]? lastCommittedPoint { get; set; }

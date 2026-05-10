@@ -1,4 +1,6 @@
 ﻿using Newtonsoft.Json;
+// ReSharper disable AutoPropertyCanBeMadeGetOnly.Global
+// ReSharper disable UnusedAutoPropertyAccessor.Global
 
 namespace org.SpocWeb.PptxToJson.ExcaliDraw; 
 
@@ -41,14 +43,14 @@ static partial class Excalidraw {
 	public sealed class PointBinding {
 
 		public PointBinding(){}
-		public PointBinding(string ElementId, double Focus = 0, double Gap = 0) {
+		public PointBinding(string? ElementId, double Focus = 0, double Gap = 0) {
 			elementId= ElementId;
 			focus = Focus;
 			gap = Gap;
 		}
 
 		/// <summary> ID of the bound target element. </summary>
-		public string elementId { get; set; }
+		public string? elementId { get; set; }
 
 		/// <summary> indicates where along the bound element’s perimeter/axis the arrow attaches </summary>
 		public double focus { get; set; }
