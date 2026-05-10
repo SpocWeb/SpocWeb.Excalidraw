@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System.Text.RegularExpressions;
 using static org.SpocWeb.PptxToJson.ExcaliDraw.Excalidraw;
 
 namespace org.SpocWeb.PptxToJson.ExcaliDraw;
@@ -56,5 +57,24 @@ public static class ExcalidrawParser {
 		} catch {
 			return null;
 		}
+	}
+
+	/// <summary> Generates an ID from the <paramref name="label"/> that is not <see cref="used"/> yet </summary>
+	public static string MakeUniqueId(this HashSet<string> used, string label, string fallback) {
+		var raw = Regex.Replace(label, @"[^A-Za-z0-9_]", "_");
+		if (string.IsNullOrEmpty(raw) || raw.All(c => c == '_')) {
+			raw = "N_" + Regex.Replace(fallback, @"[^A-Za-z0-9_]", "_").Substring(0, Math.Min(8, fallback.Length));
+		}
+		if (char.IsDigit(raw[0])) {
+			raw = "N" + raw;
+		}
+		raw = raw.Length > 40 ? raw.Substring(0, 40) : raw;
+		var candidate = raw;
+		var suffix = 1;
+		while (used.Contains(candidate)) {
+			candidate = $"{raw}_{suffix++}";
+		}
+		used.Add(candidate);
+		return candidate;
 	}
 }
