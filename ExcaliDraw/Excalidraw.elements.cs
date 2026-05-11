@@ -289,13 +289,13 @@ public static partial class Excalidraw{
 			, Arrowhead? EndArrowhead
 			, string? StartElementId
 			, string? EndElementId
-			, string? label
+			//, string? label
 			) : base(id, elementType, frameId, x, y, strokeWidth, strokeStyle, strokeColor, null, opacity) {
 			startBinding = new PointBinding(StartElementId);
 			endBinding = new PointBinding(EndElementId);
 			startArrowhead = StartArrowhead;
 			endArrowhead = EndArrowhead;
-			this.label = label;
+			//this.label = label;
 		}
 
 
@@ -306,13 +306,13 @@ public static partial class Excalidraw{
 			, Arrowhead? EndArrowhead
 			, string? StartElementId
 			, string? EndElementId
-			, string? Label
+			//, string? Label
 		) : base(ElementType, bounds, context, groupIds) {
 			startBinding = new PointBinding(StartElementId);
 			endBinding = new PointBinding(EndElementId);
 			startArrowhead = StartArrowhead;
 			endArrowhead = EndArrowhead;
-			label = Label;
+			//label = Label;
 		}
 
 		/// <summary> Type of <see cref="Arrowhead"/> at the Line Start </summary>
@@ -321,12 +321,8 @@ public static partial class Excalidraw{
 		/// <summary> Type of <see cref="Arrowhead"/> at the Line End </summary>
 		public Arrowhead? endArrowhead { get; set; }
 
-		#region temp
-
-		[JsonIgnore]
+		[Obsolete("In earlier Versions, excalidraw stored the Label here use " + nameof(boundElements), true)]
 		public string? label { get; set; }
-
-		#endregion temp
 
 		/// <summary> Ordered array of [x, y] point pairs in element-local coordinates. </summary>
 		/// <remarks>
@@ -373,17 +369,20 @@ public static partial class Excalidraw{
 			, StrokeStyle StrokeStyle
 			, string? StrokeColor
 			, double Opacity
-			, string? Label)
+			//, string? Label
+			)
 			: base(Id, ElementType.line, FrameId, X, Y, StrokeWidth, StrokeStyle, StrokeColor, Opacity
-				  , null, null, null, null, Label) {
+				  , null, null, null, null//, Label
+				  ) {
 		}
 
 
 		public LineElement(ElementBounds bounds
 			, IHaveSequence<int> context, List<string> groupIds
-			, string? Label
+			//, string? Label
 		) : base(ElementType.line, bounds, context, groupIds
-			, null, null, null, null, Label) {
+			, null, null, null, null//, Label
+			) {
 		}
 
 	}
@@ -403,11 +402,12 @@ public static partial class Excalidraw{
 			, double Opacity
 			, Arrowhead? StartArrowhead
 			, Arrowhead? EndArrowhead
-			, string? Label = null
+			//, string? Label = null
 			, string? StartElementId = null
 			, string? EndElementId = null
 		) : base(Id, ElementType.arrow, FrameId, X, Y, StrokeWidth, StrokeStyle, StrokeColor, Opacity
-			, StartArrowhead, EndArrowhead, StartElementId, EndElementId, Label) {
+			, StartArrowhead, EndArrowhead, StartElementId, EndElementId//, Label
+			) {
 		}
 
 
@@ -415,11 +415,12 @@ public static partial class Excalidraw{
 			, IHaveSequence<int> context, List<string> groupIds
 			, Arrowhead? StartArrowhead
 			, Arrowhead? EndArrowhead
-			, string? Label
+			//, string? Label
 			, string? StartElementId = null
 			, string? EndElementId = null
 		) : base(ElementType.arrow, bounds, context, groupIds
-			, StartArrowhead, EndArrowhead, StartElementId, EndElementId, Label) {
+			, StartArrowhead, EndArrowhead, StartElementId, EndElementId//, Label
+			) {
 		}
 
 		/// <summary> When <c>true</c>, the arrow uses 90-degree elbow routing
