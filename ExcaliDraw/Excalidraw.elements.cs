@@ -104,10 +104,8 @@ public static partial class Excalidraw{
 		/// <summary> ID of the frame element that contains this element, or <c>null</c>. </summary>
 		public string? frameId { get; set; }
 
-		/// <summary>
-		/// Ordered list of group IDs this element belongs to,
-		/// from deepest (innermost) to shallowest (outermost).
-		/// </summary>
+		/// <summary> Ordered list of group IDs this element belongs to,
+		/// from deepest (innermost) to shallowest (outermost). </summary>
 		public List<string> groupIds { get; set; } = new();
 
 		/// <summary> References to arrows or text elements bound to this element. </summary>
