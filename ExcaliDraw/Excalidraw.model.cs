@@ -42,7 +42,9 @@ static partial class Excalidraw {
 	/// </remarks>
 	public sealed class PointBinding {
 
+		/// <summary> Initializes an empty, unbound <see cref="PointBinding"/>. </summary>
 		public PointBinding(){}
+		/// <summary> Initializes a <see cref="PointBinding"/> attaching to <paramref name="ElementId"/>. </summary>
 		public PointBinding(string? ElementId, double Focus = 0, double Gap = 0) {
 			elementId= ElementId;
 			focus = Focus;

@@ -232,8 +232,10 @@ public static partial class Excalidraw{
 	/// JSON type: <c>"rectangle"</c>.
 	/// </summary>
 	public sealed class RectangleElement : Element {
+		/// <summary> Initializes an empty <see cref="RectangleElement"/> for JSON deserialization. </summary>
 		public RectangleElement() : base(ElementType.rectangle) { }
 
+		/// <summary> Initializes a <see cref="RectangleElement"/> from <paramref name="bounds"/> using <paramref name="context"/> for id/seed. </summary>
 		public RectangleElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.ellipse, bounds, context, groupIds) {
 		}
@@ -247,8 +249,10 @@ public static partial class Excalidraw{
 	/// JSON type: <c>"ellipse"</c>.
 	/// </summary>
 	public sealed class EllipseElement : Element {
+		/// <summary> Initializes an empty <see cref="EllipseElement"/> for JSON deserialization. </summary>
 		public EllipseElement() : base(ElementType.ellipse) { }
 
+		/// <summary> Initializes an <see cref="EllipseElement"/> from <paramref name="bounds"/> using <paramref name="context"/> for id/seed. </summary>
 		public EllipseElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.ellipse, bounds, context, groupIds) {
 		}
@@ -261,8 +265,10 @@ public static partial class Excalidraw{
 	/// JSON type: <c>"diamond"</c>.
 	/// </summary>
 	public sealed class DiamondElement : Element {
+		/// <summary> Initializes an empty <see cref="DiamondElement"/> for JSON deserialization. </summary>
 		public DiamondElement() : base(ElementType.diamond) { }
 
+		/// <summary> Initializes a <see cref="DiamondElement"/> from <paramref name="bounds"/> using <paramref name="context"/> for id/seed. </summary>
 		public DiamondElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.diamond, bounds, context, groupIds) {
 		}
@@ -272,8 +278,10 @@ public static partial class Excalidraw{
 	/// <summary> Base class for elements composed of an ordered array of points: lines and arrows. </summary>
 	public class LinearElement : Element {
 
+		/// <summary> Initializes an empty <see cref="LinearElement"/> for JSON deserialization. </summary>
 		protected LinearElement(ElementType type) : base(type) { }
 
+		/// <summary> Initializes a <see cref="LinearElement"/> with full styling and optional endpoint bindings. </summary>
 		protected LinearElement(string id
 			, ElementType elementType
 			, string? frameId
@@ -297,6 +305,7 @@ public static partial class Excalidraw{
 		}
 
 
+		/// <summary> Initializes a <see cref="LinearElement"/> from <paramref name="bounds"/> using <paramref name="context"/> for id/seed. </summary>
 		public LinearElement(ElementType ElementType
 			, ElementBounds bounds
 			, IHaveSequence<int> context, List<string> groupIds
@@ -357,8 +366,10 @@ public static partial class Excalidraw{
 		/// </summary>
 		public bool polygon { get; set; }
 
+		/// <summary> Initializes an empty <see cref="LineElement"/> for JSON deserialization. </summary>
 		public LineElement() : base(ElementType.line) { }
 
+		/// <summary> Initializes a <see cref="LineElement"/> with full styling parameters. </summary>
 		public LineElement(string Id
 			, string? FrameId
 			, double X

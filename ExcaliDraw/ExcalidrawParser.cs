@@ -24,6 +24,7 @@ public static class ExcalidrawParser {
 	public static string ToJson(this Document excaliDraw, Formatting formatting = Formatting.Indented)
 		=> JsonConvert.SerializeObject(excaliDraw, formatting, ExcalidrawSettings());
 
+	/// <summary> Serializes the <paramref name="excaliDraw"/> document to a JSON string and writes it to <paramref name="filePath"/>. </summary>
 	public static string ToFile(this Document excaliDraw, string filePath, Formatting formatting = Formatting.Indented)
 		=> JsonConvert.SerializeObject(excaliDraw, formatting, ExcalidrawSettings());
 

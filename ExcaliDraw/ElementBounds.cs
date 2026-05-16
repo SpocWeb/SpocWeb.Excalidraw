@@ -2,6 +2,7 @@
 
 /// <summary> Similar to <see cref="System.Drawing.Rectangle"/> but with <see cref="AngleRadians"/> </summary>
 public record struct ElementBounds {
+	/// <summary> Initializes an <see cref="ElementBounds"/> with position, size and <paramref name="angleRad"/>. </summary>
 	public ElementBounds(double x, double y, double width, double height, double angleRad) {
 		X = x;
 		Y = y;
