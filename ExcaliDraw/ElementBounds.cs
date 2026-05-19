@@ -1,6 +1,13 @@
 ﻿namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 
 /// <summary> Similar to <see cref="System.Drawing.Rectangle"/> but with <see cref="AngleRadians"/> </summary>
+/// <remarks>
+/// ## Meta
+/// pass: 2
+/// mtime: 2026-05-15T20:55:59Z
+/// digest: bcae9ce00ceab71fbd3e569f2256e842c60f3f559f9d378303e20923f65942e4
+/// updated: 2026-05-19
+/// </remarks>
 public record struct ElementBounds {
 	/// <summary> Initializes an <see cref="ElementBounds"/> with position, size and <paramref name="angleRad"/>. </summary>
 	public ElementBounds(double x, double y, double width, double height, double angleRad) {

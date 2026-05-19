@@ -7,9 +7,14 @@ using System;
 /// <remarks>
 /// - serialises enum values by converting their PascalCase C# name to snake_case, <br/>
 /// - and deserializes by the reverse mapping. <br/>
-/// 
+///
 /// Note: this converter does NOT handle values whose JSON key uses a hyphen (e.g. "cross-hatch").
 /// Those still require [<see cref="System.Runtime.Serialization.EnumMemberAttribute"/>].
+/// ## Meta
+/// pass: 2
+/// mtime: 2026-05-03T17:27:38Z
+/// digest: a0b69328b4d8d1e16b2115a6ad606198be0bbe56a838aa8f570d82f6958174a0
+/// updated: 2026-05-19
 /// </remarks>
 public sealed class SnakeCaseEnumConverter : JsonConverter {
 

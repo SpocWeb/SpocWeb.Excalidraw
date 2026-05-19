@@ -6,6 +6,13 @@ using static org.SpocWeb.PptxToJson.ExcaliDraw.Excalidraw;
 namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 
 /// <inheritdoc cref="ParseExcalidraw(string)"/>
+/// <remarks>
+/// ## Meta
+/// pass: 2
+/// mtime: 2026-05-15T20:56:05Z
+/// digest: beb3737587544cb4f2871cfd7db7397dbf510d7d76ef91e74d4561c5a2c315bf
+/// updated: 2026-05-19
+/// </remarks>
 public static class ExcalidrawParser {
 
 	/// <summary> Builds new <see cref="JsonSerializerSettings"/> instance

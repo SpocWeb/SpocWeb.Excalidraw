@@ -4,6 +4,14 @@ using Newtonsoft.Json;
 
 namespace org.SpocWeb.PptxToJson.ExcaliDraw; 
 
+/// <summary>Thread-safe cached PascalCase-to-snake_case conversion utilities for enum serialization.</summary>
+/// <remarks>
+/// ## Meta
+/// pass: 2
+/// mtime: 2026-05-03T17:35:31Z
+/// digest: d4f126731646bc73bcfb4d9d181bb63fa8e639c8fc2319eb96508113d82ce6d5
+/// updated: 2026-05-19
+/// </remarks>
 public static partial class PascalToSnakeConversion {
 
 	/// <summary> Cache of (EnumType → (MemberName → SnakeCaseString)) for serialisation. </summary>

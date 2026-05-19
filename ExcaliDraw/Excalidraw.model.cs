@@ -4,6 +4,14 @@
 
 namespace org.SpocWeb.PptxToJson.ExcaliDraw; 
 
+/// <summary>Partial class hosting the Excalidraw model types: Roundness, BoundElement, PointBinding, BinaryFileData and AppState.</summary>
+/// <remarks>
+/// ## Meta
+/// pass: 2
+/// mtime: 2026-05-15T20:56:12Z
+/// digest: 8e3bd7e1288d4ca0bed69587ec0867c4a44255f665cc45018a066de5bebed3c6
+/// updated: 2026-05-19
+/// </remarks>
 static partial class Excalidraw {
 
 	/// <summary>
@@ -11,6 +19,13 @@ static partial class Excalidraw {
 	/// Serializes to <c>{ "type": number, "value"?: number }</c>.
 	/// Source: <c>_ExcalidrawElementBase.roundness</c> in types.ts.
 	/// </summary>
+	/// <remarks>
+	/// ## Meta
+	/// pass: 2
+	/// mtime: 2026-05-15T20:56:12Z
+	/// digest: 8e3bd7e1288d4ca0bed69587ec0867c4a44255f665cc45018a066de5bebed3c6
+	/// updated: 2026-05-19
+	/// </remarks>
 	public sealed class Roundness {
 		/// <summary> Algorithm used to compute the corner radius. <see cref="RoundnessType"/> for values. </summary>
 		public RoundnessType type { get; set; }
@@ -25,6 +40,11 @@ static partial class Excalidraw {
 	/// <remarks>
 	/// Stored in <see cref="Excalidraw.Element.boundElements"/>.
 	/// Unlike <see cref="PointBinding"/> which describes attached Lines.
+	/// ## Meta
+	/// pass: 2
+	/// mtime: 2026-05-15T20:56:12Z
+	/// digest: 8e3bd7e1288d4ca0bed69587ec0867c4a44255f665cc45018a066de5bebed3c6
+	/// updated: 2026-05-19
 	/// </remarks>
 	public sealed class BoundElement {
 		/// <summary> ID of the bound element (arrow or text). </summary>
@@ -39,6 +59,11 @@ static partial class Excalidraw {
 	/// <summary> binding that attaches an arrow tip to a specific point on a bindable Shape. </summary>
 	/// <remarks>
 	/// Unlike <see cref="BoundElement"/> which describes nested Elements.
+	/// ## Meta
+	/// pass: 2
+	/// mtime: 2026-05-15T20:56:12Z
+	/// digest: 8e3bd7e1288d4ca0bed69587ec0867c4a44255f665cc45018a066de5bebed3c6
+	/// updated: 2026-05-19
 	/// </remarks>
 	public sealed class PointBinding {
 
@@ -80,6 +105,13 @@ static partial class Excalidraw {
 	/// Keyed by a SHA-1 FileId string.
 	/// Source: <c>BinaryFileData</c> in excalidraw/types.ts.
 	/// </summary>
+	/// <remarks>
+	/// ## Meta
+	/// pass: 2
+	/// mtime: 2026-05-15T20:56:12Z
+	/// digest: 8e3bd7e1288d4ca0bed69587ec0867c4a44255f665cc45018a066de5bebed3c6
+	/// updated: 2026-05-19
+	/// </remarks>
 	public sealed class BinaryFileData {
 		/// <summary>
 		/// MIME type of the file, e.g. <c>"image/png"</c>, <c>"image/svg+xml"</c>.
@@ -128,9 +160,14 @@ static partial class Excalidraw {
 	/// <remarks>
 	/// Ephemeral UI state (selection, cursor, viewport offsets) is stripped
 	/// by <c>cleanAppStateForExport()</c> before serialisation.
-	/// 
+	///
 	/// Source: <c>AppState</c> interface in excalidraw/types.ts.
 	/// (background colour, grid size, theme, tool preferences, etc.).
+	/// ## Meta
+	/// pass: 2
+	/// mtime: 2026-05-15T20:56:12Z
+	/// digest: 8e3bd7e1288d4ca0bed69587ec0867c4a44255f665cc45018a066de5bebed3c6
+	/// updated: 2026-05-19
 	/// </remarks>
 	public sealed class AppState {
 		/// <summary>

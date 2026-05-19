@@ -1,5 +1,13 @@
 ﻿namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 
+/// <summary>Partial class hosting the Excalidraw scene document and clipboard types.</summary>
+/// <remarks>
+/// ## Meta
+/// pass: 2
+/// mtime: 2026-05-03T11:15:42Z
+/// digest: 20970f1734f1138a24fae14a8a5d46479de0c31d4930f22a962f48fbbc1bd435
+/// updated: 2026-05-19
+/// </remarks>
 static partial class Excalidraw {
 
 	/// <summary> Root object for an <c>.excalidraw</c> scene file (schema version 2). </summary>
@@ -16,6 +24,11 @@ static partial class Excalidraw {
 	/// | Arrow   → shape | `startBinding`	/ `endBinding` | `boundElements` | <br/>
 	/// | Element → frame | `frameId`		| No reverse field on frame | <br/>
 	/// | Element → group | `groupIds`		| grouping, no object with props  | <br/>
+	/// ## Meta
+	/// pass: 2
+	/// mtime: 2026-05-03T11:15:42Z
+	/// digest: 20970f1734f1138a24fae14a8a5d46479de0c31d4930f22a962f48fbbc1bd435
+	/// updated: 2026-05-19
 	/// </remarks>
 	public sealed class Document {
 
@@ -56,6 +69,11 @@ static partial class Excalidraw {
 	/// <remarks>
 	/// Type field is <c>"excalidraw/clipboard"</c> instead of <c>"excalidraw"</c>.
 	/// Source: clipboard.ts in the Excalidraw codebase.
+	/// ## Meta
+	/// pass: 2
+	/// mtime: 2026-05-03T11:15:42Z
+	/// digest: 20970f1734f1138a24fae14a8a5d46479de0c31d4930f22a962f48fbbc1bd435
+	/// updated: 2026-05-19
 	/// </remarks>
 	public sealed class Clipboard {
 

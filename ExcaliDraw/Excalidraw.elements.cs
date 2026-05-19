@@ -4,9 +4,17 @@ using Newtonsoft.Json.Serialization;
 
 namespace org.SpocWeb.PptxToJson.ExcaliDraw; 
 
+/// <summary>Partial class hosting all Excalidraw element types and their base class.</summary>
+/// <remarks>
+/// ## Meta
+/// pass: 2
+/// mtime: 2026-05-15T20:57:01Z
+/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
+/// updated: 2026-05-19
+/// </remarks>
 public static partial class Excalidraw{
 
-	/// <summary>Rounds a floating-point value for JSON output.</summary> 
+	/// <summary>Rounds a floating-point value for JSON output.</summary>
 	public static double Round(double value, int digits = 2)
 		=> Math.Round(value, digits, MidpointRounding.AwayFromZero);
 
@@ -17,6 +25,13 @@ public static partial class Excalidraw{
 	/// Property names match JSON camelCase keys exactly via <see cref="CamelCasePropertyNamesContractResolver"/>
 	/// (first char lowercased).
 	/// </summary>
+	/// <remarks>
+	/// ## Meta
+	/// pass: 2
+	/// mtime: 2026-05-15T20:57:01Z
+	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
+	/// updated: 2026-05-19
+	/// </remarks>
 	public class Element {
 
 		/// <summary> Debuggable String Representation </summary>
@@ -231,6 +246,13 @@ public static partial class Excalidraw{
 	/// No additional properties beyond the base element.
 	/// JSON type: <c>"rectangle"</c>.
 	/// </summary>
+	/// <remarks>
+	/// ## Meta
+	/// pass: 2
+	/// mtime: 2026-05-15T20:57:01Z
+	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
+	/// updated: 2026-05-19
+	/// </remarks>
 	public sealed class RectangleElement : Element {
 		/// <summary> Initializes an empty <see cref="RectangleElement"/> for JSON deserialization. </summary>
 		public RectangleElement() : base(ElementType.rectangle) { }
@@ -248,6 +270,13 @@ public static partial class Excalidraw{
 	/// No additional properties beyond the base element.
 	/// JSON type: <c>"ellipse"</c>.
 	/// </summary>
+	/// <remarks>
+	/// ## Meta
+	/// pass: 2
+	/// mtime: 2026-05-15T20:57:01Z
+	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
+	/// updated: 2026-05-19
+	/// </remarks>
 	public sealed class EllipseElement : Element {
 		/// <summary> Initializes an empty <see cref="EllipseElement"/> for JSON deserialization. </summary>
 		public EllipseElement() : base(ElementType.ellipse) { }
@@ -264,6 +293,13 @@ public static partial class Excalidraw{
 	/// No additional properties beyond the base element.
 	/// JSON type: <c>"diamond"</c>.
 	/// </summary>
+	/// <remarks>
+	/// ## Meta
+	/// pass: 2
+	/// mtime: 2026-05-15T20:57:01Z
+	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
+	/// updated: 2026-05-19
+	/// </remarks>
 	public sealed class DiamondElement : Element {
 		/// <summary> Initializes an empty <see cref="DiamondElement"/> for JSON deserialization. </summary>
 		public DiamondElement() : base(ElementType.diamond) { }
@@ -276,6 +312,13 @@ public static partial class Excalidraw{
 	}
 
 	/// <summary> Base class for elements composed of an ordered array of points: lines and arrows. </summary>
+	/// <remarks>
+	/// ## Meta
+	/// pass: 2
+	/// mtime: 2026-05-15T20:57:01Z
+	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
+	/// updated: 2026-05-19
+	/// </remarks>
 	public class LinearElement : Element {
 
 		/// <summary> Initializes an empty <see cref="LinearElement"/> for JSON deserialization. </summary>
@@ -358,6 +401,13 @@ public static partial class Excalidraw{
 	}
 
 	/// <summary> Undirected straight or curved line through two or more points. </summary>
+	/// <remarks>
+	/// ## Meta
+	/// pass: 2
+	/// mtime: 2026-05-15T20:57:01Z
+	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
+	/// updated: 2026-05-19
+	/// </remarks>
 	public sealed class LineElement : LinearElement {
 
 		/// <summary>
@@ -397,6 +447,13 @@ public static partial class Excalidraw{
 	}
 
 	/// <summary> Directed arrow with optional endpoint bindings and arrowhead decorations. </summary>
+	/// <remarks>
+	/// ## Meta
+	/// pass: 2
+	/// mtime: 2026-05-15T20:57:01Z
+	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
+	/// updated: 2026-05-19
+	/// </remarks>
 	public sealed class Arrow : LinearElement {
 
 		public Arrow() : base(ElementType.arrow) { }
@@ -439,6 +496,13 @@ public static partial class Excalidraw{
 	}
 
 	/// <summary> Freehand stroke captured from pointer input. </summary>
+	/// <remarks>
+	/// ## Meta
+	/// pass: 2
+	/// mtime: 2026-05-15T20:57:01Z
+	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
+	/// updated: 2026-05-19
+	/// </remarks>
 	public sealed class FreedrawElement : Element {
 		public FreedrawElement() : base(ElementType.freedraw) { }
 
@@ -467,6 +531,13 @@ public static partial class Excalidraw{
 	}
 
 	/// <summary> Text label element, either standalone or bound to a container shape. </summary>
+	/// <remarks>
+	/// ## Meta
+	/// pass: 2
+	/// mtime: 2026-05-15T20:57:01Z
+	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
+	/// updated: 2026-05-19
+	/// </remarks>
 	public sealed class TextElement : Element {
 
 		public TextElement() : base(ElementType.text) { }
@@ -524,6 +595,13 @@ public static partial class Excalidraw{
 	}
 
 	/// <summary> Raster image whose binary content is stored in the document-level <c>files</c> map keyed by <see cref="fileId"/>. </summary>
+	/// <remarks>
+	/// ## Meta
+	/// pass: 2
+	/// mtime: 2026-05-15T20:57:01Z
+	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
+	/// updated: 2026-05-19
+	/// </remarks>
 	public sealed class ImageElement : Element {
 
 		public ImageElement() : base(ElementType.image) { }
@@ -560,6 +638,11 @@ public static partial class Excalidraw{
 	/// <summary> Crop rectangle applied to an image element </summary>
 	/// <remarks>
 	/// expressed in the image's natural (pre-scale) pixel coordinate space.
+	/// ## Meta
+	/// pass: 2
+	/// mtime: 2026-05-15T20:57:01Z
+	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
+	/// updated: 2026-05-19
 	/// </remarks>
 	public sealed class ImageCrop {
 		/// <summary>Left offset of the crop rectangle in natural image pixels. JSON key: <c>"x"</c>.</summary>
@@ -590,6 +673,11 @@ public static partial class Excalidraw{
 	/// <summary> Named frame that visually groups and clips its child elements. </summary>
 	/// <remarks>
 	/// Children reference this frame via their <c>frameId</c> property.
+	/// ## Meta
+	/// pass: 2
+	/// mtime: 2026-05-15T20:57:01Z
+	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
+	/// updated: 2026-05-19
 	/// </remarks>
 	public sealed class FrameElement : Element {
 		public FrameElement() : base(ElementType.frame) { }
@@ -613,6 +701,11 @@ public static partial class Excalidraw{
 	/// <summary> AI-generated magic frame. </summary>
 	/// <remarks>
 	/// Behaves like <see cref="FrameElement"/> but is produced by Excalidraw's text-to-diagram / generative features.
+	/// ## Meta
+	/// pass: 2
+	/// mtime: 2026-05-15T20:57:01Z
+	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
+	/// updated: 2026-05-19
 	/// </remarks>
 	public sealed class MagicFrameElement : Element {
 		public MagicFrameElement() : base(ElementType.magicframe) { }
@@ -626,6 +719,13 @@ public static partial class Excalidraw{
 	}
 
 	/// <summary> Embeds an external web resource (URL) rendered as an interactive widget. </summary>
+	/// <remarks>
+	/// ## Meta
+	/// pass: 2
+	/// mtime: 2026-05-15T20:57:01Z
+	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
+	/// updated: 2026-05-19
+	/// </remarks>
 	public sealed class EmbeddableElement : Element {
 
 		public EmbeddableElement() : base(ElementType.embeddable) { }
@@ -639,6 +739,11 @@ public static partial class Excalidraw{
 	/// <summary> Inline iframe for arbitrary HTML content directly on the canvas. </summary>
 	/// <remarks>
 	/// May carry AI generation metadata in <c>customData.generationData</c>.
+	/// ## Meta
+	/// pass: 2
+	/// mtime: 2026-05-15T20:57:01Z
+	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
+	/// updated: 2026-05-19
 	/// </remarks>
 	public sealed class IFrameElement : Element {
 		public IFrameElement() : base(ElementType.iframe) { }

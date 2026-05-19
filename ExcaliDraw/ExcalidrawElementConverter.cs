@@ -8,6 +8,13 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// <see cref="Excalidraw.Element"/> subclass before populating it.
 /// Write is intentionally disabled; the default serializer handles output.
 /// </summary>
+/// <remarks>
+/// ## Meta
+/// pass: 2
+/// mtime: 2026-05-04T06:50:08Z
+/// digest: 6bd1a4123c70999cdb57f1abbdadef8453fec2e9a8482179d72178918f415bcd
+/// updated: 2026-05-19
+/// </remarks>
 public sealed class ExcalidrawElementConverter : JsonConverter<Excalidraw.Element> {
 
 	/// <summary> Disable custom write path; default serialisation should be sufficient. </summary>
