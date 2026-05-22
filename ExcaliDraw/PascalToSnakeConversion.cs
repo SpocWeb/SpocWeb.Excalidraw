@@ -1,4 +1,4 @@
-﻿using System.Collections.Concurrent;
+using System.Collections.Concurrent;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 
@@ -27,7 +27,8 @@ public static partial class PascalToSnakeConversion {
 	public const string RxLowerUpper = "(?<=[a-z0-9])([A-Z])";
 
 	//[GeneratedRegex(RxLowerUpper)]
-	public static Regex LowerUpper() => _LowerUpper ??= new (RxLowerUpper);
+	/// <summary>TODO: LLM</summary>
+ 	public static Regex LowerUpper() => _LowerUpper ??= new (RxLowerUpper);
 	static Regex? _LowerUpper;
 
 	/// <summary> Returns the snake_case string for a given enum member name,

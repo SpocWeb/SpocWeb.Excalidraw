@@ -1,4 +1,4 @@
-﻿using System.Runtime.Serialization;
+using System.Runtime.Serialization;
 
 namespace org.SpocWeb.PptxToJson.ExcaliDraw; 
 
@@ -187,15 +187,19 @@ static partial class Excalidraw {
 		/// <summary>Zero or many (optional many) — crow's-foot with a circle.</summary>
 		CardinalityZeroOrMany,
 
+		/// <summary>Represents dot.</summary>
 		[Obsolete("Use " + nameof(Circle))]
 		Dot = Circle,
 
+		/// <summary>Represents crowfoot One.</summary>
 		[Obsolete("Use " + nameof(CardinalityOne))]
 		CrowfootOne = CardinalityOne,
 
+		/// <summary>Represents crowfoot Many.</summary>
 		[Obsolete("Use " + nameof(CardinalityMany))]
 		CrowfootMany = CardinalityMany,
 
+		/// <summary>Represents crowfoot One Or Many.</summary>
 		[Obsolete("Use " + nameof(CardinalityOneOrMany))]
 		CrowfootOneOrMany = CardinalityOneOrMany,
 	}

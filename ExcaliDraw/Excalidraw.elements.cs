@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 // ReSharper disable UnusedAutoPropertyAccessor.Global
 
@@ -168,6 +168,7 @@ public static partial class Excalidraw{
 		/// <summary> Minimum Constructor </summary>
 		protected Element(ElementType elementType) { type = elementType; }
 
+		/// <summary>Initializes a new instance of <see cref="Element"/> with the specified <paramref name="Id"/>, <paramref name="Type"/>, <paramref name="FrameId"/>, <paramref name="X"/>, <paramref name="Y"/>, <paramref name="StrokeWidth"/>, <paramref name="StrokeStyle"/>, <paramref name="StrokeColor"/>, <paramref name="BackgroundColor"/> and <paramref name="Opacity"/>.</summary>
 		public Element(
 			string Id
 			, ElementType Type
@@ -192,6 +193,7 @@ public static partial class Excalidraw{
 			opacity = (int)Opacity;
 		}
 
+		/// <summary>Initializes a new instance of <see cref="Element"/> with the specified <paramref name="type"/>, <paramref name="bounds"/>, <paramref name="context"/> and <paramref name="GroupIds"/>.</summary>
 		public Element(ElementType type, ElementBounds bounds
 			, IHaveSequence<int> context, List<string> GroupIds) : this(
 			context.NextId(type.ToString()), type, null, Round(bounds.X), Round(bounds.Y)
@@ -217,6 +219,7 @@ public static partial class Excalidraw{
 		}
 
 
+		/// <summary>Deconstructs this instance into its component parts.</summary>
 		public void Deconstruct(out string Id
 			, out ElementType Type
 			, out string? FrameId

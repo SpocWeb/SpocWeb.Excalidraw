@@ -1,4 +1,4 @@
-﻿namespace org.SpocWeb.PptxToJson.ExcaliDraw;
+namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 
 /// <summary>Contract for objects that carry a monotonically incrementing integer sequence counter.</summary>
 /// <remarks>
@@ -9,6 +9,7 @@
 /// updated: 2026-05-19
 /// </remarks>
 public interface IHaveSequence<T> {
+	/// <summary>Gets or sets the sequence.</summary>
 	public T Sequence { get; set; }
 
 }

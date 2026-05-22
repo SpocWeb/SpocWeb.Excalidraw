@@ -1,4 +1,4 @@
-﻿namespace org.SpocWeb.PptxToJson.ExcaliDraw;
+namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 
 /// <summary> Similar to <see cref="System.Drawing.Rectangle"/> but with <see cref="AngleRadians"/> </summary>
 /// <remarks>
@@ -18,9 +18,13 @@ public record struct ElementBounds {
 		AngleRadians = angleRad;
 	}
 
+	/// <summary>Gets or sets the x.</summary>
 	public double X { get; set; }
+	/// <summary>Gets or sets the y.</summary>
 	public double Y { get; set; }
+	/// <summary>Gets or sets the width.</summary>
 	public double Width { get; set; }
+	/// <summary>Gets or sets the height.</summary>
 	public double Height { get; set; }
 
 	/// <summary> Rotation Angle, also used to determine the Bounding Box </summary>
