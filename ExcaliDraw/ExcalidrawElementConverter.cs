@@ -3,7 +3,7 @@ using Newtonsoft.Json.Linq;
 
 namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 
-/// <summary> Custom Newtonsoft <see cref="JsonConverter{T}"/> that reads the <c>"type"</c> discriminator
+/// <summary> Custom Newtonsoft <see cref="JsonConverter{T}"/> that reads the `"type"` discriminator
 /// from each element token and instantiates the correct
 /// <see cref="Excalidraw.Element"/> subclass before populating it.
 /// Write is intentionally disabled; the default serializer handles output.
@@ -21,7 +21,7 @@ public sealed class ExcalidrawElementConverter : JsonConverter<Excalidraw.Elemen
 	public override bool CanWrite => false;
 
 	/// <summary>
-	/// Reads the <c>"type"</c> field and populates the matching subclass.
+	/// Reads the `"type"` field and populates the matching subclass.
 	/// Throws <see cref="JsonException"/> for unknown type strings.
 	/// </summary>
 	public override Excalidraw.Element ReadJson(

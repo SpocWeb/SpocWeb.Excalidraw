@@ -35,7 +35,7 @@ public static class ExcalidrawParser {
 	public static string ToFile(this Document excaliDraw, string filePath, Formatting formatting = Formatting.Indented)
 		=> JsonConvert.SerializeObject(excaliDraw, formatting, ExcalidrawSettings());
 
-	/// <summary> Parses an <c>.excalidraw</c> JSON string into an <see cref="Document"/>. </summary>
+	/// <summary> Parses an `.excalidraw` JSON string into an <see cref="Document"/>. </summary>
 	/// <param name="json">The full JSON text of the scene file.</param>
 	/// <returns>A populated <see cref="Document"/> instance.</returns>
 	/// <exception cref="JsonException">Thrown when deserialisation returns null or the JSON is malformed.</exception>
@@ -43,7 +43,7 @@ public static class ExcalidrawParser {
 		=> JsonConvert.DeserializeObject<Document>(json, ExcalidrawSettings())
 		   ?? throw new JsonException("Deserialisation returned null.");
 
-	/// <summary> Parses an <c>excalidraw/clipboard</c> JSON string into an <see cref="Clipboard"/> payload. </summary>
+	/// <summary> Parses an `excalidraw/clipboard` JSON string into an <see cref="Clipboard"/> payload. </summary>
 	/// <param name="json">The clipboard JSON string.</param>
 	public static Clipboard ParseClipboard(string json)
 		=> JsonConvert.DeserializeObject<Clipboard>(json, ExcalidrawSettings())
@@ -54,8 +54,8 @@ public static class ExcalidrawParser {
 		=> ParseExcalidraw(File.ReadAllText(excalidraw.FullName));
 
 	/// <summary>
-	/// Returns <c>true</c> when the JSON string is a well-formed Excalidraw
-	/// scene document (<c>type == "excalidraw"</c>, <c>version == 2</c>).
+	/// Returns `true` when the JSON string is a well-formed Excalidraw
+	/// scene document (`type == "excalidraw"`, `version == 2`).
 	/// </summary>
 	/// <param name="json">JSON string to validate.</param>
 	public static Document? IsValid(string json) {

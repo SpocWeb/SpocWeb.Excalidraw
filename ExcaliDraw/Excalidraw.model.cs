@@ -16,8 +16,8 @@ static partial class Excalidraw {
 
 	/// <summary>
 	/// Corner-rounding configuration attached to any closed shape element.
-	/// Serializes to <c>{ "type": number, "value"?: number }</c>.
-	/// Source: <c>_ExcalidrawElementBase.roundness</c> in types.ts.
+	/// Serializes to `{ "type": number, "value"?: number }`.
+	/// Source: `_ExcalidrawElementBase.roundness` in types.ts.
 	/// </summary>
 	/// <remarks>
 	/// ## Meta
@@ -50,7 +50,7 @@ static partial class Excalidraw {
 		/// <summary> ID of the bound element (arrow or text). </summary>
 		public string id { get; set; }
 
-		/// <summary> Type of the bound element: <c>"arrow"</c> or <c>"text"</c>. </summary>
+		/// <summary> Type of the bound element: `"arrow"` or `"text"`. </summary>
 		public ElementType type { get; set; }
 	}
 
@@ -91,8 +91,8 @@ static partial class Excalidraw {
 		/// </remarks>
 		public double[]? fixedPoint { get; set; }
 
-		/// <summary> Binding mode: <c>"inside"</c> allows the arrow tip inside the shape;
-		/// <c>"orbit"</c> keeps it on the outline; <c>"skip"</c> disables attachment.
+		/// <summary> Binding mode: `"inside"` allows the arrow tip inside the shape;
+		/// `"orbit"` keeps it on the outline; `"skip"` disables attachment.
 		/// </summary>
 		/// <remarks>
 		/// it is ephemeral and never written to the file.
@@ -101,9 +101,9 @@ static partial class Excalidraw {
 	}
 
 	/// <summary>
-	/// Binary file entry stored in the document-level <c>files</c> map.
+	/// Binary file entry stored in the document-level `files` map.
 	/// Keyed by a SHA-1 FileId string.
-	/// Source: <c>BinaryFileData</c> in excalidraw/types.ts.
+	/// Source: `BinaryFileData` in excalidraw/types.ts.
 	/// </summary>
 	/// <remarks>
 	/// ## Meta
@@ -114,44 +114,44 @@ static partial class Excalidraw {
 	/// </remarks>
 	public sealed class BinaryFileData {
 		/// <summary>
-		/// MIME type of the file, e.g. <c>"image/png"</c>, <c>"image/svg+xml"</c>.
-		/// JSON key: <c>"mimeType"</c>.
+		/// MIME type of the file, e.g. `"image/png"`, `"image/svg+xml"`.
+		/// JSON key: `"mimeType"`.
 		/// </summary>
 		public string mimeType { get; set; }
 
 		/// <summary>
-		/// SHA-1 FileId that matches the key in the <c>files</c> map.
-		/// JSON key: <c>"id"</c>.
+		/// SHA-1 FileId that matches the key in the `files` map.
+		/// JSON key: `"id"`.
 		/// </summary>
 		public string id { get; set; }
 
 		/// <summary>
 		/// Base-64 data URL of the file content, e.g.
-		/// <c>"data:image/png;base64,..."</c>.
-		/// JSON key: <c>"dataURL"</c>.
+		/// `"data:image/png;base64,..."`.
+		/// JSON key: `"dataURL"`.
 		/// <para>
-		/// Note: C# name <c>DataURL</c> → first char lowercased → <c>dataURL</c>. ✓
+		/// Note: C# name `DataURL` → first char lowercased → `dataURL`. ✓
 		/// </para>
 		/// </summary>
 		public string DataURL { get; set; }
 
 		/// <summary>
 		/// Unix epoch timestamp (ms) when this file was created.
-		/// JSON key: <c>"created"</c>.
+		/// JSON key: `"created"`.
 		/// </summary>
 		public long created { get; set; }
 
 		/// <summary>
 		/// Unix epoch timestamp (ms) of the last retrieval from storage.
 		/// Used to decide whether unused files may be deleted.
-		/// JSON key: <c>"lastRetrieved"</c>.
+		/// JSON key: `"lastRetrieved"`.
 		/// </summary>
 		public long? lastRetrieved { get; set; }
 
 		/// <summary>
 		/// Optional schema version of the file data.
 		/// Incremented when the dataURL changes due to a restore migration.
-		/// JSON key: <c>"version"</c>.
+		/// JSON key: `"version"`.
 		/// </summary>
 		public int? version { get; set; }
 	}
@@ -159,9 +159,9 @@ static partial class Excalidraw {
 	/// <summary> Serializable subset of editor application state written to disk. </summary>
 	/// <remarks>
 	/// Ephemeral UI state (selection, cursor, viewport offsets) is stripped
-	/// by <c>cleanAppStateForExport()</c> before serialisation.
+	/// by `cleanAppStateForExport()` before serialisation.
 	///
-	/// Source: <c>AppState</c> interface in excalidraw/types.ts.
+	/// Source: `AppState` interface in excalidraw/types.ts.
 	/// (background colour, grid size, theme, tool preferences, etc.).
 	/// ## Meta
 	/// pass: 2
@@ -172,78 +172,78 @@ static partial class Excalidraw {
 	public sealed class AppState {
 		/// <summary>
 		/// Background colour of the canvas viewport (CSS colour string).
-		/// JSON key: <c>"viewBackgroundColor"</c>.
+		/// JSON key: `"viewBackgroundColor"`.
 		/// </summary>
 		public string viewBackgroundColor { get; set; }
 
 		/// <summary>
-		/// Grid cell size in pixels. <c>null</c> indicates grid is disabled.
-		/// JSON key: <c>"gridSize"</c>.
+		/// Grid cell size in pixels. `null` indicates grid is disabled.
+		/// JSON key: `"gridSize"`.
 		/// </summary>
 		public int? gridSize { get; set; }
 
 		/// <summary>
 		/// Number of grid cells per major grid line.
-		/// JSON key: <c>"gridStep"</c>.
+		/// JSON key: `"gridStep"`.
 		/// </summary>
 		public int? gridStep { get; set; }
 
 		/// <summary>
-		/// Active UI theme: <c>"light"</c> or <c>"dark"</c>.
-		/// JSON key: <c>"theme"</c>.
+		/// Active UI theme: `"light"` or `"dark"`.
+		/// JSON key: `"theme"`.
 		/// </summary>
 		public string theme { get; set; }
 
-		/// <summary>Stroke colour applied to newly created items. JSON key: <c>"currentItemStrokeColor"</c>.</summary>
+		/// <summary>Stroke colour applied to newly created items. JSON key: `"currentItemStrokeColor"`.</summary>
 		public string currentItemStrokeColor { get; set; }
 
-		/// <summary>Fill colour applied to newly created items. JSON key: <c>"currentItemBackgroundColor"</c>.</summary>
+		/// <summary>Fill colour applied to newly created items. JSON key: `"currentItemBackgroundColor"`.</summary>
 		public string currentItemBackgroundColor { get; set; }
 
-		/// <summary>Fill style applied to newly created items. JSON key: <c>"currentItemFillStyle"</c>.</summary>
+		/// <summary>Fill style applied to newly created items. JSON key: `"currentItemFillStyle"`.</summary>
 		public string currentItemFillStyle { get; set; }
 
-		/// <summary>Stroke width applied to newly created items (px). JSON key: <c>"currentItemStrokeWidth"</c>.</summary>
+		/// <summary>Stroke width applied to newly created items (px). JSON key: `"currentItemStrokeWidth"`.</summary>
 		public int? currentItemStrokeWidth { get; set; }
 
-		/// <summary>Stroke dash style for newly created items. JSON key: <c>"currentItemStrokeStyle"</c>.</summary>
+		/// <summary>Stroke dash style for newly created items. JSON key: `"currentItemStrokeStyle"`.</summary>
 		public string currentItemStrokeStyle { get; set; }
 
 		/// <summary>
 		/// RoughJS roughness level (0 = architect, 1 = artist, 2 = cartoonist)
-		/// for newly created items. JSON key: <c>"currentItemRoughness"</c>.
+		/// for newly created items. JSON key: `"currentItemRoughness"`.
 		/// </summary>
 		public int? currentItemRoughness { get; set; }
 
-		/// <summary>Opacity (0–100) for newly created items. JSON key: <c>"currentItemOpacity"</c>.</summary>
+		/// <summary>Opacity (0–100) for newly created items. JSON key: `"currentItemOpacity"`.</summary>
 		public int? currentItemOpacity { get; set; }
 
-		/// <summary>Font family numeric ID for newly created text. JSON key: <c>"currentItemFontFamily"</c>.</summary>
+		/// <summary>Font family numeric ID for newly created text. JSON key: `"currentItemFontFamily"`.</summary>
 		public int? currentItemFontFamily { get; set; }
 
-		/// <summary>Font size (px) for newly created text. JSON key: <c>"currentItemFontSize"</c>.</summary>
+		/// <summary>Font size (px) for newly created text. JSON key: `"currentItemFontSize"`.</summary>
 		public int? currentItemFontSize { get; set; }
 
-		/// <summary>Text alignment for newly created text elements. JSON key: <c>"currentItemTextAlign"</c>.</summary>
+		/// <summary>Text alignment for newly created text elements. JSON key: `"currentItemTextAlign"`.</summary>
 		public string currentItemTextAlign { get; set; }
 
 		/// <summary>
 		/// Horizontal canvas scroll offset in pixels.
-		/// JSON key: <c>"scrollX"</c>.
+		/// JSON key: `"scrollX"`.
 		/// </summary>
 		public double? scrollX { get; set; }
 
 		/// <summary>
 		/// Vertical canvas scroll offset in pixels.
-		/// JSON key: <c>"scrollY"</c>.
+		/// JSON key: `"scrollY"`.
 		/// </summary>
 		public double? scrollY { get; set; }
 
 		/// <summary>
-		/// Current zoom level as <c>{ "value": number }</c>.
-		/// Stored as <c>object</c> to handle both the legacy plain-number format
+		/// Current zoom level as `{ "value": number }`.
+		/// Stored as `object` to handle both the legacy plain-number format
 		/// and the current object format without a custom converter.
-		/// JSON key: <c>"zoom"</c>.
+		/// JSON key: `"zoom"`.
 		/// </summary>
 		public object zoom { get; set; }
 

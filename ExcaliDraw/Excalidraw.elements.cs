@@ -21,7 +21,7 @@ public static partial class Excalidraw{
 	/// <summary> Graphic Element Base-Class of <see cref="type"/> </summary>
 	/// <summary>
 	/// Properties shared by every Excalidraw element regardless of type.
-	/// Corresponds to <c>_ExcalidrawElementBase</c> in types.ts.
+	/// Corresponds to `_ExcalidrawElementBase` in types.ts.
 	/// Property names match JSON camelCase keys exactly via <see cref="CamelCasePropertyNamesContractResolver"/>
 	/// (first char lowercased).
 	/// </summary>
@@ -37,86 +37,86 @@ public static partial class Excalidraw{
 		/// <summary> Debuggable String Representation </summary>
 		public override string ToString() => JsonConvert.SerializeObject(this, Formatting.None, ExcalidrawParser.ExcalidrawSettings());
 
-		/// <summary>Unique element identifier (random string). JSON key: <c>"id"</c>.</summary>
+		/// <summary>Unique element identifier (random string). JSON key: `"id"`.</summary>
 		public string id { get; set; }
 
-		/// <summary> Element type discriminator matching the JSON <c>"type"</c> string. </summary>
+		/// <summary> Element type discriminator matching the JSON `"type"` string. </summary>
 		/// <remarks>
 		/// Used by <see cref="ExcalidrawElementConverter"/> for polymorphic deserialisation.
 		/// </remarks>
 		public ElementType type { get; set; }
 
-		/// <summary>Left edge of the element's bounding box in canvas coordinates (px). JSON key: <c>"x"</c>.</summary>
+		/// <summary>Left edge of the element's bounding box in canvas coordinates (px). JSON key: `"x"`.</summary>
 		public double x { get; set; }
 
-		/// <summary>Top edge of the element's bounding box in canvas coordinates (px). JSON key: <c>"y"</c>.</summary>
+		/// <summary>Top edge of the element's bounding box in canvas coordinates (px). JSON key: `"y"`.</summary>
 		public double y { get; set; }
 
-		/// <summary>Width of the element's bounding box (px). JSON key: <c>"width"</c>.</summary>
+		/// <summary>Width of the element's bounding box (px). JSON key: `"width"`.</summary>
 		public double width { get; set; }
 
-		/// <summary>Height of the element's bounding box (px). JSON key: <c>"height"</c>.</summary>
+		/// <summary>Height of the element's bounding box (px). JSON key: `"height"`.</summary>
 		public double height { get; set; }
 
 		/// <summary>
 		/// Rotation angle in radians (clockwise from 12 o'clock).
-		/// JSON key: <c>"angle"</c>.
+		/// JSON key: `"angle"`.
 		/// </summary>
 		public double angle { get; set; }
 
-		/// <summary>CSS colour string for the element's stroke/outline. JSON key: <c>"strokeColor"</c>.</summary>
+		/// <summary>CSS colour string for the element's stroke/outline. JSON key: `"strokeColor"`.</summary>
 		public string strokeColor { get; set; }
 
-		/// <summary>CSS colour string for the element's fill. JSON key: <c>"backgroundColor"</c>.</summary>
+		/// <summary>CSS colour string for the element's fill. JSON key: `"backgroundColor"`.</summary>
 		public string backgroundColor { get; set; }
 
 		/// <summary>
 		/// Fill pattern for the element's interior.
-		/// One of <c>"hachure"</c>, <c>"cross-hatch"</c>, <c>"solid"</c>, <c>"zigzag"</c>.
-		/// JSON key: <c>"fillStyle"</c>.
+		/// One of `"hachure"`, `"cross-hatch"`, `"solid"`, `"zigzag"`.
+		/// JSON key: `"fillStyle"`.
 		/// </summary>
 		public FillStyle fillStyle { get; set; }
 
-		/// <summary>Stroke width in pixels. JSON key: <c>"strokeWidth"</c>.</summary>
+		/// <summary>Stroke width in pixels. JSON key: `"strokeWidth"`.</summary>
 		public double strokeWidth { get; set; }
 
 		/// <summary>
-		/// Dash pattern for the stroke: <c>"solid"</c>, <c>"dashed"</c>, or <c>"dotted"</c>.
-		/// JSON key: <c>"strokeStyle"</c>.
+		/// Dash pattern for the stroke: `"solid"`, `"dashed"`, or `"dotted"`.
+		/// JSON key: `"strokeStyle"`.
 		/// </summary>
 		public StrokeStyle strokeStyle { get; set; }
 
 		/// <summary>
 		/// RoughJS roughness level: 0 = architect (clean), 1 = artist, 2 = cartoonist (very rough).
-		/// JSON key: <c>"roughness"</c>.
+		/// JSON key: `"roughness"`.
 		/// </summary>
 		public int roughness { get; set; }
 
 		/// <summary>
 		/// Element opacity as an integer percentage (0–100).
-		/// JSON key: <c>"opacity"</c>.
+		/// JSON key: `"opacity"`.
 		/// </summary>
 		public int opacity { get; set; }
 
 		/// <summary>
-		/// Corner-rounding configuration, or <c>null</c> for sharp corners.
-		/// JSON key: <c>"roundness"</c>.
+		/// Corner-rounding configuration, or `null` for sharp corners.
+		/// JSON key: `"roundness"`.
 		/// </summary>
 		public Roundness? roundness { get; set; }
 
 		/// <summary>
 		/// Random seed integer used by RoughJS to produce a stable hand-drawn shape
-		/// that doesn't change across re-renders. JSON key: <c>"seed"</c>.
+		/// that doesn't change across re-renders. JSON key: `"seed"`.
 		/// </summary>
 		public int seed { get; set; }
 
 		/// <summary>
 		/// Soft-delete flag. Deleted elements remain in the array so that
-		/// collaborative peers can reconcile removals. JSON key: <c>"isDeleted"</c>.
+		/// collaborative peers can reconcile removals. JSON key: `"isDeleted"`.
 		/// </summary>
 		public bool isDeleted { get; set; }
 
-		/// <summary> ID of the frame element that contains this element, or <c>null</c>. </summary>
+		/// <summary> ID of the frame element that contains this element, or `null`. </summary>
 		public string? frameId { get; set; }
 
 		/// <summary> Ordered list of group IDs this element belongs to,
@@ -126,14 +126,14 @@ public static partial class Excalidraw{
 		/// <summary> References to arrows or text elements bound to this element. </summary>
 		public List<BoundElement>? boundElements { get; set; }
 
-		/// <summary> Hyperlink URL attached to the element, or <c>null</c>. </summary>
+		/// <summary> Hyperlink URL attached to the element, or `null`. </summary>
 		public string? link { get; set; }
 
-		/// <summary> When <c>true</c>, the element cannot be selected or moved interactively. </summary>
+		/// <summary> When `true`, the element cannot be selected or moved interactively. </summary>
 		public bool locked { get; set; }
 
 		/// <summary> Sequential integer incremented on every change.
-		/// Used for collaborative reconciliation. JSON key: <c>"version"</c>.
+		/// Used for collaborative reconciliation. JSON key: `"version"`.
 		/// </summary>
 		public int version { get; set; }
 
@@ -147,7 +147,7 @@ public static partial class Excalidraw{
 		public long updated { get; set; }
 
 		/// <summary> Fractional index string (rocicorp/fractional-indexing) used for
-		/// stable ordering in multiplayer scenarios. JSON key: <c>"index"</c>.
+		/// stable ordering in multiplayer scenarios. JSON key: `"index"`.
 		/// </summary>
 		public string index { get; set; }
 
@@ -247,7 +247,7 @@ public static partial class Excalidraw{
 	/// <summary>
 	/// Axis-aligned rectangle shape element.
 	/// No additional properties beyond the base element.
-	/// JSON type: <c>"rectangle"</c>.
+	/// JSON type: `"rectangle"`.
 	/// </summary>
 	/// <remarks>
 	/// ## Meta
@@ -271,7 +271,7 @@ public static partial class Excalidraw{
 	/// <summary>
 	/// Ellipse (or circle when width == height) shape element.
 	/// No additional properties beyond the base element.
-	/// JSON type: <c>"ellipse"</c>.
+	/// JSON type: `"ellipse"`.
 	/// </summary>
 	/// <remarks>
 	/// ## Meta
@@ -294,7 +294,7 @@ public static partial class Excalidraw{
 	/// <summary>
 	/// Diamond (rotated square) shape element.
 	/// No additional properties beyond the base element.
-	/// JSON type: <c>"diamond"</c>.
+	/// JSON type: `"diamond"`.
 	/// </summary>
 	/// <remarks>
 	/// ## Meta
@@ -380,24 +380,24 @@ public static partial class Excalidraw{
 		/// <summary> Ordered array of [x, y] point pairs in element-local coordinates. </summary>
 		/// <remarks>
 		/// The first point is always [0, 0]; subsequent points are relative offsets.
-		/// JSON key: <c>"points"</c>.
+		/// JSON key: `"points"`.
 		/// </remarks>
 		public List<double[]> points { get; set; } = new();
 
 		///// <summary> The last point that was committed to the <see cref="points"/> array during interactive creation. </summary>
 		///// <remarks>
-		///// Used internally; may be <c>null</c>.
-		///// JSON key: <c>"lastCommittedPoint"</c>.
+		///// Used internally; may be `null`.
+		///// JSON key: `"lastCommittedPoint"`.
 		///// </summary>
 		//public double[]? lastCommittedPoint { get; set; }
 
 		/// <summary> Arrow endpoint binding to the element at the start of the line.
-		/// <c>null</c> when the start is unbound. JSON key: <c>"startBinding"</c>.
+		/// `null` when the start is unbound. JSON key: `"startBinding"`.
 		/// </summary>
 		public PointBinding? startBinding { get; set; }
 
 		/// <summary> Arrow endpoint binding to the element at the end of the line.
-		/// <c>null</c> when the end is unbound. JSON key: <c>"endBinding"</c>.
+		/// `null` when the end is unbound. JSON key: `"endBinding"`.
 		/// </summary>
 		public PointBinding? endBinding { get; set; }
 
@@ -414,8 +414,8 @@ public static partial class Excalidraw{
 	public sealed class LineElement : LinearElement {
 
 		/// <summary>
-		/// When <c>true</c>, the last point is connected back to the first
-		/// to close the polyline into a polygon. JSON key: <c>"polygon"</c>.
+		/// When `true`, the last point is connected back to the first
+		/// to close the polyline into a polygon. JSON key: `"polygon"`.
 		/// </summary>
 		public bool polygon { get; set; }
 
@@ -492,7 +492,7 @@ public static partial class Excalidraw{
 			) {
 		}
 
-		/// <summary> When <c>true</c>, the arrow uses 90-degree elbow routing
+		/// <summary> When `true`, the arrow uses 90-degree elbow routing
 		/// instead of straight or curved segments. </summary>
 		public bool elbowed { get; set; }
 
@@ -515,20 +515,20 @@ public static partial class Excalidraw{
 
 		/// <summary>
 		/// Ordered array of [x, y] points in canvas coordinates tracing the stroke.
-		/// JSON key: <c>"points"</c>.
+		/// JSON key: `"points"`.
 		/// </summary>
 		public List<double[]> points { get; set; } = new();
 
 		/// <summary>
 		/// Per-point stylus pressure values (0.0–1.0) corresponding to each entry
-		/// in <see cref="points"/>. Empty when <see cref="simulatePressure"/> is <c>true</c>.
-		/// JSON key: <c>"pressures"</c>.
+		/// in <see cref="points"/>. Empty when <see cref="simulatePressure"/> is `true`.
+		/// JSON key: `"pressures"`.
 		/// </summary>
 		public List<double> pressures { get; set; } = new();
 
 		/// <summary>
-		/// When <c>true</c>, pressure is algorithmically simulated rather than
-		/// read from the pointer device. JSON key: <c>"simulatePressure"</c>.
+		/// When `true`, pressure is algorithmically simulated rather than
+		/// read from the pointer device. JSON key: `"simulatePressure"`.
 		/// </summary>
 		public bool simulatePressure { get; set; }
 	}
@@ -549,41 +549,41 @@ public static partial class Excalidraw{
 			: base(ElementType.text, bounds, context, groupIds) {
 		}
 
-		/// <summary> Display text content (may be wrapped). JSON key: <c>"text"</c>. </summary>
+		/// <summary> Display text content (may be wrapped). JSON key: `"text"`. </summary>
 		public string text { get; set; }
 
 		/// <summary> The full, unwrapped text before container-width wrapping is applied. </summary>
 		/// <remarks>
-		/// JSON key: <c>"originalText"</c>.
+		/// JSON key: `"originalText"`.
 		/// </remarks>
 		public string originalText { get; set; }
 
-		/// <summary>Font size in pixels. JSON key: <c>"fontSize"</c>.</summary>
+		/// <summary>Font size in pixels. JSON key: `"fontSize"`.</summary>
 		public double fontSize { get; set; }
 
-		/// <summary> Numeric font family ID matching the <c>FONT_FAMILY</c> constant. </summary>
+		/// <summary> Numeric font family ID matching the `FONT_FAMILY` constant. </summary>
 		/// <remarks>
-		/// See <see cref="FontFamily"/> enum for named values. JSON key: <c>"fontFamily"</c>.
+		/// See <see cref="FontFamily"/> enum for named values. JSON key: `"fontFamily"`.
 		/// </remarks>
 		public FontFamily fontFamily { get; set; }
 
-		/// <summary> Horizontal text alignment: <c>"left"</c>, <c>"center"</c>, or <c>"right"</c>.
+		/// <summary> Horizontal text alignment: `"left"`, `"center"`, or `"right"`.
 		/// </summary>
 		public TextAlign textAlign { get; set; }
 
 		/// <summary> Vertical text alignment within the bounding box or container:
-		/// <c>"top"</c>, <c>"middle"</c>, or <c>"bottom"</c>.
+		/// `"top"`, `"middle"`, or `"bottom"`.
 		/// </summary>
 		public VerticalAlign verticalAlign { get; set; }
 
 		/// <summary> ID of the container shape this text is bound to,
-		/// or <c>null</c> for standalone text. JSON key: <c>"containerId"</c>.
+		/// or `null` for standalone text. JSON key: `"containerId"`.
 		/// </summary>
 		public string? containerId { get; set; }
 
 		/// <summary>
-		/// When <c>true</c>, the container shape resizes to fit the text.
-		/// When <c>false</c>, text wraps to fit the container width.
+		/// When `true`, the container shape resizes to fit the text.
+		/// When `false`, text wraps to fit the container width.
 		/// </summary>
 		public bool autoResize { get; set; }
 
@@ -597,7 +597,7 @@ public static partial class Excalidraw{
 		public double baseline { get ; set ; }
 	}
 
-	/// <summary> Raster image whose binary content is stored in the document-level <c>files</c> map keyed by <see cref="fileId"/>. </summary>
+	/// <summary> Raster image whose binary content is stored in the document-level `files` map keyed by <see cref="fileId"/>. </summary>
 	/// <remarks>
 	/// ## Meta
 	/// pass: 2
@@ -613,27 +613,27 @@ public static partial class Excalidraw{
 			: base(ElementType.image, bounds, context, groupIds) {
 		}
 
-		/// <summary> SHA-1 FileId referencing the binary data in <c>ExcalidrawDocument.files</c>.
-		/// <c>null</c> when the image has not yet been assigned a file. JSON key: <c>"fileId"</c>.
+		/// <summary> SHA-1 FileId referencing the binary data in `ExcalidrawDocument.files`.
+		/// `null` when the image has not yet been assigned a file. JSON key: `"fileId"`.
 		/// </summary>
 		public string? fileId { get; set; }
 
 		/// <summary>
 		/// Load/persistence state of the image binary data.
-		/// One of <c>"pending"</c>, <c>"saved"</c>, <c>"error"</c>. JSON key: <c>"status"</c>.
+		/// One of `"pending"`, `"saved"`, `"error"`. JSON key: `"status"`.
 		/// </summary>
 		public string status { get; set; }
 
 		/// <summary>
 		/// Two-element array [scaleX, scaleY] in the range [-1, 1].
 		/// A value of -1 on either axis flips the image on that axis.
-		/// JSON key: <c>"scale"</c>.
+		/// JSON key: `"scale"`.
 		/// </summary>
 		public double[] scale { get; set; }
 
 		/// <summary>
-		/// Active crop rectangle applied to the image, or <c>null</c> if uncropped.
-		/// JSON key: <c>"crop"</c>.
+		/// Active crop rectangle applied to the image, or `null` if uncropped.
+		/// JSON key: `"crop"`.
 		/// </summary>
 		public ImageCrop? crop { get; set; }
 	}
@@ -648,34 +648,34 @@ public static partial class Excalidraw{
 	/// updated: 2026-05-19
 	/// </remarks>
 	public sealed class ImageCrop {
-		/// <summary>Left offset of the crop rectangle in natural image pixels. JSON key: <c>"x"</c>.</summary>
+		/// <summary>Left offset of the crop rectangle in natural image pixels. JSON key: `"x"`.</summary>
 		public double x { get; set; }
 
-		/// <summary>Top offset of the crop rectangle in natural image pixels. JSON key: <c>"y"</c>.</summary>
+		/// <summary>Top offset of the crop rectangle in natural image pixels. JSON key: `"y"`.</summary>
 		public double y { get; set; }
 
-		/// <summary>Width of the crop rectangle in natural image pixels. JSON key: <c>"width"</c>.</summary>
+		/// <summary>Width of the crop rectangle in natural image pixels. JSON key: `"width"`.</summary>
 		public double width { get; set; }
 
-		/// <summary>Height of the crop rectangle in natural image pixels. JSON key: <c>"height"</c>.</summary>
+		/// <summary>Height of the crop rectangle in natural image pixels. JSON key: `"height"`.</summary>
 		public double height { get; set; }
 
 		/// <summary>
 		/// Full intrinsic width of the source image in pixels (before any scaling).
-		/// JSON key: <c>"naturalWidth"</c>.
+		/// JSON key: `"naturalWidth"`.
 		/// </summary>
 		public double naturalWidth { get; set; }
 
 		/// <summary>
 		/// Full intrinsic height of the source image in pixels (before any scaling).
-		/// JSON key: <c>"naturalHeight"</c>.
+		/// JSON key: `"naturalHeight"`.
 		/// </summary>
 		public double naturalHeight { get; set; }
 	}
 
 	/// <summary> Named frame that visually groups and clips its child elements. </summary>
 	/// <remarks>
-	/// Children reference this frame via their <c>frameId</c> property.
+	/// Children reference this frame via their `frameId` property.
 	/// ## Meta
 	/// pass: 2
 	/// mtime: 2026-05-15T20:57:01Z
@@ -697,7 +697,7 @@ public static partial class Excalidraw{
 			: base(ElementType.frame, bounds, context, groupIds) {
 		}
 
-		/// <summary> Human-readable label displayed in the frame's header, or <c>null</c>. </summary>
+		/// <summary> Human-readable label displayed in the frame's header, or `null`. </summary>
 		public string? name { get; set; }
 	}
 
@@ -717,7 +717,7 @@ public static partial class Excalidraw{
 			: base(ElementType.magicframe, bounds, context, groupIds) {
 		}
 
-		/// <summary> Human-readable label displayed in the frame's header, or <c>null</c>. </summary>
+		/// <summary> Human-readable label displayed in the frame's header, or `null`. </summary>
 		public string? name { get; set; }
 	}
 
@@ -741,7 +741,7 @@ public static partial class Excalidraw{
 
 	/// <summary> Inline iframe for arbitrary HTML content directly on the canvas. </summary>
 	/// <remarks>
-	/// May carry AI generation metadata in <c>customData.generationData</c>.
+	/// May carry AI generation metadata in `customData.generationData`.
 	/// ## Meta
 	/// pass: 2
 	/// mtime: 2026-05-15T20:57:01Z

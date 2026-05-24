@@ -10,7 +10,7 @@
 /// </remarks>
 static partial class Excalidraw {
 
-	/// <summary> Root object for an <c>.excalidraw</c> scene file (schema version 2). </summary>
+	/// <summary> Root object for an `.excalidraw` scene file (schema version 2). </summary>
 	/// <remarks>
 	/// Serialises to the top-level JSON structure defined at
 	/// https://docs.excalidraw.com/docs/codebase/json-schema.
@@ -32,15 +32,15 @@ static partial class Excalidraw {
 	/// </remarks>
 	public sealed class Document {
 
-		/// <summary> Format discriminator. Always <c>"excalidraw"</c> for scene files. </summary>
+		/// <summary> Format discriminator. Always `"excalidraw"` for scene files. </summary>
 		public string type { get; set; } = "excalidraw";
 
-		/// <summary> Schema version number, currently always <c>2</c>. </summary>
+		/// <summary> Schema version number, currently always `2`. </summary>
 		public int version { get; set; } = 2;
 
 		/// <summary> Origin URL of the Excalidraw application that produced this file </summary>
 		/// <remarks>
-		/// e.g. <c>"https://excalidraw.com"</c>. JSON key: <c>"source"</c>.
+		/// e.g. `"https://excalidraw.com"`. JSON key: `"source"`.
 		/// </remarks>
 		public string source { get; set; } = "https://excalidraw.com";
 
@@ -48,26 +48,26 @@ static partial class Excalidraw {
 
 		/// <summary> All non-deleted canvas elements. </summary>
 		/// <remarks>
-		/// Deleted elements are stripped by <c>serializeAsJSON()</c> before writing to disk.
+		/// Deleted elements are stripped by `serializeAsJSON()` before writing to disk.
 		/// </remarks>
 		public List<Element> elements { get; set; } = new();
 
 		/// <summary> Serializable subset of editor <see cref="AppState"/> </summary>
 		/// <remarks>
-		/// Ephemeral UI state is stripped before serialisation. JSON key: <c>"appState"</c>.
+		/// Ephemeral UI state is stripped before serialisation. JSON key: `"appState"`.
 		/// </remarks>
 		public AppState appState { get; set; }
 
 		/// <summary> Map of FileId → binary file data for all <see cref="ImageElement"/>s </summary>
 		/// <remarks>
-		/// Keyed by SHA-1 FileId strings. JSON key: <c>"files"</c>.
+		/// Keyed by SHA-1 FileId strings. JSON key: `"files"`.
 		/// </remarks>
 		public Dictionary<string, BinaryFileData> files { get; set; } = new();
 	}
 
 	/// <summary> Clipboard-format variant produced when copying selected elements. </summary>
 	/// <remarks>
-	/// Type field is <c>"excalidraw/clipboard"</c> instead of <c>"excalidraw"</c>.
+	/// Type field is `"excalidraw/clipboard"` instead of `"excalidraw"`.
 	/// Source: clipboard.ts in the Excalidraw codebase.
 	/// ## Meta
 	/// pass: 2
@@ -77,11 +77,11 @@ static partial class Excalidraw {
 	/// </remarks>
 	public sealed class Clipboard {
 
-		/// <summary> Format discriminator. Always <c>"excalidraw/clipboard"</c>. </summary>
+		/// <summary> Format discriminator. Always `"excalidraw/clipboard"`. </summary>
 		public string type { get; set; } = "excalidraw/clipboard";
 
 		/// <summary>
-		/// The copied canvas elements. <c>frameId</c> is stripped from elements
+		/// The copied canvas elements. `frameId` is stripped from elements
 		/// that were copied without their containing frame.
 		/// </summary>
 		public List<Element> elements { get; set; } = new();
