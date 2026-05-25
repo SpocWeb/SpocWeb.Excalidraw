@@ -374,6 +374,7 @@ public static partial class Excalidraw{
 		/// <summary> Type of <see cref="Arrowhead"/> at the Line End </summary>
 		public Arrowhead? endArrowhead { get; set; }
 
+		/// <summary>Gets or sets the label.</summary>
 		[Obsolete("In earlier Versions, excalidraw stored the Label here use " + nameof(boundElements), true)]
 		public string? label { get; set; }
 
@@ -459,8 +460,10 @@ public static partial class Excalidraw{
 	/// </remarks>
 	public sealed class Arrow : LinearElement {
 
+		/// <summary>Initializes a new instance of <see cref="Arrow"/>.</summary>
 		public Arrow() : base(ElementType.arrow) { }
 
+		/// <summary>Initializes a new instance of <see cref="Arrow"/> with the specified <paramref name="Id"/>, <paramref name="FrameId"/>, <paramref name="X"/>, <paramref name="Y"/>, <paramref name="StrokeWidth"/>, <paramref name="StrokeStyle"/>, <paramref name="StrokeColor"/>, <paramref name="Opacity"/>, <paramref name="StartArrowhead"/>, <paramref name="EndArrowhead"/>, <paramref name="StartElementId"/> and <paramref name="EndElementId"/>.</summary>
 		public Arrow(string Id
 			, string? FrameId
 			, double X
@@ -480,6 +483,7 @@ public static partial class Excalidraw{
 		}
 
 
+		/// <summary>Initializes a new instance of <see cref="Arrow"/> with the specified <paramref name="bounds"/>, <paramref name="context"/>, <paramref name="groupIds"/>, <paramref name="StartArrowhead"/>, <paramref name="EndArrowhead"/>, <paramref name="StartElementId"/> and <paramref name="EndElementId"/>.</summary>
 		public Arrow(ElementBounds bounds
 			, IHaveSequence<int> context, List<string> groupIds
 			, Arrowhead? StartArrowhead
@@ -507,8 +511,10 @@ public static partial class Excalidraw{
 	/// updated: 2026-05-19
 	/// </remarks>
 	public sealed class FreedrawElement : Element {
+		/// <summary>Initializes a new instance of <see cref="FreedrawElement"/>.</summary>
 		public FreedrawElement() : base(ElementType.freedraw) { }
 
+		/// <summary>Initializes a new instance of <see cref="FreedrawElement"/> with the specified <paramref name="bounds"/>, <paramref name="context"/> and <paramref name="groupIds"/>.</summary>
 		public FreedrawElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.freedraw, bounds, context, groupIds) {
 		}
@@ -543,8 +549,10 @@ public static partial class Excalidraw{
 	/// </remarks>
 	public sealed class TextElement : Element {
 
+		/// <summary>Initializes a new instance of <see cref="TextElement"/>.</summary>
 		public TextElement() : base(ElementType.text) { }
 
+		/// <summary>Initializes a new instance of <see cref="TextElement"/> with the specified <paramref name="bounds"/>, <paramref name="context"/> and <paramref name="groupIds"/>.</summary>
 		public TextElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.text, bounds, context, groupIds) {
 		}
@@ -607,8 +615,10 @@ public static partial class Excalidraw{
 	/// </remarks>
 	public sealed class ImageElement : Element {
 
+		/// <summary>Initializes a new instance of <see cref="ImageElement"/>.</summary>
 		public ImageElement() : base(ElementType.image) { }
 
+		/// <summary>Initializes a new instance of <see cref="ImageElement"/> with the specified <paramref name="bounds"/>, <paramref name="context"/> and <paramref name="groupIds"/>.</summary>
 		public ImageElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.image, bounds, context, groupIds) {
 		}
@@ -683,8 +693,10 @@ public static partial class Excalidraw{
 	/// updated: 2026-05-19
 	/// </remarks>
 	public sealed class FrameElement : Element {
+		/// <summary>Initializes a new instance of <see cref="FrameElement"/>.</summary>
 		public FrameElement() : base(ElementType.frame) { }
 
+		/// <summary>Initializes a new instance of <see cref="FrameElement"/> with the specified <paramref name="id"/>, <paramref name="x"/>, <paramref name="y"/> and <paramref name="Name"/>.</summary>
 		public FrameElement(string id
 			, double x
 			, double y
@@ -693,6 +705,7 @@ public static partial class Excalidraw{
 			name = Name;
 		}
 
+		/// <summary>Initializes a new instance of <see cref="FrameElement"/> with the specified <paramref name="bounds"/>, <paramref name="context"/> and <paramref name="groupIds"/>.</summary>
 		public FrameElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.frame, bounds, context, groupIds) {
 		}
@@ -711,8 +724,10 @@ public static partial class Excalidraw{
 	/// updated: 2026-05-19
 	/// </remarks>
 	public sealed class MagicFrameElement : Element {
+		/// <summary>Initializes a new instance of <see cref="MagicFrameElement"/>.</summary>
 		public MagicFrameElement() : base(ElementType.magicframe) { }
 
+		/// <summary>Initializes a new instance of <see cref="MagicFrameElement"/> with the specified <paramref name="bounds"/>, <paramref name="context"/> and <paramref name="groupIds"/>.</summary>
 		public MagicFrameElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.magicframe, bounds, context, groupIds) {
 		}
@@ -731,8 +746,10 @@ public static partial class Excalidraw{
 	/// </remarks>
 	public sealed class EmbeddableElement : Element {
 
+		/// <summary>Initializes a new instance of <see cref="EmbeddableElement"/>.</summary>
 		public EmbeddableElement() : base(ElementType.embeddable) { }
 
+		/// <summary>Initializes a new instance of <see cref="EmbeddableElement"/> with the specified <paramref name="bounds"/>, <paramref name="context"/> and <paramref name="groupIds"/>.</summary>
 		public EmbeddableElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.embeddable, bounds, context, groupIds) {
 		}
@@ -749,8 +766,10 @@ public static partial class Excalidraw{
 	/// updated: 2026-05-19
 	/// </remarks>
 	public sealed class IFrameElement : Element {
+		/// <summary>Initializes a new instance of <see cref="IFrameElement"/>.</summary>
 		public IFrameElement() : base(ElementType.iframe) { }
 
+		/// <summary>Initializes a new instance of <see cref="IFrameElement"/> with the specified <paramref name="bounds"/>, <paramref name="context"/> and <paramref name="groupIds"/>.</summary>
 		public IFrameElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.iframe, bounds, context, groupIds) {
 		}
