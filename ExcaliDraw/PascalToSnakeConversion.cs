@@ -27,8 +27,8 @@ public static partial class PascalToSnakeConversion {
 	public const string RxLowerUpper = "(?<=[a-z0-9])([A-Z])";
 
 	//[GeneratedRegex(RxLowerUpper)]
-	/// <summary>TODO: LLM</summary>
- 	public static Regex LowerUpper() => _LowerUpper ??= new (RxLowerUpper);
+	/// <summary> Returns (and lazily initializes) the compiled <see cref="Regex"/> for <see cref="RxLowerUpper"/>. </summary>
+	public static Regex LowerUpper() => _LowerUpper ??= new (RxLowerUpper);
 	static Regex? _LowerUpper;
 
 	/// <summary> Returns the snake_case string for a given enum member name,

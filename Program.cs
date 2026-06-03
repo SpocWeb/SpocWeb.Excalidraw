@@ -14,7 +14,7 @@ namespace org.SpocWeb.PptxToJson;
 /// </remarks>
 public static class Program {
 
-	/// <summary>TODO: LLM</summary>
- 	public static void Main(params string[] args) {
+	/// <summary> Application entry point; no operations are performed at startup. </summary>
+	public static void Main(params string[] args) {
 	}
 }
