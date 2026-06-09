@@ -12,6 +12,13 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// digest: d4f126731646bc73bcfb4d9d181bb63fa8e639c8fc2319eb96508113d82ce6d5
 /// updated: 2026-05-19
 /// </remarks>
+/// <example>
+/// <code language="yaml">
+/// pass: 2
+/// mtime: 2026-06-03T19:25:51Z
+/// digest: 6164c28ddf066b8eee4a240d6ae71d536fef5252f3e7d9312ef5dd46c39fe0d2
+/// </code>
+/// </example>
 public static partial class PascalToSnakeConversion {
 
 	/// <summary> Cache of (EnumType → (MemberName → SnakeCaseString)) for serialisation. </summary>

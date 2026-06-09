@@ -8,6 +8,13 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// digest: bcae9ce00ceab71fbd3e569f2256e842c60f3f559f9d378303e20923f65942e4
 /// updated: 2026-05-19
 /// </remarks>
+/// <example>
+/// <code language="yaml">
+/// pass: 2
+/// mtime: 2026-05-22T17:44:36Z
+/// digest: eb13646dd38100244bc627294c9251cbc985152b1c7ebb2a6545f3479b1bd45e
+/// </code>
+/// </example>
 public record struct ElementBounds {
 	/// <summary> Initializes an <see cref="ElementBounds"/> with position, size and <paramref name="angleRad"/>. </summary>
 	public ElementBounds(double x, double y, double width, double height, double angleRad) {

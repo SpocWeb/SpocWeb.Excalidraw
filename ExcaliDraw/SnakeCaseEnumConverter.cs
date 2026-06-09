@@ -1,4 +1,4 @@
-﻿namespace org.SpocWeb.PptxToJson.ExcaliDraw;
+namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 
 using Newtonsoft.Json;
 using System;
@@ -16,6 +16,13 @@ using System;
 /// digest: a0b69328b4d8d1e16b2115a6ad606198be0bbe56a838aa8f570d82f6958174a0
 /// updated: 2026-05-19
 /// </remarks>
+/// <example>
+/// <code language="yaml">
+/// pass: 2
+/// mtime: 2026-05-19T14:43:27Z
+/// digest: 2bec9cc2474af270007ab0ff7d64dae4a4c7ac6a3e7f54a84bb1843eb4750047
+/// </code>
+/// </example>
 public sealed class SnakeCaseEnumConverter : JsonConverter {
 
 	/// <summary>Handles any enum type.</summary>

@@ -12,6 +12,13 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 /// updated: 2026-05-19
 /// </remarks>
+/// <example>
+/// <code language="yaml">
+/// pass: 2
+/// mtime: 2026-06-09T16:07:57Z
+/// digest: aae77790dca39822d58425f311debad3aa038613e851567102d04737ebb581df
+/// </code>
+/// </example>
 public static partial class Excalidraw{
 
 	/// <summary>Rounds a floating-point value for JSON output.</summary>
@@ -32,6 +39,13 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
+	/// <example>
+	/// <code language="yaml">
+	/// pass: 2
+	/// mtime: 2026-06-09T16:07:57Z
+	/// digest: 00dd43a41bb2f6dc3a49516a6087b402fc7d1bf4ac21534f92776bf278557879
+	/// </code>
+	/// </example>
 	public class Element {
 
 		/// <summary> Debuggable String Representation </summary>
@@ -256,6 +270,13 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
+	/// <example>
+	/// <code language="yaml">
+	/// pass: 2
+	/// mtime: 2026-06-09T16:07:57Z
+	/// digest: dbf553a66b7a0528d1c5170ff9c4d7babdb69942e9510ce21f860c22f29736d5
+	/// </code>
+	/// </example>
 	public sealed class RectangleElement : Element {
 		/// <summary> Initializes an empty <see cref="RectangleElement"/> for JSON deserialization. </summary>
 		public RectangleElement() : base(ElementType.rectangle) { }
@@ -280,6 +301,13 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
+	/// <example>
+	/// <code language="yaml">
+	/// pass: 2
+	/// mtime: 2026-06-09T16:07:57Z
+	/// digest: 88ca0892e541e80785eb95b8fdc5e33df1e6841cf47beee13611a5b8c2994edf
+	/// </code>
+	/// </example>
 	public sealed class EllipseElement : Element {
 		/// <summary> Initializes an empty <see cref="EllipseElement"/> for JSON deserialization. </summary>
 		public EllipseElement() : base(ElementType.ellipse) { }
@@ -303,6 +331,13 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
+	/// <example>
+	/// <code language="yaml">
+	/// pass: 2
+	/// mtime: 2026-06-09T16:07:57Z
+	/// digest: 938dea4088d89746c8db83fed844daa24fb2b369983d90865ab797e7acfdbf35
+	/// </code>
+	/// </example>
 	public sealed class DiamondElement : Element {
 		/// <summary> Initializes an empty <see cref="DiamondElement"/> for JSON deserialization. </summary>
 		public DiamondElement() : base(ElementType.diamond) { }
@@ -322,6 +357,13 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
+	/// <example>
+	/// <code language="yaml">
+	/// pass: 2
+	/// mtime: 2026-06-09T16:07:57Z
+	/// digest: 14d176b2956813fd19adb4f4bebaeccb963a622777e739e9b5449a5d4daa57c7
+	/// </code>
+	/// </example>
 	public class LinearElement : Element {
 
 		/// <summary> Initializes an empty <see cref="LinearElement"/> for JSON deserialization. </summary>
@@ -412,6 +454,13 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
+	/// <example>
+	/// <code language="yaml">
+	/// pass: 2
+	/// mtime: 2026-06-09T16:07:57Z
+	/// digest: c41e97c1cfe2e234ee1d322147ec96516e6d0ad6ed2b6faf7f2178a7b8a32522
+	/// </code>
+	/// </example>
 	public sealed class LineElement : LinearElement {
 
 		/// <summary>
@@ -458,6 +507,13 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
+	/// <example>
+	/// <code language="yaml">
+	/// pass: 2
+	/// mtime: 2026-06-09T16:07:57Z
+	/// digest: 0505b14edc4bc1c1311dcf294b40ab6c8fdaa9ba194687a4c150edb0ea6dd091
+	/// </code>
+	/// </example>
 	public sealed class Arrow : LinearElement {
 
 		/// <summary>Initializes a new instance of <see cref="Arrow"/>.</summary>
@@ -510,6 +566,13 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
+	/// <example>
+	/// <code language="yaml">
+	/// pass: 2
+	/// mtime: 2026-06-09T16:07:57Z
+	/// digest: acbef79f8bd8d16fd9ddcb351f31d79eccf5d00c896cc2abb1ed1bb05fe92ce6
+	/// </code>
+	/// </example>
 	public sealed class FreedrawElement : Element {
 		/// <summary>Initializes a new instance of <see cref="FreedrawElement"/>.</summary>
 		public FreedrawElement() : base(ElementType.freedraw) { }
@@ -547,6 +610,13 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
+	/// <example>
+	/// <code language="yaml">
+	/// pass: 2
+	/// mtime: 2026-06-09T16:07:57Z
+	/// digest: 9d258720f987f3053db79b3fd54f36d42dddb115cc01097b07d1197e76076842
+	/// </code>
+	/// </example>
 	public sealed class TextElement : Element {
 
 		/// <summary>Initializes a new instance of <see cref="TextElement"/>.</summary>
@@ -613,6 +683,13 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
+	/// <example>
+	/// <code language="yaml">
+	/// pass: 2
+	/// mtime: 2026-06-09T16:07:57Z
+	/// digest: 3a1be6f68af968b21632c4483879c2519fe1c1f69b07f79774f705bfda1ba1a4
+	/// </code>
+	/// </example>
 	public sealed class ImageElement : Element {
 
 		/// <summary>Initializes a new instance of <see cref="ImageElement"/>.</summary>
@@ -657,6 +734,13 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
+	/// <example>
+	/// <code language="yaml">
+	/// pass: 2
+	/// mtime: 2026-06-09T16:07:57Z
+	/// digest: cae8b3242cc04c5e5d7f8bfa4302b37a40adff0836b5c7c5fc5720bf5ac7edfe
+	/// </code>
+	/// </example>
 	public sealed class ImageCrop {
 		/// <summary>Left offset of the crop rectangle in natural image pixels. JSON key: `"x"`.</summary>
 		public double x { get; set; }
@@ -692,6 +776,13 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
+	/// <example>
+	/// <code language="yaml">
+	/// pass: 2
+	/// mtime: 2026-06-09T16:07:57Z
+	/// digest: d5ca03d313d97389d4947ac505e8a4c4f45f9c7a96be236d4fa4617fcfae4841
+	/// </code>
+	/// </example>
 	public sealed class FrameElement : Element {
 		/// <summary>Initializes a new instance of <see cref="FrameElement"/>.</summary>
 		public FrameElement() : base(ElementType.frame) { }
@@ -723,6 +814,13 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
+	/// <example>
+	/// <code language="yaml">
+	/// pass: 2
+	/// mtime: 2026-06-09T16:07:57Z
+	/// digest: 10c4a0f483a16d480a9390e11a8f784a4480a7c3634a8510d6f87a75d327ece4
+	/// </code>
+	/// </example>
 	public sealed class MagicFrameElement : Element {
 		/// <summary>Initializes a new instance of <see cref="MagicFrameElement"/>.</summary>
 		public MagicFrameElement() : base(ElementType.magicframe) { }
@@ -744,6 +842,13 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
+	/// <example>
+	/// <code language="yaml">
+	/// pass: 2
+	/// mtime: 2026-06-09T16:07:57Z
+	/// digest: 2e2a47aad35618e502f2cda987731c182412386040f86a8c122ab61ef55595b2
+	/// </code>
+	/// </example>
 	public sealed class EmbeddableElement : Element {
 
 		/// <summary>Initializes a new instance of <see cref="EmbeddableElement"/>.</summary>
@@ -765,6 +870,13 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
+	/// <example>
+	/// <code language="yaml">
+	/// pass: 2
+	/// mtime: 2026-06-09T16:07:57Z
+	/// digest: 50ec4d2b1ff0046f8f2a9885aaa32409bce0655928bba636fa1923386a389d0c
+	/// </code>
+	/// </example>
 	public sealed class IFrameElement : Element {
 		/// <summary>Initializes a new instance of <see cref="IFrameElement"/>.</summary>
 		public IFrameElement() : base(ElementType.iframe) { }

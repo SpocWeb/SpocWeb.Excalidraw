@@ -22,6 +22,13 @@ public interface IHaveSequence<T> {
 /// digest: fc3f3f23b7d70d32067dd5a9256b2fc966270faeae3e1c775ff380e787da67b8
 /// updated: 2026-05-19
 /// </remarks>
+/// <example>
+/// <code language="yaml">
+/// pass: 2
+/// mtime: 2026-05-22T17:44:36Z
+/// digest: 35bd8afa8faaa7560a9dc1374fb54e9e6c6880a5bcd3bca5aeefdeff8380c614
+/// </code>
+/// </example>
 public static class IHaveSequence {
 	/// <summary>Returns a deterministic-looking positive sequence id string.</summary>
 	public static string NextId(this IHaveSequence<int> context, string prefix) {

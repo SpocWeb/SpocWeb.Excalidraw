@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 // ReSharper disable AutoPropertyCanBeMadeGetOnly.Global
 // ReSharper disable UnusedAutoPropertyAccessor.Global
 
@@ -12,6 +12,13 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// digest: 8e3bd7e1288d4ca0bed69587ec0867c4a44255f665cc45018a066de5bebed3c6
 /// updated: 2026-05-19
 /// </remarks>
+/// <example>
+/// <code language="yaml">
+/// pass: 2
+/// mtime: 2026-05-24T14:22:10Z
+/// digest: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+/// </code>
+/// </example>
 static partial class Excalidraw {
 
 	/// <summary>
@@ -26,6 +33,13 @@ static partial class Excalidraw {
 	/// digest: 8e3bd7e1288d4ca0bed69587ec0867c4a44255f665cc45018a066de5bebed3c6
 	/// updated: 2026-05-19
 	/// </remarks>
+	/// <example>
+	/// <code language="yaml">
+	/// pass: 2
+	/// mtime: 2026-05-24T14:22:10Z
+	/// digest: 6298ab8a2f2fc4f8de29a9bcb35de669f7a95dab4d52671507298107b76d10ef
+	/// </code>
+	/// </example>
 	public sealed class Roundness {
 		/// <summary> Algorithm used to compute the corner radius. <see cref="RoundnessType"/> for values. </summary>
 		public RoundnessType type { get; set; }
@@ -46,6 +60,13 @@ static partial class Excalidraw {
 	/// digest: 8e3bd7e1288d4ca0bed69587ec0867c4a44255f665cc45018a066de5bebed3c6
 	/// updated: 2026-05-19
 	/// </remarks>
+	/// <example>
+	/// <code language="yaml">
+	/// pass: 2
+	/// mtime: 2026-05-24T14:22:10Z
+	/// digest: 066472cd92cb1e65c35dcb9a7005588ea9959e360fe342f475d86a4c147ed5b0
+	/// </code>
+	/// </example>
 	public sealed class BoundElement {
 		/// <summary> ID of the bound element (arrow or text). </summary>
 		public string id { get; set; }
@@ -65,6 +86,13 @@ static partial class Excalidraw {
 	/// digest: 8e3bd7e1288d4ca0bed69587ec0867c4a44255f665cc45018a066de5bebed3c6
 	/// updated: 2026-05-19
 	/// </remarks>
+	/// <example>
+	/// <code language="yaml">
+	/// pass: 2
+	/// mtime: 2026-05-24T14:22:10Z
+	/// digest: f516121ad2c29449876cf47ab4ab1d09e250672aef71db59b59eff38fe7d4a70
+	/// </code>
+	/// </example>
 	public sealed class PointBinding {
 
 		/// <summary> Initializes an empty, unbound <see cref="PointBinding"/>. </summary>
@@ -112,6 +140,13 @@ static partial class Excalidraw {
 	/// digest: 8e3bd7e1288d4ca0bed69587ec0867c4a44255f665cc45018a066de5bebed3c6
 	/// updated: 2026-05-19
 	/// </remarks>
+	/// <example>
+	/// <code language="yaml">
+	/// pass: 2
+	/// mtime: 2026-05-24T14:22:10Z
+	/// digest: 1eac90f0ec8e34ad3b55f8771984b54d2ceb72c1fa044a7f0a547e69c59ffa07
+	/// </code>
+	/// </example>
 	public sealed class BinaryFileData {
 		/// <summary>
 		/// MIME type of the file, e.g. `"image/png"`, `"image/svg+xml"`.
@@ -169,6 +204,13 @@ static partial class Excalidraw {
 	/// digest: 8e3bd7e1288d4ca0bed69587ec0867c4a44255f665cc45018a066de5bebed3c6
 	/// updated: 2026-05-19
 	/// </remarks>
+	/// <example>
+	/// <code language="yaml">
+	/// pass: 2
+	/// mtime: 2026-05-24T14:22:10Z
+	/// digest: 19ef3883807c7171bfb6b9adeeabf68538a91dab0e791756b9390739121ce6cb
+	/// </code>
+	/// </example>
 	public sealed class AppState {
 		/// <summary>
 		/// Background colour of the canvas viewport (CSS colour string).

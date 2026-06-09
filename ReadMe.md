@@ -1,8 +1,11 @@
 ---
 uid: SpocWeb.Excalidraw.md
 tags: [arch, dev ]
+  local-classes:
+    Program:
+      mtime: "2026-06-09T16:08:50Z"
+      digest: "e1623107bf1d964a526b588adc259035fbc65d746201544be5e5926fddd0dbb9"
 ---
-
 <details><summary><span style="font-size:24px;font-weight:bold">Content</span></summary>
 [[_TOC_]]
 
@@ -50,38 +53,45 @@ This Project provides for [Excalidraw](https://excalidraw.com/) Graphics:
 - Data Model 
 - Parser and Serializer using Newtonsoft JSON
 
+## Architecture
+
+```mermaid
+flowchart TD
+    subgraph Root["SpocWeb.Excalidraw (root)"]
+        Prog["Program\n(entry point)"]
+    end
+
+    subgraph Sub["ExcaliDraw/ subsystem"]
+        ExcDraw["Excalidraw partial class\n(Document · elements · enums · model · public)"]
+        Parser["ExcalidrawParser"]
+        Converter["ExcalidrawElementConverter"]
+        SnakeConv["SnakeCaseEnumConverter"]
+        Pascal["PascalToSnakeConversion"]
+        ISeq["IHaveSequence&lt;T&gt;"]
+        Bounds["ElementBounds"]
+    end
+
+    Prog -->|"delegates work to"| Parser
+    Parser -->|"uses"| Converter
+    Parser -->|"uses"| SnakeConv
+    SnakeConv -->|"delegates"| Pascal
+    Converter -->|"instantiates elements from"| ExcDraw
+
+    linkStyle 0 opacity:1
+    linkStyle 1 opacity:1
+    linkStyle 2 opacity:1
+    linkStyle 3 opacity:1
+    linkStyle 4 opacity:1
+
+    ExcDraw -->|"element ctors accept"| Bounds
+    ExcDraw -->|"element ctors accept"| ISeq
+```
+
 ## Classes
 
-| Class | Responsibility | Key Collaborators |
-|---|---|---|
-| [Excalidraw](ExcaliDraw/Excalidraw.public.cs) | Partial root class; grouping namespace for all Excalidraw types. | All element and model types |
-| [Excalidraw.Document](ExcaliDraw/Excalidraw.Document.cs) | Root scene document (schema version 2) containing elements, appState and files. | `Element`, `AppState`, `BinaryFileData` |
-| [Excalidraw.Clipboard](ExcaliDraw/Excalidraw.Document.cs) | Clipboard-format variant (`"excalidraw/clipboard"`) used when copying selected elements. | `Element`, `BinaryFileData` |
-| [Element](ExcaliDraw/Excalidraw.elements.cs) | Base class for all canvas elements; holds id, geometry, stroke, fill, opacity, grouping and collaboration metadata. | All concrete element types |
-| [LinearElement](ExcaliDraw/Excalidraw.elements.cs) | Intermediate base for line and arrow elements; adds `points`, `startBinding`, `endBinding` and arrowheads. | `Arrow`, `LineElement`, `PointBinding` |
-| [Arrow](ExcaliDraw/Excalidraw.elements.cs) | Directed arrow with optional 90° elbow routing and endpoint bindings. | `LinearElement`, `PointBinding`, `Arrowhead` |
-| [LineElement](ExcaliDraw/Excalidraw.elements.cs) | Undirected polyline or polygon (`polygon=true` to close the path). | `LinearElement` |
-| [RectangleElement](ExcaliDraw/Excalidraw.elements.cs) | Axis-aligned rectangle shape. | `Element` |
-| [EllipseElement](ExcaliDraw/Excalidraw.elements.cs) | Ellipse or circle shape. | `Element` |
-| [DiamondElement](ExcaliDraw/Excalidraw.elements.cs) | Diamond (rotated square) shape. | `Element` |
-| [FreedrawElement](ExcaliDraw/Excalidraw.elements.cs) | Freehand stroke with optional per-point pressure data. | `Element` |
-| [TextElement](ExcaliDraw/Excalidraw.elements.cs) | Standalone or container-bound text label. | `Element`, `FontFamily`, `TextAlign`, `VerticalAlign` |
-| [ImageElement](ExcaliDraw/Excalidraw.elements.cs) | Raster image referenced by `fileId` from the document's `files` map. | `Element`, `BinaryFileData`, `ImageCrop` |
-| [FrameElement](ExcaliDraw/Excalidraw.elements.cs) | Named frame that visually groups and clips child elements. | `Element` |
-| [MagicFrameElement](ExcaliDraw/Excalidraw.elements.cs) | AI-generated frame produced by Excalidraw's generative features. | `Element` |
-| [EmbeddableElement](ExcaliDraw/Excalidraw.elements.cs) | Embedded external URL rendered as an interactive widget. | `Element` |
-| [IFrameElement](ExcaliDraw/Excalidraw.elements.cs) | Inline iframe for arbitrary HTML content. | `Element` |
-| [ElementBounds](ExcaliDraw/ElementBounds.cs) | Value record for an element's position, size and rotation angle. | All element constructors |
-| [Roundness](ExcaliDraw/Excalidraw.model.cs) | Corner-rounding config (`type` + optional `value`). | `Element` |
-| [BoundElement](ExcaliDraw/Excalidraw.model.cs) | Reference from a container to a bound arrow or text element. | `Element` |
-| [PointBinding](ExcaliDraw/Excalidraw.model.cs) | Arrow-tip attachment descriptor (elementId, focus, gap, fixedPoint). | `LinearElement` |
-| [BinaryFileData](ExcaliDraw/Excalidraw.model.cs) | Binary file entry (MIME type, base-64 dataURL, timestamps). | `Document`, `ImageElement` |
-| [AppState](ExcaliDraw/Excalidraw.model.cs) | Serializable subset of editor state (background, grid, theme, tool defaults, scroll, zoom). | `Document` |
-| [ExcalidrawParser](ExcaliDraw/ExcalidrawParser.cs) | Parses and serializes `Document` and `Clipboard` using configured `JsonSerializerSettings`. | `Document`, `Clipboard`, `ExcalidrawElementConverter`, `SnakeCaseEnumConverter` |
-| [ExcalidrawElementConverter](ExcaliDraw/ExcalidrawElementConverter.cs) | Polymorphic `JsonConverter` that reads the `"type"` discriminator and creates the matching element subclass. | `Element` and all subtypes |
-| [SnakeCaseEnumConverter](ExcaliDraw/SnakeCaseEnumConverter.cs) | `JsonConverter` that serializes enums as `snake_case` strings. | `PascalToSnakeConversion`, all enum types |
-| [PascalToSnakeConversion](ExcaliDraw/PascalToSnakeConversion.cs) | Thread-safe cached PascalCase→snake_case utility used by `SnakeCaseEnumConverter`. | `SnakeCaseEnumConverter` |
-| [IHaveSequence&lt;T&gt;](ExcaliDraw/IHaveSequence.cs) | Contract for objects that carry a monotonically incrementing integer counter; helpers generate deterministic ids and seeds. | Element constructors |
+| Class | Responsibility |
+|---|---|
+| [Program](Program.cs) | Application entry point for the SpocWeb. |
 
 ## Relationships
 
@@ -218,3 +228,8 @@ Although we apply a permissive License for derivative Work,
 we hope that other developers follow our example
 and choose [similar ethical licenses](https://ethicalsource.dev/licenses/) for derivative works.
 
+## Subsystems
+
+| Folder | Domain Role |
+|---|---|
+| [`ExcaliDraw/`](ExcaliDraw/ReadMe.md) | Excalidraw data model, parser, serializer, and JSON conversion utilities. |

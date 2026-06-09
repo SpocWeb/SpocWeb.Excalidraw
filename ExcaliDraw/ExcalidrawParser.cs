@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System.Text.RegularExpressions;
 using static org.SpocWeb.PptxToJson.ExcaliDraw.Excalidraw;
@@ -13,6 +13,13 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// digest: beb3737587544cb4f2871cfd7db7397dbf510d7d76ef91e74d4561c5a2c315bf
 /// updated: 2026-05-19
 /// </remarks>
+/// <example>
+/// <code language="yaml">
+/// pass: 2
+/// mtime: 2026-05-24T14:22:10Z
+/// digest: c4515cd808a9156dafc013fca213b8f110b459e5db468142cfdabb9f0d7abdbd
+/// </code>
+/// </example>
 public static class ExcalidrawParser {
 
 	/// <summary> Builds new <see cref="JsonSerializerSettings"/> instance
