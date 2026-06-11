@@ -27,6 +27,7 @@ public interface IHaveSequence<T> {
 /// pass: 2
 /// mtime: 2026-05-22T17:44:36Z
 /// digest: 35bd8afa8faaa7560a9dc1374fb54e9e6c6880a5bcd3bca5aeefdeff8380c614
+/// stale: true
 /// </code>
 /// </example>
 public static class IHaveSequence {
