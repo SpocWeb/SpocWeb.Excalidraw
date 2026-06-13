@@ -26,7 +26,7 @@ public interface IHaveSequence<T> {
 /// <code language="yaml">
 /// pass: 2
 /// mtime: 2026-05-22T17:44:36Z
-/// digest: 35bd8afa8faaa7560a9dc1374fb54e9e6c6880a5bcd3bca5aeefdeff8380c614
+/// digest: 8b7666f23b5ac8ea1003f24859c6bd4898e0132c391be9d2a2cfb3f24fb1444b
 /// stale: true
 /// </code>
 /// </example>
