@@ -17,7 +17,8 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// <code language="yaml">
 /// pass: 2
 /// mtime: 2026-05-24T14:22:10Z
-/// digest: c4515cd808a9156dafc013fca213b8f110b459e5db468142cfdabb9f0d7abdbd
+/// digest: d7948bddfa4f7b7cdf2c9e3c444807d5a1e9d36be9e4aea29dee0b4806a85cdd
+/// stale: true
 /// </code>
 /// </example>
 public static class ExcalidrawParser {

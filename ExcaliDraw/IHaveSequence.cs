@@ -8,6 +8,13 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// digest: fc3f3f23b7d70d32067dd5a9256b2fc966270faeae3e1c775ff380e787da67b8
 /// updated: 2026-05-19
 /// </remarks>
+/// <example>
+/// <code language="yaml">
+/// pass: 2
+/// mtime: 2026-06-14T11:57:41Z
+/// digest: 35bd8afa8faaa7560a9dc1374fb54e9e6c6880a5bcd3bca5aeefdeff8380c614
+/// </code>
+/// </example>
 public interface IHaveSequence<T> {
 	/// <summary>Gets or sets the sequence.</summary>
 	public T Sequence { get; set; }
