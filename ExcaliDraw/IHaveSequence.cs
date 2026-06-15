@@ -1,6 +1,7 @@
 namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 
-/// <summary>Contract for objects that carry a monotonically incrementing integer sequence counter.</summary>
+/// <summary>Contract for objects that carry a monotonically incrementing integer sequence counter.<br/>
+/// Gets or sets the sequence.</summary>
 /// <remarks>
 /// ## Meta
 /// pass: 2
@@ -21,7 +22,8 @@ public interface IHaveSequence<T> {
 
 }
 
-/// <summary>Extension helpers for <see cref="IHaveSequence{T}"/> that generate Excalidraw-compatible ids and seeds.</summary>
+/// <summary>Extension helpers for <see cref="IHaveSequence{T}"/> that generate Excalidraw-compatible ids and seeds.<br/>
+/// Returns a deterministic-looking positive sequence id string.</summary>
 /// <remarks>
 /// ## Meta
 /// pass: 2
@@ -33,12 +35,12 @@ public interface IHaveSequence<T> {
 /// <code language="yaml">
 /// pass: 2
 /// mtime: 2026-05-22T17:44:36Z
-/// digest: 35bd8afa8faaa7560a9dc1374fb54e9e6c6880a5bcd3bca5aeefdeff8380c614
-/// stale: true
+/// digest: ea89c8837e5195c1cff18a4dd6f3d69cb4ab38de3dd19b3ee1ca1f2a277d3991
 /// </code>
 /// </example>
 public static class IHaveSequence {
-	/// <summary>Returns a deterministic-looking positive sequence id string.</summary>
+	/// <summary>Returns the next hex-formatted sequence ID for <paramref name="context"/><br/>
+	/// by incrementing its counter and formatting it as <c>{prefix}-{sequence:x8}</c>.</summary>
 	public static string NextId(this IHaveSequence<int> context, string prefix) {
 		context.Sequence++;
 		return $"{prefix}-{context.Sequence:x8}";

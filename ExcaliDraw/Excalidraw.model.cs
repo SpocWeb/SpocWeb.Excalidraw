@@ -21,11 +21,10 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// </example>
 static partial class Excalidraw {
 
-	/// <summary>
-	/// Corner-rounding configuration attached to any closed shape element.
+	/// <summary>Corner-rounding configuration attached to any closed shape element.
 	/// Serializes to `{ "type": number, "value"?: number }`.
-	/// Source: `_ExcalidrawElementBase.roundness` in types.ts.
-	/// </summary>
+	/// Source: `_ExcalidrawElementBase.roundness` in types.ts.<br/>
+	/// Algorithm used to compute the corner radius. <see cref="RoundnessType"/> for values.</summary>
 	/// <remarks>
 	/// ## Meta
 	/// pass: 2
@@ -37,11 +36,11 @@ static partial class Excalidraw {
 	/// <code language="yaml">
 	/// pass: 2
 	/// mtime: 2026-05-24T14:22:10Z
-	/// digest: 6298ab8a2f2fc4f8de29a9bcb35de669f7a95dab4d52671507298107b76d10ef
+	/// digest: ce8a1f630b9734b89db1448418014a5634797e81a7851078d02a626bfc3aa5a1
 	/// </code>
 	/// </example>
 	public sealed class Roundness {
-		/// <summary> Algorithm used to compute the corner radius. <see cref="RoundnessType"/> for values. </summary>
+		/// <summary>Gets or sets the type.</summary>
 		public RoundnessType type { get; set; }
 
 		/// <summary> Optional explicit radius value whose meaning depends on <see cref="type"/>.
@@ -50,7 +49,8 @@ static partial class Excalidraw {
 		public double? value { get; set; }
 	}
 
-	/// <summary> Reference from a container element to a bound arrow or text element. </summary>
+	/// <summary>Reference from a container element to a bound arrow or text element.<br/>
+	/// ID of the bound element (arrow or text).</summary>
 	/// <remarks>
 	/// Stored in <see cref="Excalidraw.Element.boundElements"/>.
 	/// Unlike <see cref="PointBinding"/> which describes attached Lines.
@@ -64,11 +64,11 @@ static partial class Excalidraw {
 	/// <code language="yaml">
 	/// pass: 2
 	/// mtime: 2026-05-24T14:22:10Z
-	/// digest: 066472cd92cb1e65c35dcb9a7005588ea9959e360fe342f475d86a4c147ed5b0
+	/// digest: 0aa270a8eec5f47a19c4c7eee4fd2f4d84a9c41b72cead9eea41009ae7e9071d
 	/// </code>
 	/// </example>
 	public sealed class BoundElement {
-		/// <summary> ID of the bound element (arrow or text). </summary>
+		/// <summary>Gets or sets the id.</summary>
 		public string id { get; set; }
 
 		/// <summary> Type of the bound element: `"arrow"` or `"text"`. </summary>
@@ -90,14 +90,15 @@ static partial class Excalidraw {
 	/// <code language="yaml">
 	/// pass: 2
 	/// mtime: 2026-05-24T14:22:10Z
-	/// digest: f516121ad2c29449876cf47ab4ab1d09e250672aef71db59b59eff38fe7d4a70
+	/// digest: 1a848ea74ad4c5ce2e85da232c070efae829b6e5ca11916579b447533f9f833e
 	/// </code>
 	/// </example>
 	public sealed class PointBinding {
 
-		/// <summary> Initializes an empty, unbound <see cref="PointBinding"/>. </summary>
+		/// <summary>Initializes an empty, unbound <see cref="PointBinding"/>.</summary>
 		public PointBinding(){}
-		/// <summary> Initializes a <see cref="PointBinding"/> attaching to <paramref name="ElementId"/>. </summary>
+		/// <summary>Initializes a <see cref="PointBinding"/> attaching to <paramref name="ElementId"/><br/>
+		/// with the specified <paramref name="Focus"/> and <paramref name="Gap"/>.</summary>
 		public PointBinding(string? ElementId, double Focus = 0, double Gap = 0) {
 			elementId= ElementId;
 			focus = Focus;
@@ -128,11 +129,11 @@ static partial class Excalidraw {
 		public string? mode { get; set; } = "orbit";
 	}
 
-	/// <summary>
-	/// Binary file entry stored in the document-level `files` map.
+	/// <summary>Binary file entry stored in the document-level `files` map.
 	/// Keyed by a SHA-1 FileId string.
-	/// Source: `BinaryFileData` in excalidraw/types.ts.
-	/// </summary>
+	/// Source: `BinaryFileData` in excalidraw/types.ts.<br/>
+	/// MIME type of the file, e.g. `"image/png"`, `"image/svg+xml"`.
+	/// JSON key: `"mimeType"`.</summary>
 	/// <remarks>
 	/// ## Meta
 	/// pass: 2
@@ -144,14 +145,11 @@ static partial class Excalidraw {
 	/// <code language="yaml">
 	/// pass: 2
 	/// mtime: 2026-05-24T14:22:10Z
-	/// digest: 1eac90f0ec8e34ad3b55f8771984b54d2ceb72c1fa044a7f0a547e69c59ffa07
+	/// digest: ef6d22bdff0cbe013463894a24be1150166ff4be29348db65b2b1edc85fa60bf
 	/// </code>
 	/// </example>
 	public sealed class BinaryFileData {
-		/// <summary>
-		/// MIME type of the file, e.g. `"image/png"`, `"image/svg+xml"`.
-		/// JSON key: `"mimeType"`.
-		/// </summary>
+		/// <summary>Gets or sets the mime Type.</summary>
 		public string mimeType { get; set; }
 
 		/// <summary>
@@ -191,7 +189,9 @@ static partial class Excalidraw {
 		public int? version { get; set; }
 	}
 
-	/// <summary> Serializable subset of editor application state written to disk. </summary>
+	/// <summary>Serializable subset of editor application state written to disk.<br/>
+	/// Background colour of the canvas viewport (CSS colour string).
+	/// JSON key: `"viewBackgroundColor"`.</summary>
 	/// <remarks>
 	/// Ephemeral UI state (selection, cursor, viewport offsets) is stripped
 	/// by `cleanAppStateForExport()` before serialisation.
@@ -208,14 +208,11 @@ static partial class Excalidraw {
 	/// <code language="yaml">
 	/// pass: 2
 	/// mtime: 2026-05-24T14:22:10Z
-	/// digest: 19ef3883807c7171bfb6b9adeeabf68538a91dab0e791756b9390739121ce6cb
+	/// digest: 3a61d90ad3ae9f2f887e1c72e2b442818f733bcc726293d0673506b11e9819cf
 	/// </code>
 	/// </example>
 	public sealed class AppState {
-		/// <summary>
-		/// Background colour of the canvas viewport (CSS colour string).
-		/// JSON key: `"viewBackgroundColor"`.
-		/// </summary>
+		/// <summary>Gets or sets the view Background Color.</summary>
 		public string viewBackgroundColor { get; set; }
 
 		/// <summary>

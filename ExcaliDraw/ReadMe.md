@@ -2,8 +2,8 @@
 digest:
   local-classes:
     AppState:
-      mtime: "2026-06-09T16:08:50Z"
-      digest: "19ef3883807c7171bfb6b9adeeabf68538a91dab0e791756b9390739121ce6cb"
+      mtime: "2026-06-14T23:33:26Z"
+      digest: "3a61d90ad3ae9f2f887e1c72e2b442818f733bcc726293d0673506b11e9819cf"
     Arrow:
       mtime: "2026-06-11T12:25:49Z"
       digest: "0505b14edc4bc1c1311dcf294b40ab6c8fdaa9ba194687a4c150edb0ea6dd091"
@@ -11,11 +11,11 @@ digest:
       mtime: "2026-06-09T16:08:50Z"
       digest: "92b5d3622d789c148b1cbf6db32a3771693b2fdc1824d6c2887da7ef849c05e4"
     BinaryFileData:
-      mtime: "2026-06-09T16:08:50Z"
-      digest: "1eac90f0ec8e34ad3b55f8771984b54d2ceb72c1fa044a7f0a547e69c59ffa07"
+      mtime: "2026-06-14T23:33:26Z"
+      digest: "ef6d22bdff0cbe013463894a24be1150166ff4be29348db65b2b1edc85fa60bf"
     BoundElement:
-      mtime: "2026-06-09T16:08:50Z"
-      digest: "066472cd92cb1e65c35dcb9a7005588ea9959e360fe342f475d86a4c147ed5b0"
+      mtime: "2026-06-14T23:33:26Z"
+      digest: "0aa270a8eec5f47a19c4c7eee4fd2f4d84a9c41b72cead9eea41009ae7e9071d"
     Clipboard:
       mtime: "2026-06-09T16:08:50Z"
       digest: "a6ccdd4824f49a12a5e5779b1929ceec8be10e27839735e165e1e743670ed7c9"
@@ -29,8 +29,8 @@ digest:
       mtime: "2026-06-11T12:25:49Z"
       digest: "00dd43a41bb2f6dc3a49516a6087b402fc7d1bf4ac21534f92776bf278557879"
     ElementBounds:
-      mtime: "2026-06-09T16:08:50Z"
-      digest: "eb13646dd38100244bc627294c9251cbc985152b1c7ebb2a6545f3479b1bd45e"
+      mtime: "2026-06-14T23:31:35Z"
+      digest: "071b8c55dca145d8bca4ac3eef758d87b7cfd6e8dd5b36d792209dcc0284bd0c"
     ElementType:
       mtime: "2026-06-09T16:08:50Z"
       digest: "fa11011ba62baa2582584a5e2ebb34053d768d629642d5cac9fa578a64bd237b"
@@ -47,8 +47,8 @@ digest:
       mtime: "2026-06-09T16:08:50Z"
       digest: "2a84a6a25114a9c263a9b773430d58c6912b15c02d8902a11e54e3ee03f5c3a5"
     ExcalidrawParser:
-      mtime: "2026-06-09T16:08:50Z"
-      digest: "c4515cd808a9156dafc013fca213b8f110b459e5db468142cfdabb9f0d7abdbd"
+      mtime: "2026-06-14T18:16:08Z"
+      digest: "d7948bddfa4f7b7cdf2c9e3c444807d5a1e9d36be9e4aea29dee0b4806a85cdd"
     FillStyle:
       mtime: "2026-06-09T16:08:50Z"
       digest: "a5476e8c60205771c2e5238fe290ae01e1585c89c9a459a458c79ede418dceb9"
@@ -65,8 +65,8 @@ digest:
       mtime: "2026-06-11T12:25:49Z"
       digest: "50ec4d2b1ff0046f8f2a9885aaa32409bce0655928bba636fa1923386a389d0c"
     IHaveSequence:
-      mtime: "2026-06-14T00:59:10Z"
-      digest: "8b7666f23b5ac8ea1003f24859c6bd4898e0132c391be9d2a2cfb3f24fb1444b"
+      mtime: "2026-06-14T23:31:48Z"
+      digest: "ea89c8837e5195c1cff18a4dd6f3d69cb4ab38de3dd19b3ee1ca1f2a277d3991"
     ImageCrop:
       mtime: "2026-06-11T12:25:49Z"
       digest: "cae8b3242cc04c5e5d7f8bfa4302b37a40adff0836b5c7c5fc5720bf5ac7edfe"
@@ -89,14 +89,14 @@ digest:
       mtime: "2026-06-09T16:08:50Z"
       digest: "6164c28ddf066b8eee4a240d6ae71d536fef5252f3e7d9312ef5dd46c39fe0d2"
     PointBinding:
-      mtime: "2026-06-09T16:08:50Z"
-      digest: "f516121ad2c29449876cf47ab4ab1d09e250672aef71db59b59eff38fe7d4a70"
+      mtime: "2026-06-14T23:33:26Z"
+      digest: "1a848ea74ad4c5ce2e85da232c070efae829b6e5ca11916579b447533f9f833e"
     RectangleElement:
       mtime: "2026-06-11T12:25:49Z"
       digest: "dbf553a66b7a0528d1c5170ff9c4d7babdb69942e9510ce21f860c22f29736d5"
     Roundness:
-      mtime: "2026-06-09T16:08:50Z"
-      digest: "6298ab8a2f2fc4f8de29a9bcb35de669f7a95dab4d52671507298107b76d10ef"
+      mtime: "2026-06-14T23:33:26Z"
+      digest: "ce8a1f630b9734b89db1448418014a5634797e81a7851078d02a626bfc3aa5a1"
     RoundnessType:
       mtime: "2026-06-09T16:08:50Z"
       digest: "46d684972f3005020f05063c641f25747b225810c04fa5d9f7c4b5646a14cb78"
@@ -254,7 +254,7 @@ flowchart TD
 
 | Class | Responsibility |
 |---|---|
-| [ElementBounds](ElementBounds.cs) | Similar to Rectangle but with AngleRadians |
+| [ElementBounds](ElementBounds.cs) | Similar to Rectangle but with AngleRadians  Initializes an ElementBounds with position, size and angleRad. |
 | [Excalidraw](Excalidraw.Document.cs) | Partial class hosting the Excalidraw scene document and clipboard types. |
 | [Document](Excalidraw.Document.cs) | Root object for an `. |
 | [Clipboard](Excalidraw.Document.cs) | Clipboard-format variant produced when copying selected elements. |

@@ -1,6 +1,7 @@
 namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 
-/// <summary> Similar to <see cref="System.Drawing.Rectangle"/> but with <see cref="AngleRadians"/> </summary>
+/// <summary>Similar to <see cref="System.Drawing.Rectangle"/> but with <see cref="AngleRadians"/><br/>
+/// Initializes an <see cref="ElementBounds"/> with position, size and <paramref name="angleRad"/>.</summary>
 /// <remarks>
 /// ## Meta
 /// pass: 2
@@ -12,11 +13,11 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// <code language="yaml">
 /// pass: 2
 /// mtime: 2026-05-22T17:44:36Z
-/// digest: eb13646dd38100244bc627294c9251cbc985152b1c7ebb2a6545f3479b1bd45e
+/// digest: 071b8c55dca145d8bca4ac3eef758d87b7cfd6e8dd5b36d792209dcc0284bd0c
 /// </code>
 /// </example>
 public record struct ElementBounds {
-	/// <summary> Initializes an <see cref="ElementBounds"/> with position, size and <paramref name="angleRad"/>. </summary>
+	/// <summary>Initializes a new instance of <see cref="ElementBounds"/> with the specified <paramref name="x"/>, <paramref name="y"/>, <paramref name="width"/>, <paramref name="height"/> and <paramref name="angleRad"/>.</summary>
 	public ElementBounds(double x, double y, double width, double height, double angleRad) {
 		X = x;
 		Y = y;
@@ -25,7 +26,8 @@ public record struct ElementBounds {
 		AngleRadians = angleRad;
 	}
 
-	/// <summary>Gets or sets the x.</summary>
+	/// <summary>Gets or sets the x.<br/>
+	/// Gets or sets the y.</summary>
 	public double X { get; set; }
 	/// <summary>Gets or sets the y.</summary>
 	public double Y { get; set; }
