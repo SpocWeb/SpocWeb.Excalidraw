@@ -25,8 +25,10 @@ tags: [arch, dev ]
 
 ```mermaid
 flowchart TD
-    Program["Program\n(entry point)"]
-    ExcaliDraw["ExcaliDraw/\n(data model + serialization)"]
+    Program["Program
+    (entry point)"]
+    ExcaliDraw["ExcaliDraw/
+    (data model + serialization)"]
 
     Program -->|uses| ExcaliDraw
 ```
