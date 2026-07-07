@@ -5,7 +5,7 @@ using static org.SpocWeb.PptxToJson.ExcaliDraw.Excalidraw;
 
 namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 
-/// <inheritdoc cref="ParseExcalidraw(string)"/>
+/// <summary> Serializes and parses Excalidraw scene and clipboard documents to and from JSON. </summary>
 /// <remarks>
 /// ## Meta
 /// pass: 2
@@ -18,7 +18,6 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// pass: 2
 /// mtime: 2026-05-24T14:22:10Z
 /// digest: d7948bddfa4f7b7cdf2c9e3c444807d5a1e9d36be9e4aea29dee0b4806a85cdd
-/// stale: true
 /// </code>
 /// </example>
 public static class ExcalidrawParser {
