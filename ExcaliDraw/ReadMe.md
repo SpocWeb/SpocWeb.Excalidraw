@@ -47,7 +47,7 @@ digest:
       mtime: "2026-06-09T16:08:50Z"
       digest: "2a84a6a25114a9c263a9b773430d58c6912b15c02d8902a11e54e3ee03f5c3a5"
     ExcalidrawParser:
-      mtime: "2026-06-14T18:16:08Z"
+      mtime: "2026-07-07T05:44:28Z"
       digest: "d7948bddfa4f7b7cdf2c9e3c444807d5a1e9d36be9e4aea29dee0b4806a85cdd"
     FillStyle:
       mtime: "2026-06-09T16:08:50Z"
@@ -292,7 +292,7 @@ flowchart TD
 | [AppState](Excalidraw.model.cs) | Serializable subset of editor application state written to disk. |
 | [Excalidraw](Excalidraw.public.cs) | Partial root class grouping all Excalidraw types and helpers. |
 | [ExcalidrawElementConverter](ExcalidrawElementConverter.cs) | Custom Newtonsoft JsonConverter that reads the `"type"` discriminator from each element token and instantiates the correct Element subclass before populating it. |
-| [ExcalidrawParser](ExcalidrawParser.cs) |  |
+| [ExcalidrawParser](ExcalidrawParser.cs) | Serializes and parses Excalidraw scene and clipboard documents to and from JSON. |
 | [IHaveSequence](IHaveSequence.cs) | Contract for objects that carry a monotonically incrementing integer sequence counter. |
 | [IHaveSequence](IHaveSequence.cs) | Extension helpers for IHaveSequence that generate Excalidraw-compatible ids and seeds. |
 | [PascalToSnakeConversion](PascalToSnakeConversion.cs) | Thread-safe cached PascalCase-to-snake_case conversion utilities for enum serialization. |

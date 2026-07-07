@@ -1,6 +1,7 @@
 ---
 uid: SpocWeb.Excalidraw.md
 tags: [arch, dev ]
+digest:
   local-classes:
     Program:
       mtime: "2026-06-09T16:08:50Z"
@@ -8,6 +9,10 @@ tags: [arch, dev ]
   Program[Program]
 
 ```
+---
+# SpocWeb.Excalidraw
+
+This folder contains `Program`: application entry point for the SpocWeb.
 
 ## Classes
 
