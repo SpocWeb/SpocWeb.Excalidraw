@@ -6,9 +6,7 @@ digest:
     Program:
       mtime: "2026-06-09T16:08:50Z"
       digest: "e1623107bf1d964a526b588adc259035fbc65d746201544be5e5926fddd0dbb9"
-  Program[Program]
-
-```
+  folders: {}
 ---
 # SpocWeb.Excalidraw
 
