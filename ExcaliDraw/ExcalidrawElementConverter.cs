@@ -1,5 +1,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using org.SpocWeb.root.Attributes;
+using System.ComponentModel;
 
 namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 
@@ -15,22 +17,19 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// digest: 6bd1a4123c70999cdb57f1abbdadef8453fec2e9a8482179d72178918f415bcd
 /// updated: 2026-05-19
 /// </remarks>
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-24T14:18:58Z
-/// digest: 2a84a6a25114a9c263a9b773430d58c6912b15c02d8902a11e54e3ee03f5c3a5
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-08-22T17:32:47Z", Digest = "2a84a6a25114a9c263a9b773430d58c6912b15c02d8902a11e54e3ee03f5c3a5", Stale = false, Path = "ExcaliDraw/ExcalidrawElementConverter.cs", Since = "2026-08-22")]
+[System.ComponentModel.Description("Custom Newtonsoft JsonConverter that reads the `\"type\"` discriminator from each element token and instantiates the correct Element subclass before populating it.")]
 public sealed class ExcalidrawElementConverter : JsonConverter<Excalidraw.Element> {
 
 	/// <summary> Disable custom write path; default serialisation should be sufficient. </summary>
+	[System.ComponentModel.Description("Disable custom write path; default serialisation should be sufficient.")]
 	public override bool CanWrite => false;
 
 	/// <summary>
 	/// Reads the `"type"` field and populates the matching subclass.
 	/// Throws <see cref="JsonException"/> for unknown type strings.
 	/// </summary>
+	[System.ComponentModel.Description("Reads the `\"type\"` field and populates the matching subclass.")]
 	public override Excalidraw.Element ReadJson(
 		JsonReader reader, Type objectType,
 		Excalidraw.Element existingValue, bool hasExistingValue,

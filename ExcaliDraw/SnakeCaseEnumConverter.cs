@@ -2,6 +2,8 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 
 using Newtonsoft.Json;
 using System;
+using org.SpocWeb.root.Attributes;
+using System.ComponentModel;
 
 /// <summary> Newtonsoft.Json converter that... </summary>
 /// <remarks>
@@ -16,21 +18,18 @@ using System;
 /// digest: a0b69328b4d8d1e16b2115a6ad606198be0bbe56a838aa8f570d82f6958174a0
 /// updated: 2026-05-19
 /// </remarks>
-/// <example>
-/// <code language="yaml">
-/// pass: 2
-/// mtime: 2026-05-19T14:43:27Z
-/// digest: 2bec9cc2474af270007ab0ff7d64dae4a4c7ac6a3e7f54a84bb1843eb4750047
-/// </code>
-/// </example>
+[DocState(Pass = 2, MTime = "2026-08-22T17:32:47Z", Digest = "2bec9cc2474af270007ab0ff7d64dae4a4c7ac6a3e7f54a84bb1843eb4750047", Stale = false, Path = "ExcaliDraw/SnakeCaseEnumConverter.cs", Since = "2026-08-22")]
+[System.ComponentModel.Description("Newtonsoft.Json converter that...")]
 public sealed class SnakeCaseEnumConverter : JsonConverter {
 
 	/// <summary>Handles any enum type.</summary>
+	[System.ComponentModel.Description("Handles any enum type.")]
 	public override bool CanConvert(Type objectType)
 		=> objectType.IsEnum
 		   || (Nullable.GetUnderlyingType(objectType)?.IsEnum ?? false);
 
 	/// <summary>Writes the snake_case string for the enum value.</summary>
+	[System.ComponentModel.Description("Writes the snake_case string for the enum value.")]
 	public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer) {
 		var enumType = value.GetType();
 		var memberName = Enum.GetName(enumType, value)
@@ -45,6 +44,7 @@ public sealed class SnakeCaseEnumConverter : JsonConverter {
 	/// <remarks>
 	/// <paramref name="existingValue"/> is filled when re-using an object Reference.
 	/// </remarks>
+	[System.ComponentModel.Description("Reads a snake_case string and returns the matching enum value.")]
 	public override object? ReadJson(JsonReader reader, Type objectType, object existingValue
 		, JsonSerializer serializer) {
 		var underlyingType = Nullable.GetUnderlyingType(objectType) ?? objectType;

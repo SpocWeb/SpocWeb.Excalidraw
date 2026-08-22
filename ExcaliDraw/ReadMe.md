@@ -1,4 +1,8 @@
 ---
+concepts: []
+facets: {}
+tags: []
+description: "Excalidraw data model, parser, serializer, and JSON conversion utilities."
 digest:
   local-classes:
     AppState:
