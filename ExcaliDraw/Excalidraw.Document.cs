@@ -34,7 +34,7 @@ static partial class Excalidraw {
 	/// digest: 20970f1734f1138a24fae14a8a5d46479de0c31d4930f22a962f48fbbc1bd435
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "7906218b504544b3aed851ec0827813c54ea8d612383d023c12a2341efb454a2", Stale = false, Path = "ExcaliDraw/Excalidraw.Document.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "c0c0462c5f132c9da5ed47d8e6835264a6fbcf9cc8c49d258b46977e3348b183", Stale = true, Path = "ExcaliDraw/Excalidraw.Document.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Root object for an `.excalidraw` scene file (schema version 2).")]
 	public sealed class Document {
 

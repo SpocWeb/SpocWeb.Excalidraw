@@ -76,7 +76,7 @@ static partial class Excalidraw {
 	/// digest: 8e3bd7e1288d4ca0bed69587ec0867c4a44255f665cc45018a066de5bebed3c6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-23T11:34:30Z", Digest = "36a3e48f96b28320eeea0ca866468bc32913976469626841e30eba9fc611e480", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-23T11:42:50Z", Digest = "e10b9e2acf0c4a083d79030944c19f9db15d9f05f988267a2dca5f1cba6cee08", Stale = true, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("binding that attaches an arrow tip to a specific point on a bindable Shape.")]
 	public sealed class PointBinding {
 
@@ -197,7 +197,7 @@ static partial class Excalidraw {
 	/// digest: 8e3bd7e1288d4ca0bed69587ec0867c4a44255f665cc45018a066de5bebed3c6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "3a61d90ad3ae9f2f887e1c72e2b442818f733bcc726293d0673506b11e9819cf", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-23T11:42:50Z", Digest = "f76463adda97f8804886d29b64f7ffc72c9ea599fd1e4a42ab32302f39598161", Stale = true, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Serializable subset of editor application state written to disk.")]
 	public sealed class AppState {
 		/// <summary>Gets or sets the view Background Color.</summary>
