@@ -1,7 +1,6 @@
 ---
 concepts: []
 facets: {}
-tags: []
 description: "This folder contains `Program`: application entry point for the SpocWeb."
 uid: SpocWeb.Excalidraw.md
 tags: [arch, dev ]

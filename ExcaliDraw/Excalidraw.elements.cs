@@ -22,13 +22,11 @@ public static partial class Excalidraw{
 	public static double Round(double value, int digits = 2)
 		=> Math.Round(value, digits, MidpointRounding.AwayFromZero);
 
-	/// <summary> Graphic Element Base-Class of <see cref="type"/> </summary>
-	/// <summary>
+	/// <summary>Graphic Element Base-Class of <see cref="type"/><br/>
 	/// Properties shared by every Excalidraw element regardless of type.
 	/// Corresponds to `_ExcalidrawElementBase` in types.ts.
 	/// Property names match JSON camelCase keys exactly via <see cref="CamelCasePropertyNamesContractResolver"/>
-	/// (first char lowercased).
-	/// </summary>
+	/// (first char lowercased).</summary>
 	/// <remarks>
 	/// ## Meta
 	/// pass: 2
@@ -474,7 +472,7 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "c41e97c1cfe2e234ee1d322147ec96516e6d0ad6ed2b6faf7f2178a7b8a32522", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-23T11:34:30Z", Digest = "6156d6936db61eab6bdb9dca528e237dee22cff4153682c2ea1e16775886813f", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Undirected straight or curved line through two or more points.")]
 	public sealed class LineElement : LinearElement {
 
@@ -507,6 +505,7 @@ public static partial class Excalidraw{
 		}
 
 
+		/// <summary>Initializes a new instance of <see cref="LineElement"/> with the specified <paramref name="bounds"/>, <paramref name="context"/> and <paramref name="groupIds"/>.</summary>
 		public LineElement(ElementBounds bounds
 			, IHaveSequence<int> context, List<string> groupIds
 			//, string? Label
@@ -583,7 +582,7 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "acbef79f8bd8d16fd9ddcb351f31d79eccf5d00c896cc2abb1ed1bb05fe92ce6", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-23T11:34:30Z", Digest = "d2b2929eba28461799f197b2bdbbeac7fefc7de99d62c69a696d6c476e4f8c88", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Freehand stroke captured from pointer input.")]
 	public sealed class FreedrawElement : Element {
 		/// <summary>Initializes a new instance of <see cref="FreedrawElement"/>.</summary>
@@ -707,7 +706,7 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "3a1be6f68af968b21632c4483879c2519fe1c1f69b07f79774f705bfda1ba1a4", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-23T11:34:30Z", Digest = "82c53954ef1b74088f6c78273b3757ae25c986679cc0ab47354eda9a5714c712", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Raster image whose binary content is stored in the document-level `files` map keyed by fileId.")]
 	public sealed class ImageElement : Element {
 

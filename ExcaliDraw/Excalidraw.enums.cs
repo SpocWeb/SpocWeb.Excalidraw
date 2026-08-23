@@ -296,7 +296,7 @@ static partial class Excalidraw {
 	/// <remarks>
 	/// Maps to the "type" field of the Roundness object on each element.
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "46d684972f3005020f05063c641f25747b225810c04fa5d9f7c4b5646a14cb78", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-23T11:34:30Z", Digest = "a0f4224f82c204e599b58004331553c903cd05383403d0b70c744720d98d85b1", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Determines how corner rounding is computed for a shape.")]
 	public enum RoundnessType {
 

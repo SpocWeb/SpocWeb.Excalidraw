@@ -76,7 +76,7 @@ static partial class Excalidraw {
 	/// digest: 8e3bd7e1288d4ca0bed69587ec0867c4a44255f665cc45018a066de5bebed3c6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "1a848ea74ad4c5ce2e85da232c070efae829b6e5ca11916579b447533f9f833e", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-23T11:34:30Z", Digest = "36a3e48f96b28320eeea0ca866468bc32913976469626841e30eba9fc611e480", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("binding that attaches an arrow tip to a specific point on a bindable Shape.")]
 	public sealed class PointBinding {
 
@@ -133,7 +133,7 @@ static partial class Excalidraw {
 	/// digest: 8e3bd7e1288d4ca0bed69587ec0867c4a44255f665cc45018a066de5bebed3c6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "ef6d22bdff0cbe013463894a24be1150166ff4be29348db65b2b1edc85fa60bf", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-23T11:34:30Z", Digest = "2f3e8196af6a5616b4815cf499df16440f7e8735e632f29997d95630ad4ab1f1", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Binary file entry stored in the document-level `files` map.")]
 	public sealed class BinaryFileData {
 		/// <summary>Gets or sets the mime Type.</summary>
