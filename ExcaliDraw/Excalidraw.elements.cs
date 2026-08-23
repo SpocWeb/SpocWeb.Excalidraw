@@ -14,7 +14,7 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 /// updated: 2026-05-19
 /// </remarks>
-[DocState(Pass = 2, MTime = "2026-08-22T17:32:47Z", Digest = "aae77790dca39822d58425f311debad3aa038613e851567102d04737ebb581df", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "aae77790dca39822d58425f311debad3aa038613e851567102d04737ebb581df", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 [System.ComponentModel.Description("Partial class hosting all Excalidraw element types and their base class.")]
 public static partial class Excalidraw{
 
@@ -37,7 +37,7 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T17:32:47Z", Digest = "00dd43a41bb2f6dc3a49516a6087b402fc7d1bf4ac21534f92776bf278557879", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "00dd43a41bb2f6dc3a49516a6087b402fc7d1bf4ac21534f92776bf278557879", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Graphic Element Base-Class of type")]
 	public class Element {
 
@@ -296,7 +296,7 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T17:32:47Z", Digest = "dbf553a66b7a0528d1c5170ff9c4d7babdb69942e9510ce21f860c22f29736d5", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "dbf553a66b7a0528d1c5170ff9c4d7babdb69942e9510ce21f860c22f29736d5", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Axis-aligned rectangle shape element.")]
 	public sealed class RectangleElement : Element {
 		/// <summary> Initializes an empty <see cref="RectangleElement"/> for JSON deserialization. </summary>
@@ -324,7 +324,7 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T17:32:47Z", Digest = "88ca0892e541e80785eb95b8fdc5e33df1e6841cf47beee13611a5b8c2994edf", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "88ca0892e541e80785eb95b8fdc5e33df1e6841cf47beee13611a5b8c2994edf", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Ellipse (or circle when width == height) shape element.")]
 	public sealed class EllipseElement : Element {
 		/// <summary> Initializes an empty <see cref="EllipseElement"/> for JSON deserialization. </summary>
@@ -351,7 +351,7 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T17:32:47Z", Digest = "938dea4088d89746c8db83fed844daa24fb2b369983d90865ab797e7acfdbf35", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "938dea4088d89746c8db83fed844daa24fb2b369983d90865ab797e7acfdbf35", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Diamond (rotated square) shape element.")]
 	public sealed class DiamondElement : Element {
 		/// <summary> Initializes an empty <see cref="DiamondElement"/> for JSON deserialization. </summary>
@@ -374,7 +374,7 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T17:32:47Z", Digest = "14d176b2956813fd19adb4f4bebaeccb963a622777e739e9b5449a5d4daa57c7", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "14d176b2956813fd19adb4f4bebaeccb963a622777e739e9b5449a5d4daa57c7", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Base class for elements composed of an ordered array of points: lines and arrows.")]
 	public class LinearElement : Element {
 
@@ -475,7 +475,7 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T17:32:47Z", Digest = "c41e97c1cfe2e234ee1d322147ec96516e6d0ad6ed2b6faf7f2178a7b8a32522", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "c41e97c1cfe2e234ee1d322147ec96516e6d0ad6ed2b6faf7f2178a7b8a32522", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Undirected straight or curved line through two or more points.")]
 	public sealed class LineElement : LinearElement {
 
@@ -526,7 +526,7 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T17:32:47Z", Digest = "0505b14edc4bc1c1311dcf294b40ab6c8fdaa9ba194687a4c150edb0ea6dd091", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "0505b14edc4bc1c1311dcf294b40ab6c8fdaa9ba194687a4c150edb0ea6dd091", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Directed arrow with optional endpoint bindings and arrowhead decorations.")]
 	public sealed class Arrow : LinearElement {
 
@@ -584,7 +584,7 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T17:32:47Z", Digest = "acbef79f8bd8d16fd9ddcb351f31d79eccf5d00c896cc2abb1ed1bb05fe92ce6", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "acbef79f8bd8d16fd9ddcb351f31d79eccf5d00c896cc2abb1ed1bb05fe92ce6", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Freehand stroke captured from pointer input.")]
 	public sealed class FreedrawElement : Element {
 		/// <summary>Initializes a new instance of <see cref="FreedrawElement"/>.</summary>
@@ -628,7 +628,7 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T17:32:47Z", Digest = "9d258720f987f3053db79b3fd54f36d42dddb115cc01097b07d1197e76076842", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "9d258720f987f3053db79b3fd54f36d42dddb115cc01097b07d1197e76076842", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Text label element, either standalone or bound to a container shape.")]
 	public sealed class TextElement : Element {
 
@@ -708,7 +708,7 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T17:32:47Z", Digest = "3a1be6f68af968b21632c4483879c2519fe1c1f69b07f79774f705bfda1ba1a4", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "3a1be6f68af968b21632c4483879c2519fe1c1f69b07f79774f705bfda1ba1a4", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Raster image whose binary content is stored in the document-level `files` map keyed by fileId.")]
 	public sealed class ImageElement : Element {
 
@@ -760,7 +760,7 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T17:32:47Z", Digest = "cae8b3242cc04c5e5d7f8bfa4302b37a40adff0836b5c7c5fc5720bf5ac7edfe", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "cae8b3242cc04c5e5d7f8bfa4302b37a40adff0836b5c7c5fc5720bf5ac7edfe", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Crop rectangle applied to an image element")]
 	public sealed class ImageCrop {
 		/// <summary>Left offset of the crop rectangle in natural image pixels. JSON key: `"x"`.</summary>
@@ -803,7 +803,7 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T17:32:47Z", Digest = "d5ca03d313d97389d4947ac505e8a4c4f45f9c7a96be236d4fa4617fcfae4841", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "d5ca03d313d97389d4947ac505e8a4c4f45f9c7a96be236d4fa4617fcfae4841", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Named frame that visually groups and clips its child elements.")]
 	public sealed class FrameElement : Element {
 		/// <summary>Initializes a new instance of <see cref="FrameElement"/>.</summary>
@@ -840,7 +840,7 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T17:32:47Z", Digest = "10c4a0f483a16d480a9390e11a8f784a4480a7c3634a8510d6f87a75d327ece4", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "10c4a0f483a16d480a9390e11a8f784a4480a7c3634a8510d6f87a75d327ece4", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("AI-generated magic frame.")]
 	public sealed class MagicFrameElement : Element {
 		/// <summary>Initializes a new instance of <see cref="MagicFrameElement"/>.</summary>
@@ -866,7 +866,7 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T17:32:47Z", Digest = "2e2a47aad35618e502f2cda987731c182412386040f86a8c122ab61ef55595b2", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "2e2a47aad35618e502f2cda987731c182412386040f86a8c122ab61ef55595b2", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Embeds an external web resource (URL) rendered as an interactive widget.")]
 	public sealed class EmbeddableElement : Element {
 
@@ -891,7 +891,7 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T17:32:47Z", Digest = "50ec4d2b1ff0046f8f2a9885aaa32409bce0655928bba636fa1923386a389d0c", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "50ec4d2b1ff0046f8f2a9885aaa32409bce0655928bba636fa1923386a389d0c", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Inline iframe for arbitrary HTML content directly on the canvas.")]
 	public sealed class IFrameElement : Element {
 		/// <summary>Initializes a new instance of <see cref="IFrameElement"/>.</summary>

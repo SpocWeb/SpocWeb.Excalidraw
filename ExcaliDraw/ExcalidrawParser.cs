@@ -15,7 +15,7 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// digest: beb3737587544cb4f2871cfd7db7397dbf510d7d76ef91e74d4561c5a2c315bf
 /// updated: 2026-05-19
 /// </remarks>
-[DocState(Pass = 2, MTime = "2026-08-22T17:32:47Z", Digest = "d7948bddfa4f7b7cdf2c9e3c444807d5a1e9d36be9e4aea29dee0b4806a85cdd", Stale = false, Path = "ExcaliDraw/ExcalidrawParser.cs", Since = "2026-08-22")]
+[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "d7948bddfa4f7b7cdf2c9e3c444807d5a1e9d36be9e4aea29dee0b4806a85cdd", Stale = false, Path = "ExcaliDraw/ExcalidrawParser.cs", Since = "2026-08-22")]
 [System.ComponentModel.Description("Serializes and parses Excalidraw scene and clipboard documents to and from JSON.")]
 public static class ExcalidrawParser {
 

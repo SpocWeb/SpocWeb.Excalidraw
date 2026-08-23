@@ -17,7 +17,7 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// digest: 6bd1a4123c70999cdb57f1abbdadef8453fec2e9a8482179d72178918f415bcd
 /// updated: 2026-05-19
 /// </remarks>
-[DocState(Pass = 2, MTime = "2026-08-22T17:32:47Z", Digest = "2a84a6a25114a9c263a9b773430d58c6912b15c02d8902a11e54e3ee03f5c3a5", Stale = false, Path = "ExcaliDraw/ExcalidrawElementConverter.cs", Since = "2026-08-22")]
+[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "2a84a6a25114a9c263a9b773430d58c6912b15c02d8902a11e54e3ee03f5c3a5", Stale = false, Path = "ExcaliDraw/ExcalidrawElementConverter.cs", Since = "2026-08-22")]
 [System.ComponentModel.Description("Custom Newtonsoft JsonConverter that reads the `\"type\"` discriminator from each element token and instantiates the correct Element subclass before populating it.")]
 public sealed class ExcalidrawElementConverter : JsonConverter<Excalidraw.Element> {
 

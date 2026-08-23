@@ -11,7 +11,7 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// digest: bcae9ce00ceab71fbd3e569f2256e842c60f3f559f9d378303e20923f65942e4
 /// updated: 2026-05-19
 /// </remarks>
-[DocState(Pass = 2, MTime = "2026-08-22T17:32:47Z", Digest = "071b8c55dca145d8bca4ac3eef758d87b7cfd6e8dd5b36d792209dcc0284bd0c", Stale = false, Path = "ExcaliDraw/ElementBounds.cs", Since = "2026-08-22")]
+[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "071b8c55dca145d8bca4ac3eef758d87b7cfd6e8dd5b36d792209dcc0284bd0c", Stale = false, Path = "ExcaliDraw/ElementBounds.cs", Since = "2026-08-22")]
 [System.ComponentModel.Description("Similar to Rectangle but with AngleRadians  Initializes an ElementBounds with position, size and angleRad.")]
 public record struct ElementBounds {
 	/// <summary>Initializes a new instance of <see cref="ElementBounds"/> with the specified <paramref name="x"/>, <paramref name="y"/>, <paramref name="width"/>, <paramref name="height"/> and <paramref name="angleRad"/>.</summary>
