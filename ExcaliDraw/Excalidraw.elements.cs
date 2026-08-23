@@ -15,7 +15,6 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// updated: 2026-05-19
 /// </remarks>
 [DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "aae77790dca39822d58425f311debad3aa038613e851567102d04737ebb581df", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
-[System.ComponentModel.Description("Partial class hosting all Excalidraw element types and their base class.")]
 public static partial class Excalidraw{
 
 	/// <summary>Rounds a floating-point value for JSON output.</summary>

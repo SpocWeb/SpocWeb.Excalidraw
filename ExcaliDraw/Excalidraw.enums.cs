@@ -13,7 +13,6 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// updated: 2026-05-19
 /// </remarks>
 [DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
-[System.ComponentModel.Description("Enums and static Helper Methods to parse Excalidraw JSON")]
 static partial class Excalidraw {
 
 	/// <summary> AKA ShapeType; Discriminates the concrete element subtype stored in the elements array.

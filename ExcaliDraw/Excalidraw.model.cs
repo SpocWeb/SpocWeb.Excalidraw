@@ -15,7 +15,6 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// updated: 2026-05-19
 /// </remarks>
 [DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
-[System.ComponentModel.Description("Partial class hosting the Excalidraw model types: Roundness, BoundElement, PointBinding, BinaryFileData and AppState.")]
 static partial class Excalidraw {
 
 	/// <summary>Corner-rounding configuration attached to any closed shape element.

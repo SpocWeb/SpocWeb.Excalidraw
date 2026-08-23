@@ -36,6 +36,8 @@
     <Compile Include="..\..\GlobalUsings.cs" Link="Properties\GlobalUsings.cs" />
     <Compile Include="..\..\CompanyInfo.cs" Link="Properties\CompanyInfo.cs" />
     <Compile Include="..\..\SolutionInfo.sdk.cs" Link="Properties\SolutionInfo.sdk.cs" />
+    <Compile Include="..\SpocWeb.Proxies\Attributes\DocStateAttribute.cs" Link="_Links\DocStateAttribute.cs" />
+    <Compile Include="..\SpocWeb.Proxies\Attributes\DocStateAttribute.public.cs" Link="_Links\DocStateAttribute.public.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" />
