@@ -80,7 +80,7 @@ static partial class Excalidraw {
 	/// <remarks>
 	/// Rendered via RoughJS fill algorithms.
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-23T11:42:50Z", Digest = "fef8f6df5ae505ba589081b8bd392d42c4935efe478d83195990ff5d3466096b", Stale = true, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-27T19:37:49Z", Digest = "a5476e8c60205771c2e5238fe290ae01e1585c89c9a459a458c79ede418dceb9", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Filling of the interior of a closed shape")]
 	public enum FillStyle {
 		/// <summary> Single Diagonal parallel lines drawn across the interior (hatching). </summary>
@@ -124,7 +124,7 @@ static partial class Excalidraw {
 	/// Decoration rendered at the start or end point of an Arrow element.
 	/// The JSON field stores these as lowercase strings (e.g. "arrow", "bar").
 	/// </summary>
-	[DocState(Pass = 2, MTime = "2026-08-23T11:42:50Z", Digest = "53a8cfaff1be1109354cb9cc1f252db993be637135d0818fdea3200cb5dd9e20", Stale = true, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-27T19:37:49Z", Digest = "92b5d3622d789c148b1cbf6db32a3771693b2fdc1824d6c2887da7ef849c05e4", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Decoration rendered at the start or end point of an Arrow element.")]
 	public enum Arrowhead {
 		///// <summary>No decoration; the line ends without any marker.</summary>
@@ -247,7 +247,7 @@ static partial class Excalidraw {
 	/// Built-in font families available in Excalidraw.
 	/// The integer values match the fontFamily field in the JSON.
 	/// </summary>
-	[DocState(Pass = 2, MTime = "2026-08-23T11:42:50Z", Digest = "31780983b4bd6ee9cab45a2110f51c4b8b3e30dee9781e9849659f04be494e9b", Stale = true, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-27T19:37:49Z", Digest = "68730d1c960e17ebcea046ec7b084f28506a3f863c5b417f66116d1806bf2442", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Built-in font families available in Excalidraw.")]
 	public enum FontFamily {
 		/// <summary> 1. Virgil — Excalidraw's default hand-drawn / sketch font. </summary>

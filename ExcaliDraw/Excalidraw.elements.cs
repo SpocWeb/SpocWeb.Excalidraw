@@ -34,7 +34,7 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-23T11:42:50Z", Digest = "5dab8f4c75c6c49445b05284dc2bc2da62abba507da9e30a45aac9eb6842f94c", Stale = true, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-27T19:37:49Z", Digest = "00dd43a41bb2f6dc3a49516a6087b402fc7d1bf4ac21534f92776bf278557879", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Graphic Element Base-Class of type")]
 	public class Element {
 
@@ -582,7 +582,7 @@ public static partial class Excalidraw{
 	/// digest: b390d9e832cad8a4119eca03b771d6044717604550b67134271e51d20afa58d6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-23T11:42:50Z", Digest = "db8de900eb3b2011d004c97f2bd04fc2cca6e35bc0335a43402e11c8e618d9ed", Stale = true, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-27T19:37:49Z", Digest = "d2b2929eba28461799f197b2bdbbeac7fefc7de99d62c69a696d6c476e4f8c88", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Freehand stroke captured from pointer input.")]
 	public sealed class FreedrawElement : Element {
 		/// <summary>Initializes a new instance of <see cref="FreedrawElement"/>.</summary>
