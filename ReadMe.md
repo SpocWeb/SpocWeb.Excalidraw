@@ -1,7 +1,12 @@
 ---
-tags: []
-concepts: []
-facets: {}
+tags:
+  - code/entry_point
+concepts:
+  - excalidraw_diagram_format
+facets:
+  layer: infrastructure
+  status: active
+  complexity: 1
 description: "This folder contains `Program`: application entry point for the SpocWeb."
 uid: SpocWeb.Excalidraw.md
 tags: [arch, dev ]

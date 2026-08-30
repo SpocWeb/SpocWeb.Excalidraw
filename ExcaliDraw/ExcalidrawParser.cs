@@ -15,8 +15,11 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// digest: beb3737587544cb4f2871cfd7db7397dbf510d7d76ef91e74d4561c5a2c315bf
 /// updated: 2026-05-19
 /// </remarks>
-[DocState(Pass = 2, MTime = "2026-08-30T19:39:14Z", Digest = "986d7710d0fabee2cf133d6cc2ff2c7f4173539c2480d8716e1fc0785b5dbea2", Stale = false, Path = "ExcaliDraw/ExcalidrawParser.cs", Since = "2026-08-22")]
+[Facets(Layer = "infrastructure", Status = "active", Complexity = 3)]
+[Tags("code/json_serialization", "code/parsing")]
+[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "986d7710d0fabee2cf133d6cc2ff2c7f4173539c2480d8716e1fc0785b5dbea2", Stale = false, Path = "ExcaliDraw/ExcalidrawParser.cs", Since = "2026-08-22")]
 [System.ComponentModel.Description("Serializes and parses Excalidraw scene and clipboard documents to and from JSON.")]
+[Concept("excalidraw_diagram_format")]
 public static class ExcalidrawParser {
 
 	/// <summary> Builds new <see cref="JsonSerializerSettings"/> instance
@@ -25,7 +28,10 @@ public static class ExcalidrawParser {
 	/// - null-ignoring,  <BR/>
 	/// - polymorphic element converter. <BR/>
 	/// </summary>
+	[Facets(Layer = "infrastructure", Status = "active", Complexity = 2)]
+	[Tags("code/json_serialization")]
 	[System.ComponentModel.Description("Builds new JsonSerializerSettings instance configured for Excalidraw:   - camelCase contract resolver,   - null-ignoring,    - polymorphic element converter.")]
+	[Concept("excalidraw_diagram_format")]
 	public static JsonSerializerSettings ExcalidrawSettings() => new() {
 			ContractResolver = new CamelCasePropertyNamesContractResolver()
 			, NullValueHandling = NullValueHandling.Ignore
@@ -33,12 +39,18 @@ public static class ExcalidrawParser {
 		};
 
 	/// <summary> Converts the <paramref name="excaliDraw"/> <see cref="Document"/> to a JSON String </summary>
+	[Facets(Layer = "infrastructure", Status = "active", Complexity = 1)]
+	[Tags("code/json_serialization")]
 	[System.ComponentModel.Description("Converts the excaliDraw Document to a JSON String")]
+	[Concept("excalidraw_diagram_format")]
 	public static string ToJson(this Document excaliDraw, Formatting formatting = Formatting.Indented)
 		=> JsonConvert.SerializeObject(excaliDraw, formatting, ExcalidrawSettings());
 
 	/// <summary> Serializes the <paramref name="excaliDraw"/> document to a JSON string and writes it to <paramref name="filePath"/>. </summary>
+	[Facets(Layer = "infrastructure", Status = "active", Complexity = 1)]
+	[Tags("code/json_serialization", "code/file_io")]
 	[System.ComponentModel.Description("Serializes the excaliDraw document to a JSON string and writes it to filePath.")]
+	[Concept("excalidraw_diagram_format")]
 	public static string ToFile(this Document excaliDraw, string filePath, Formatting formatting = Formatting.Indented)
 		=> JsonConvert.SerializeObject(excaliDraw, formatting, ExcalidrawSettings());
 
@@ -46,20 +58,29 @@ public static class ExcalidrawParser {
 	/// <param name="json">The full JSON text of the scene file.</param>
 	/// <returns>A populated <see cref="Document"/> instance.</returns>
 	/// <exception cref="JsonException">Thrown when deserialisation returns null or the JSON is malformed.</exception>
+	[Facets(Layer = "infrastructure", Status = "active", Complexity = 2)]
+	[Tags("code/json_serialization", "code/parsing")]
 	[System.ComponentModel.Description("Parses an `.excalidraw` JSON string into an Document.")]
+	[Concept("excalidraw_diagram_format")]
 	public static Document ParseExcalidraw(string json)
 		=> JsonConvert.DeserializeObject<Document>(json, ExcalidrawSettings())
 		   ?? throw new JsonException("Deserialisation returned null.");
 
 	/// <summary> Parses an `excalidraw/clipboard` JSON string into an <see cref="Clipboard"/> payload. </summary>
 	/// <param name="json">The clipboard JSON string.</param>
+	[Facets(Layer = "infrastructure", Status = "active", Complexity = 2)]
+	[Tags("code/json_serialization", "code/parsing")]
 	[System.ComponentModel.Description("Parses an `excalidraw/clipboard` JSON string into an Clipboard payload.")]
+	[Concept("excalidraw_diagram_format")]
 	public static Clipboard ParseClipboard(string json)
 		=> JsonConvert.DeserializeObject<Clipboard>(json, ExcalidrawSettings())
 		   ?? throw new JsonException("Deserialisation returned null.");
 
 	/// <summary> Synchronously reads an <paramref name="excalidraw"/> file from disk and parses it into an <see cref="Document"/>. </summary>
+	[Facets(Layer = "infrastructure", Status = "active", Complexity = 2)]
+	[Tags("code/json_serialization", "code/file_io")]
 	[System.ComponentModel.Description("Synchronously reads an excalidraw file from disk and parses it into an Document.")]
+	[Concept("excalidraw_diagram_format")]
 	public static Document ParseExcalidraw(this FileInfo excalidraw)
 		=> ParseExcalidraw(File.ReadAllText(excalidraw.FullName));
 
@@ -68,7 +89,10 @@ public static class ExcalidrawParser {
 	/// scene document (`type == "excalidraw"`, `version == 2`).
 	/// </summary>
 	/// <param name="json">JSON string to validate.</param>
+	[Facets(Layer = "infrastructure", Status = "active", Complexity = 2)]
+	[Tags("code/json_validation")]
 	[System.ComponentModel.Description("Returns `true` when the JSON string is a well-formed Excalidraw scene document (`type == \"excalidraw\"`, `version == 2`).")]
+	[Concept("excalidraw_diagram_format")]
 	public static Document? IsValid(string json) {
 		try {
 			return ParseExcalidraw(json);
@@ -79,7 +103,10 @@ public static class ExcalidrawParser {
 	}
 
 	/// <summary> Generates an ID from the <paramref name="label"/> that is not <see cref="used"/> yet </summary>
+	[Facets(Layer = "infrastructure", Status = "active", Complexity = 2)]
+	[Tags("code/id_generation")]
 	[System.ComponentModel.Description("Generates an ID from the label that is not used yet")]
+	[Concept("excalidraw_diagram_format")]
 	public static string MakeUniqueId(this HashSet<string> used, string label, string fallback) {
 		var raw = Regex.Replace(label, @"[^A-Za-z0-9_]", "_");
 		if (string.IsNullOrEmpty(raw) || raw.All(c => c == '_')) {

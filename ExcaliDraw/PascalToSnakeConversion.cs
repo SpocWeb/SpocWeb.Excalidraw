@@ -14,8 +14,11 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// digest: d4f126731646bc73bcfb4d9d181bb63fa8e639c8fc2319eb96508113d82ce6d5
 /// updated: 2026-05-19
 /// </remarks>
-[DocState(Pass = 2, MTime = "2026-08-30T19:39:14Z", Digest = "6164c28ddf066b8eee4a240d6ae71d536fef5252f3e7d9312ef5dd46c39fe0d2", Stale = false, Path = "ExcaliDraw/PascalToSnakeConversion.cs", Since = "2026-08-22")]
+[Facets(Layer = "infrastructure", Status = "active", Complexity = 3)]
+[Tags("code/string_conversion", "code/caching")]
+[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "6164c28ddf066b8eee4a240d6ae71d536fef5252f3e7d9312ef5dd46c39fe0d2", Stale = false, Path = "ExcaliDraw/PascalToSnakeConversion.cs", Since = "2026-08-22")]
 [System.ComponentModel.Description("Thread-safe cached PascalCase-to-snake_case conversion utilities for enum serialization.")]
+[Concept("excalidraw_diagram_format")]
 public static partial class PascalToSnakeConversion {
 
 	/// <summary> Cache of (EnumType → (MemberName → SnakeCaseString)) for serialisation. </summary>
@@ -32,13 +35,19 @@ public static partial class PascalToSnakeConversion {
 
 	//[GeneratedRegex(RxLowerUpper)]
 	/// <summary> Returns (and lazily initializes) the compiled <see cref="Regex"/> for <see cref="RxLowerUpper"/>. </summary>
+	[Facets(Layer = "infrastructure", Status = "active", Complexity = 1)]
+	[Tags("code/regex")]
 	[System.ComponentModel.Description("Returns (and lazily initializes) the compiled Regex for RxLowerUpper.")]
+	[Concept("excalidraw_diagram_format")]
 	public static Regex LowerUpper() => _LowerUpper ??= new (RxLowerUpper);
 	static Regex? _LowerUpper;
 
 	/// <summary> Returns the snake_case string for a given enum member name,
 	/// reading from cache or computing and storing on first access. </summary>
+	[Facets(Layer = "infrastructure", Status = "active", Complexity = 2)]
+	[Tags("code/string_conversion", "code/caching")]
 	[System.ComponentModel.Description("Returns the snake_case string for a given enum member name, reading from cache or computing and storing on first access.")]
+	[Concept("excalidraw_diagram_format")]
 	public static string ToSnakeCase(this Type enumType, string memberName) {
 		var forward = ToSnakeCache.GetOrAdd(enumType
 			, _ => new ());
@@ -49,7 +58,10 @@ public static partial class PascalToSnakeConversion {
 	/// <summary> Returns the C# member name for a given snake_case string,
 	/// reading from cache or computing and storing on first access.
 	/// </summary>
+	[Facets(Layer = "infrastructure", Status = "active", Complexity = 2)]
+	[Tags("code/string_conversion", "code/caching")]
 	[System.ComponentModel.Description("Returns the C# member name for a given snake_case string, reading from cache or computing and storing on first access.")]
+	[Concept("excalidraw_diagram_format")]
 	public static string FromSnakeCase(this Type enumType, string snake) {
 		var reverse = FromSnakeCache.GetOrAdd(enumType
 			, type => {
@@ -81,7 +93,10 @@ public static partial class PascalToSnakeConversion {
 	[TestCase("Solid", ExpectedResult = "solid")]
 	[TestCase("IFrame", ExpectedResult = "i_frame")]
 #endif //NUNIT
+	[Facets(Layer = "infrastructure", Status = "active", Complexity = 1)]
+	[Tags("code/string_conversion")]
 	[System.ComponentModel.Description("Converts a PascalCase identifier to snake_case.")]
+	[Concept("excalidraw_diagram_format")]
 	public static string PascalToSnake(string pascal)
 		=> LowerUpper().Replace(pascal, "_$1").ToLowerInvariant();
 }

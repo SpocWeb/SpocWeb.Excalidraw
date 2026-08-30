@@ -11,11 +11,17 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// digest: bcae9ce00ceab71fbd3e569f2256e842c60f3f559f9d378303e20923f65942e4
 /// updated: 2026-05-19
 /// </remarks>
-[DocState(Pass = 2, MTime = "2026-08-30T19:39:14Z", Digest = "071b8c55dca145d8bca4ac3eef758d87b7cfd6e8dd5b36d792209dcc0284bd0c", Stale = false, Path = "ExcaliDraw/ElementBounds.cs", Since = "2026-08-22")]
+[Facets(Layer = "domain", Status = "active", Complexity = 2)]
+[Tags("code/geometry")]
+[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "071b8c55dca145d8bca4ac3eef758d87b7cfd6e8dd5b36d792209dcc0284bd0c", Stale = false, Path = "ExcaliDraw/ElementBounds.cs", Since = "2026-08-22")]
 [System.ComponentModel.Description("Similar to Rectangle but with AngleRadians  Initializes an ElementBounds with position, size and angleRad.")]
+[Concept("excalidraw_diagram_format")]
 public record struct ElementBounds {
 	/// <summary>Initializes a new instance of <see cref="ElementBounds"/> with the specified <paramref name="x"/>, <paramref name="y"/>, <paramref name="width"/>, <paramref name="height"/> and <paramref name="angleRad"/>.</summary>
+	[Facets(Layer = "domain", Status = "active", Complexity = 2)]
+	[Tags("code/geometry")]
 	[System.ComponentModel.Description("Initializes a new instance of ElementBounds with the specified x, y, width, height and angleRad.")]
+	[Concept("excalidraw_diagram_format")]
 	public ElementBounds(double x, double y, double width, double height, double angleRad) {
 		X = x;
 		Y = y;
@@ -26,16 +32,28 @@ public record struct ElementBounds {
 
 	/// <summary>Gets or sets the x.<br/>
 	/// Gets or sets the y.</summary>
+	[Facets(Layer = "domain", Status = "active", Complexity = 2)]
+	[Tags("code/geometry")]
 	[System.ComponentModel.Description("Gets or sets the x.")]
+	[Concept("excalidraw_diagram_format")]
 	public double X { get; set; }
 	/// <summary>Gets or sets the y.</summary>
+	[Facets(Layer = "domain", Status = "active", Complexity = 2)]
+	[Tags("code/geometry")]
 	[System.ComponentModel.Description("Gets or sets the y.")]
+	[Concept("excalidraw_diagram_format")]
 	public double Y { get; set; }
 	/// <summary>Gets or sets the width.</summary>
+	[Facets(Layer = "domain", Status = "active", Complexity = 2)]
+	[Tags("code/geometry")]
 	[System.ComponentModel.Description("Gets or sets the width.")]
+	[Concept("excalidraw_diagram_format")]
 	public double Width { get; set; }
 	/// <summary>Gets or sets the height.</summary>
+	[Facets(Layer = "domain", Status = "active", Complexity = 2)]
+	[Tags("code/geometry")]
 	[System.ComponentModel.Description("Gets or sets the height.")]
+	[Concept("excalidraw_diagram_format")]
 	public double Height { get; set; }
 
 	/// <summary> Rotation Angle, also used to determine the Bounding Box </summary>
@@ -48,6 +66,9 @@ public record struct ElementBounds {
 	/// | FreeDraw	| Each raw point is rotated via rotate(x, y, cx−el.x, cy−el.y, element.angle) before min/max is computed. |
 	/// | Linear	| Points are rotated via a transformXY callback (x, y) => rotate(el.x + x, el.y + y, cx, cy, element.angle) that is passed into the Bézier curve bounds calculator. |
 	/// </remarks>
+	[Facets(Layer = "domain", Status = "active", Complexity = 2)]
+	[Tags("code/geometry")]
 	[System.ComponentModel.Description("Rotation Angle, also used to determine the Bounding Box")]
+	[Concept("excalidraw_diagram_format")]
 	public double AngleRadians { get; set; }
 }

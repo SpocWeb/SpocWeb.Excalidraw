@@ -1,7 +1,14 @@
 ---
-concepts: []
-facets: {}
-tags: []
+concepts:
+  - excalidraw_diagram_format
+facets:
+  layer: domain
+  status: active
+  complexity: 3
+tags:
+  - code/dto
+  - code/json_serialization
+  - code/parsing
 description: "Excalidraw data model, parser, serializer, and JSON conversion utilities."
 digest:
   local-classes:

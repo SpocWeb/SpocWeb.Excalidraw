@@ -18,8 +18,11 @@ static partial class Excalidraw {
 	/// <summary> AKA ShapeType; Discriminates the concrete element subtype stored in the elements array.
 	/// Maps 1-to-1 with the JSON "type" string field.
 	/// </summary>
-	[DocState(Pass = 2, MTime = "2026-08-30T19:39:14Z", Digest = "fa11011ba62baa2582584a5e2ebb34053d768d629642d5cac9fa578a64bd237b", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
+	[Facets(Layer = "domain", Status = "active", Complexity = 1)]
+	[Tags("code/enum")]
+	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "fa11011ba62baa2582584a5e2ebb34053d768d629642d5cac9fa578a64bd237b", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("AKA ShapeType; Discriminates the concrete element subtype stored in the elements array.")]
+	[Concept("excalidraw_diagram_format")]
 	public enum ElementType {
 		/// <summary>Axis-aligned rectangle shape.</summary>
 		rectangle,
@@ -80,8 +83,11 @@ static partial class Excalidraw {
 	/// <remarks>
 	/// Rendered via RoughJS fill algorithms.
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-30T19:39:14Z", Digest = "a5476e8c60205771c2e5238fe290ae01e1585c89c9a459a458c79ede418dceb9", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
+	[Facets(Layer = "domain", Status = "active", Complexity = 1)]
+	[Tags("code/enum")]
+	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "a5476e8c60205771c2e5238fe290ae01e1585c89c9a459a458c79ede418dceb9", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Filling of the interior of a closed shape")]
+	[Concept("excalidraw_diagram_format")]
 	public enum FillStyle {
 		/// <summary> Single Diagonal parallel lines drawn across the interior (hatching). </summary>
 		/// <remarks>
@@ -106,8 +112,11 @@ static partial class Excalidraw {
 	}
 
 	/// <summary> dash pattern applied to an element's stroke (outline). </summary>
-	[DocState(Pass = 2, MTime = "2026-08-30T19:39:14Z", Digest = "c6b74d09157f269b9b58325a82eddca2e9b3f304ad12c47e5d052854210f67ad", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
+	[Facets(Layer = "domain", Status = "active", Complexity = 1)]
+	[Tags("code/enum")]
+	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "c6b74d09157f269b9b58325a82eddca2e9b3f304ad12c47e5d052854210f67ad", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("dash pattern applied to an element's stroke (outline).")]
+	[Concept("excalidraw_diagram_format")]
 	public enum StrokeStyle {
 
 		/// <summary>Continuous, unbroken line. The default stroke style.</summary>
@@ -124,8 +133,11 @@ static partial class Excalidraw {
 	/// Decoration rendered at the start or end point of an Arrow element.
 	/// The JSON field stores these as lowercase strings (e.g. "arrow", "bar").
 	/// </summary>
-	[DocState(Pass = 2, MTime = "2026-08-30T19:39:14Z", Digest = "92b5d3622d789c148b1cbf6db32a3771693b2fdc1824d6c2887da7ef849c05e4", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
+	[Facets(Layer = "domain", Status = "active", Complexity = 1)]
+	[Tags("code/enum")]
+	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "92b5d3622d789c148b1cbf6db32a3771693b2fdc1824d6c2887da7ef849c05e4", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Decoration rendered at the start or end point of an Arrow element.")]
+	[Concept("excalidraw_diagram_format")]
 	public enum Arrowhead {
 		///// <summary>No decoration; the line ends without any marker.</summary>
 		//None,
@@ -216,8 +228,11 @@ static partial class Excalidraw {
 	}
 
 	/// <summary>Horizontal alignment of text within its bounding box.</summary>
-	[DocState(Pass = 2, MTime = "2026-08-30T19:39:14Z", Digest = "f7dd87d2cf91220e75d9c2ad7c954fc4ed77e6cf7c9390ffb4c0148867b90a8f", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
+	[Facets(Layer = "domain", Status = "active", Complexity = 1)]
+	[Tags("code/enum")]
+	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "f7dd87d2cf91220e75d9c2ad7c954fc4ed77e6cf7c9390ffb4c0148867b90a8f", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Horizontal alignment of text within its bounding box.")]
+	[Concept("excalidraw_diagram_format")]
 	public enum TextAlign {
 		/// <summary>Text is aligned to the left edge of the bounding box.</summary>
 		left,
@@ -230,8 +245,11 @@ static partial class Excalidraw {
 	}
 
 	/// <summary>Vertical alignment of text within its bounding box or container shape.</summary>
-	[DocState(Pass = 2, MTime = "2026-08-30T19:39:14Z", Digest = "e162f6cdc78dd6bbfa78fa4b555ae715009dfea3f7e35bfd49f43b6ed8636459", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
+	[Facets(Layer = "domain", Status = "active", Complexity = 1)]
+	[Tags("code/enum")]
+	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "e162f6cdc78dd6bbfa78fa4b555ae715009dfea3f7e35bfd49f43b6ed8636459", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Vertical alignment of text within its bounding box or container shape.")]
+	[Concept("excalidraw_diagram_format")]
 	public enum VerticalAlign {
 		/// <summary>Text is pinned to the top edge of the bounding box.</summary>
 		Top,
@@ -247,8 +265,11 @@ static partial class Excalidraw {
 	/// Built-in font families available in Excalidraw.
 	/// The integer values match the fontFamily field in the JSON.
 	/// </summary>
-	[DocState(Pass = 2, MTime = "2026-08-30T19:39:14Z", Digest = "68730d1c960e17ebcea046ec7b084f28506a3f863c5b417f66116d1806bf2442", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
+	[Facets(Layer = "domain", Status = "active", Complexity = 1)]
+	[Tags("code/enum")]
+	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "68730d1c960e17ebcea046ec7b084f28506a3f863c5b417f66116d1806bf2442", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Built-in font families available in Excalidraw.")]
+	[Concept("excalidraw_diagram_format")]
 	public enum FontFamily {
 		/// <summary> 1. Virgil — Excalidraw's default hand-drawn / sketch font. </summary>
 		/// <remarks>
@@ -270,8 +291,11 @@ static partial class Excalidraw {
 	}
 
 	/// <summary>Load/persistence state of an Image element's binary data.</summary>
-	[DocState(Pass = 2, MTime = "2026-08-30T19:39:14Z", Digest = "7cef962c17b32e33b62e5313119e92fa8b8483f349d8ce31431a78934a79c108", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
+	[Facets(Layer = "domain", Status = "active", Complexity = 1)]
+	[Tags("code/enum")]
+	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "7cef962c17b32e33b62e5313119e92fa8b8483f349d8ce31431a78934a79c108", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Load/persistence state of an Image element's binary data.")]
+	[Concept("excalidraw_diagram_format")]
 	public enum ImageStatus {
 		/// <summary>
 		/// The image has been referenced but its binary data has not yet
@@ -296,8 +320,11 @@ static partial class Excalidraw {
 	/// <remarks>
 	/// Maps to the "type" field of the Roundness object on each element.
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-30T19:39:14Z", Digest = "a0f4224f82c204e599b58004331553c903cd05383403d0b70c744720d98d85b1", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
+	[Facets(Layer = "domain", Status = "active", Complexity = 1)]
+	[Tags("code/enum")]
+	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "a0f4224f82c204e599b58004331553c903cd05383403d0b70c744720d98d85b1", Stale = false, Path = "ExcaliDraw/Excalidraw.enums.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Determines how corner rounding is computed for a shape.")]
+	[Concept("excalidraw_diagram_format")]
 	public enum RoundnessType {
 
 		/// <summary> 1. Legacy fixed-radius rounding used by older Excalidraw versions. </summary>

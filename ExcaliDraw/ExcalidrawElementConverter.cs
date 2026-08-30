@@ -17,19 +17,28 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// digest: 6bd1a4123c70999cdb57f1abbdadef8453fec2e9a8482179d72178918f415bcd
 /// updated: 2026-05-19
 /// </remarks>
-[DocState(Pass = 2, MTime = "2026-08-30T19:39:14Z", Digest = "2a84a6a25114a9c263a9b773430d58c6912b15c02d8902a11e54e3ee03f5c3a5", Stale = false, Path = "ExcaliDraw/ExcalidrawElementConverter.cs", Since = "2026-08-22")]
+[Facets(Layer = "infrastructure", Status = "active", Complexity = 4)]
+[Tags("code/json_serialization", "code/polymorphic_deserialization")]
+[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "2a84a6a25114a9c263a9b773430d58c6912b15c02d8902a11e54e3ee03f5c3a5", Stale = false, Path = "ExcaliDraw/ExcalidrawElementConverter.cs", Since = "2026-08-22")]
 [System.ComponentModel.Description("Custom Newtonsoft JsonConverter that reads the `\"type\"` discriminator from each element token and instantiates the correct Element subclass before populating it.")]
+[Concept("excalidraw_diagram_format")]
 public sealed class ExcalidrawElementConverter : JsonConverter<Excalidraw.Element> {
 
 	/// <summary> Disable custom write path; default serialisation should be sufficient. </summary>
+	[Facets(Layer = "infrastructure", Status = "active", Complexity = 4)]
+	[Tags("code/json_serialization", "code/polymorphic_deserialization")]
 	[System.ComponentModel.Description("Disable custom write path; default serialisation should be sufficient.")]
+	[Concept("excalidraw_diagram_format")]
 	public override bool CanWrite => false;
 
 	/// <summary>
 	/// Reads the `"type"` field and populates the matching subclass.
 	/// Throws <see cref="JsonException"/> for unknown type strings.
 	/// </summary>
+	[Facets(Layer = "infrastructure", Status = "active", Complexity = 4)]
+	[Tags("code/json_serialization", "code/polymorphic_deserialization")]
 	[System.ComponentModel.Description("Reads the `\"type\"` field and populates the matching subclass.")]
+	[Concept("excalidraw_diagram_format")]
 	public override Excalidraw.Element ReadJson(
 		JsonReader reader, Type objectType,
 		Excalidraw.Element existingValue, bool hasExistingValue,
