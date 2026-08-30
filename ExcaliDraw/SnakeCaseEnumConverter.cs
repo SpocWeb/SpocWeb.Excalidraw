@@ -18,7 +18,7 @@ using System.ComponentModel;
 /// digest: a0b69328b4d8d1e16b2115a6ad606198be0bbe56a838aa8f570d82f6958174a0
 /// updated: 2026-05-19
 /// </remarks>
-[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "2bec9cc2474af270007ab0ff7d64dae4a4c7ac6a3e7f54a84bb1843eb4750047", Stale = false, Path = "ExcaliDraw/SnakeCaseEnumConverter.cs", Since = "2026-08-22")]
+[DocState(Pass = 2, MTime = "2026-08-30T19:39:14Z", Digest = "2bec9cc2474af270007ab0ff7d64dae4a4c7ac6a3e7f54a84bb1843eb4750047", Stale = false, Path = "ExcaliDraw/SnakeCaseEnumConverter.cs", Since = "2026-08-22")]
 [System.ComponentModel.Description("Newtonsoft.Json converter that...")]
 public sealed class SnakeCaseEnumConverter : JsonConverter {
 

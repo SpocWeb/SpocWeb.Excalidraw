@@ -14,7 +14,7 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// digest: d4f126731646bc73bcfb4d9d181bb63fa8e639c8fc2319eb96508113d82ce6d5
 /// updated: 2026-05-19
 /// </remarks>
-[DocState(Pass = 2, MTime = "2026-08-27T19:37:49Z", Digest = "6164c28ddf066b8eee4a240d6ae71d536fef5252f3e7d9312ef5dd46c39fe0d2", Stale = false, Path = "ExcaliDraw/PascalToSnakeConversion.cs", Since = "2026-08-22")]
+[DocState(Pass = 2, MTime = "2026-08-30T19:39:14Z", Digest = "6164c28ddf066b8eee4a240d6ae71d536fef5252f3e7d9312ef5dd46c39fe0d2", Stale = false, Path = "ExcaliDraw/PascalToSnakeConversion.cs", Since = "2026-08-22")]
 [System.ComponentModel.Description("Thread-safe cached PascalCase-to-snake_case conversion utilities for enum serialization.")]
 public static partial class PascalToSnakeConversion {
 

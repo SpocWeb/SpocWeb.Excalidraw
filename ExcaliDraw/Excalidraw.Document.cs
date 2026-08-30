@@ -10,7 +10,7 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// digest: 20970f1734f1138a24fae14a8a5d46479de0c31d4930f22a962f48fbbc1bd435
 /// updated: 2026-05-19
 /// </remarks>
-[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", Stale = false, Path = "ExcaliDraw/Excalidraw.Document.cs", Since = "2026-08-22")]
+[DocState(Pass = 2, MTime = "2026-08-30T19:39:14Z", Digest = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", Stale = false, Path = "ExcaliDraw/Excalidraw.Document.cs", Since = "2026-08-22")]
 [System.ComponentModel.Description("Partial class hosting the Excalidraw scene document and clipboard types.")]
 static partial class Excalidraw {
 
@@ -34,7 +34,7 @@ static partial class Excalidraw {
 	/// digest: 20970f1734f1138a24fae14a8a5d46479de0c31d4930f22a962f48fbbc1bd435
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-27T19:37:49Z", Digest = "7906218b504544b3aed851ec0827813c54ea8d612383d023c12a2341efb454a2", Stale = false, Path = "ExcaliDraw/Excalidraw.Document.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-30T19:39:14Z", Digest = "7906218b504544b3aed851ec0827813c54ea8d612383d023c12a2341efb454a2", Stale = false, Path = "ExcaliDraw/Excalidraw.Document.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Root object for an `.excalidraw` scene file (schema version 2).")]
 	public sealed class Document {
 
@@ -87,7 +87,7 @@ static partial class Excalidraw {
 	/// digest: 20970f1734f1138a24fae14a8a5d46479de0c31d4930f22a962f48fbbc1bd435
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "a6ccdd4824f49a12a5e5779b1929ceec8be10e27839735e165e1e743670ed7c9", Stale = false, Path = "ExcaliDraw/Excalidraw.Document.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-30T19:39:14Z", Digest = "a6ccdd4824f49a12a5e5779b1929ceec8be10e27839735e165e1e743670ed7c9", Stale = false, Path = "ExcaliDraw/Excalidraw.Document.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Clipboard-format variant produced when copying selected elements.")]
 	public sealed class Clipboard {
 

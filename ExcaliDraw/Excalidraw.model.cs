@@ -28,7 +28,7 @@ static partial class Excalidraw {
 	/// digest: 8e3bd7e1288d4ca0bed69587ec0867c4a44255f665cc45018a066de5bebed3c6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "ce8a1f630b9734b89db1448418014a5634797e81a7851078d02a626bfc3aa5a1", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-30T19:39:14Z", Digest = "ce8a1f630b9734b89db1448418014a5634797e81a7851078d02a626bfc3aa5a1", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Corner-rounding configuration attached to any closed shape element.")]
 	public sealed class Roundness {
 		/// <summary>Gets or sets the type.</summary>
@@ -53,7 +53,7 @@ static partial class Excalidraw {
 	/// digest: 8e3bd7e1288d4ca0bed69587ec0867c4a44255f665cc45018a066de5bebed3c6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-22T20:36:28Z", Digest = "0aa270a8eec5f47a19c4c7eee4fd2f4d84a9c41b72cead9eea41009ae7e9071d", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-30T19:39:14Z", Digest = "0aa270a8eec5f47a19c4c7eee4fd2f4d84a9c41b72cead9eea41009ae7e9071d", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Reference from a container element to a bound arrow or text element.")]
 	public sealed class BoundElement {
 		/// <summary>Gets or sets the id.</summary>
@@ -76,7 +76,7 @@ static partial class Excalidraw {
 	/// digest: 8e3bd7e1288d4ca0bed69587ec0867c4a44255f665cc45018a066de5bebed3c6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-27T19:37:49Z", Digest = "36a3e48f96b28320eeea0ca866468bc32913976469626841e30eba9fc611e480", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-30T19:39:14Z", Digest = "36a3e48f96b28320eeea0ca866468bc32913976469626841e30eba9fc611e480", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("binding that attaches an arrow tip to a specific point on a bindable Shape.")]
 	public sealed class PointBinding {
 
@@ -133,7 +133,7 @@ static partial class Excalidraw {
 	/// digest: 8e3bd7e1288d4ca0bed69587ec0867c4a44255f665cc45018a066de5bebed3c6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-23T11:34:30Z", Digest = "2f3e8196af6a5616b4815cf499df16440f7e8735e632f29997d95630ad4ab1f1", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-30T19:39:14Z", Digest = "2f3e8196af6a5616b4815cf499df16440f7e8735e632f29997d95630ad4ab1f1", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Binary file entry stored in the document-level `files` map.")]
 	public sealed class BinaryFileData {
 		/// <summary>Gets or sets the mime Type.</summary>
@@ -197,7 +197,7 @@ static partial class Excalidraw {
 	/// digest: 8e3bd7e1288d4ca0bed69587ec0867c4a44255f665cc45018a066de5bebed3c6
 	/// updated: 2026-05-19
 	/// </remarks>
-	[DocState(Pass = 2, MTime = "2026-08-27T19:37:49Z", Digest = "3a61d90ad3ae9f2f887e1c72e2b442818f733bcc726293d0673506b11e9819cf", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-08-30T19:39:14Z", Digest = "3a61d90ad3ae9f2f887e1c72e2b442818f733bcc726293d0673506b11e9819cf", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Serializable subset of editor application state written to disk.")]
 	public sealed class AppState {
 		/// <summary>Gets or sets the view Background Color.</summary>
