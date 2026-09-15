@@ -36,7 +36,7 @@ public interface IHaveSequence<T> {
 /// updated: 2026-05-19
 /// </remarks>
 [Facets(Layer = "infrastructure", Status = "active", Complexity = 2)]
-[Tags("code/id_generation", "code/extension_methods")]
+[Tags("code/extension_method", "code/id_generation")]
 [DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "ea89c8837e5195c1cff18a4dd6f3d69cb4ab38de3dd19b3ee1ca1f2a277d3991", Stale = false, Path = "ExcaliDraw/IHaveSequence.cs", Since = "2026-08-22")]
 [System.ComponentModel.Description("Extension helpers for IHaveSequence that generate Excalidraw-compatible ids and seeds.")]
 [Concept("excalidraw_diagram_format")]
