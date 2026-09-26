@@ -1,12 +1,11 @@
 ---
+facet-complexity: 1
+facet-status: active
+facet-layer: infrastructure
 tags:
   - code/entry_point
 concepts:
-  - excalidraw_diagram_format
-facets:
-  layer: infrastructure
-  status: active
-  complexity: 1
+  - Technology\IT\Data\File_Format.md
 description: "This folder contains `Program`: application entry point for the SpocWeb."
 uid: SpocWeb.Excalidraw.md
 tags: [arch, dev ]

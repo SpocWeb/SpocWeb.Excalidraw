@@ -1,10 +1,9 @@
 ---
+facet-complexity: 3
+facet-status: active
+facet-layer: domain
 concepts:
-  - excalidraw_diagram_format
-facets:
-  layer: domain
-  status: active
-  complexity: 3
+  - Technology\IT\Data\File_Format.md
 tags:
   - code/dto
   - code/json_serialization

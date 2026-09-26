@@ -21,7 +21,7 @@ public static partial class Excalidraw{
 	[Facets(Layer = "infrastructure", Status = "active", Complexity = 1)]
 	[Tags("code/json_serialization", "code/numeric_formatting")]
 	[System.ComponentModel.Description("Rounds a floating-point value for JSON output.")]
-	[Concept("excalidraw_diagram_format")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public static double Round(double value, int digits = 2)
 		=> Math.Round(value, digits, MidpointRounding.AwayFromZero);
 
@@ -41,24 +41,24 @@ public static partial class Excalidraw{
 	[Tags("code/dto")]
 	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "00dd43a41bb2f6dc3a49516a6087b402fc7d1bf4ac21534f92776bf278557879", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Graphic Element Base-Class of type  Properties shared by every Excalidraw element regardless of type.")]
-	[Concept("excalidraw_diagram_format")]
 	[Concept("diagram_element_model")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public class Element {
 
 		/// <summary> Debuggable String Representation </summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Debuggable String Representation")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public override string ToString() => JsonConvert.SerializeObject(this, Formatting.None, ExcalidrawParser.ExcalidrawSettings());
 
 		/// <summary>Unique element identifier (random string). JSON key: `"id"`.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Unique element identifier (random string).")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public string id { get; set; }
 
 		/// <summary> Element type discriminator matching the JSON `"type"` string. </summary>
@@ -68,40 +68,40 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Element type discriminator matching the JSON `\"type\"` string.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public ElementType type { get; set; }
 
 		/// <summary>Left edge of the element's bounding box in canvas coordinates (px). JSON key: `"x"`.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Left edge of the element's bounding box in canvas coordinates (px).")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public double x { get; set; }
 
 		/// <summary>Top edge of the element's bounding box in canvas coordinates (px). JSON key: `"y"`.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Top edge of the element's bounding box in canvas coordinates (px).")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public double y { get; set; }
 
 		/// <summary>Width of the element's bounding box (px). JSON key: `"width"`.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Width of the element's bounding box (px).")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public double width { get; set; }
 
 		/// <summary>Height of the element's bounding box (px). JSON key: `"height"`.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Height of the element's bounding box (px).")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public double height { get; set; }
 
 		/// <summary>
@@ -111,24 +111,24 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Rotation angle in radians (clockwise from 12 o'clock).")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public double angle { get; set; }
 
 		/// <summary>CSS colour string for the element's stroke/outline. JSON key: `"strokeColor"`.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("CSS colour string for the element's stroke/outline.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public string strokeColor { get; set; }
 
 		/// <summary>CSS colour string for the element's fill. JSON key: `"backgroundColor"`.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("CSS colour string for the element's fill.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public string backgroundColor { get; set; }
 
 		/// <summary>
@@ -139,16 +139,16 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Fill pattern for the element's interior.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public FillStyle fillStyle { get; set; }
 
 		/// <summary>Stroke width in pixels. JSON key: `"strokeWidth"`.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Stroke width in pixels.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public double strokeWidth { get; set; }
 
 		/// <summary>
@@ -158,8 +158,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Dash pattern for the stroke: `\"solid\"`, `\"dashed\"`, or `\"dotted\"`.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public StrokeStyle strokeStyle { get; set; }
 
 		/// <summary>
@@ -169,8 +169,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("RoughJS roughness level: 0 = architect (clean), 1 = artist, 2 = cartoonist (very rough).")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public int roughness { get; set; }
 
 		/// <summary>
@@ -180,8 +180,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Element opacity as an integer percentage (0–100).")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public int opacity { get; set; }
 
 		/// <summary>
@@ -191,8 +191,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Corner-rounding configuration, or `null` for sharp corners.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public Roundness? roundness { get; set; }
 
 		/// <summary>
@@ -202,8 +202,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Random seed integer used by RoughJS to produce a stable hand-drawn shape that doesn't change across re-renders.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public int seed { get; set; }
 
 		/// <summary>
@@ -213,16 +213,16 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Soft-delete flag.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public bool isDeleted { get; set; }
 
 		/// <summary> ID of the frame element that contains this element, or `null`. </summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("ID of the frame element that contains this element, or `null`.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public string? frameId { get; set; }
 
 		/// <summary> Ordered list of group IDs this element belongs to,
@@ -230,32 +230,32 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Ordered list of group IDs this element belongs to, from deepest (innermost) to shallowest (outermost).")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public List<string> groupIds { get; set; } = new();
 
 		/// <summary> References to arrows or text elements bound to this element. </summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("References to arrows or text elements bound to this element.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public List<BoundElement>? boundElements { get; set; }
 
 		/// <summary> Hyperlink URL attached to the element, or `null`. </summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Hyperlink URL attached to the element, or `null`.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public string? link { get; set; }
 
 		/// <summary> When `true`, the element cannot be selected or moved interactively. </summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("When `true`, the element cannot be selected or moved interactively.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public bool locked { get; set; }
 
 		/// <summary> Sequential integer incremented on every change.
@@ -264,8 +264,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Sequential integer incremented on every change.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public int version { get; set; }
 
 		/// <summary>
@@ -275,16 +275,16 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Random integer regenerated on every change, used for deterministic reconciliation when two peers have the same version counter.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public int versionNonce { get; set; }
 
 		/// <summary> Unix epoch timestamp (ms) of the last element mutation. </summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Unix epoch timestamp (ms) of the last element mutation.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public long updated { get; set; }
 
 		/// <summary> Fractional index string (rocicorp/fractional-indexing) used for
@@ -293,16 +293,16 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Fractional index string (rocicorp/fractional-indexing) used for stable ordering in multiplayer scenarios.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public string index { get; set; }
 
 		/// <summary> Arbitrary host-app or plugin data attached to this element. </summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Arbitrary host-app or plugin data attached to this element.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public Dictionary<string, object> customData { get; set; }
 
 		/// <summary>
@@ -313,8 +313,8 @@ public static partial class Excalidraw{
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Catch-all bucket that preserves any unrecognised JSON fields during round-trips, ensuring forward compatibility.")]
 		[JsonExtensionData]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public IDictionary<string, object> AdditionalData { get; set; }
 
 		public static string DefaultStrokeColor = "#1e1e1e";
@@ -325,16 +325,16 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Minimum Constructor")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		protected Element(ElementType elementType) { type = elementType; }
 
 		/// <summary>Initializes a new instance of <see cref="Element"/> with the specified <paramref name="Id"/>, <paramref name="Type"/>, <paramref name="FrameId"/>, <paramref name="X"/>, <paramref name="Y"/>, <paramref name="StrokeWidth"/>, <paramref name="StrokeStyle"/>, <paramref name="StrokeColor"/>, <paramref name="BackgroundColor"/> and <paramref name="Opacity"/>.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a new instance of Element with the specified Id, Type, FrameId, X, Y, StrokeWidth, StrokeStyle, StrokeColor, BackgroundColor and Opacity.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public Element(
 			string Id
 			, ElementType Type
@@ -363,8 +363,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a new instance of Element with the specified type, bounds, context and GroupIds.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public Element(ElementType type, ElementBounds bounds
 			, IHaveSequence<int> context, List<string> GroupIds) : this(
 			context.NextId(type.ToString()), type, null, Round(bounds.X), Round(bounds.Y)
@@ -394,8 +394,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Deconstructs this instance into its component parts.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public void Deconstruct(out string Id
 			, out ElementType Type
 			, out string? FrameId
@@ -436,23 +436,23 @@ public static partial class Excalidraw{
 	[Tags("code/dto")]
 	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "dbf553a66b7a0528d1c5170ff9c4d7babdb69942e9510ce21f860c22f29736d5", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Axis-aligned rectangle shape element.")]
-	[Concept("excalidraw_diagram_format")]
 	[Concept("diagram_element_model")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public sealed class RectangleElement : Element {
 		/// <summary> Initializes an empty <see cref="RectangleElement"/> for JSON deserialization. </summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes an empty RectangleElement for JSON deserialization.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public RectangleElement() : base(ElementType.rectangle) { }
 
 		/// <summary> Initializes a <see cref="RectangleElement"/> from <paramref name="bounds"/> using <paramref name="context"/> for id/seed. </summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a RectangleElement from bounds using context for id/seed.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public RectangleElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.ellipse, bounds, context, groupIds) {
 		}
@@ -476,23 +476,23 @@ public static partial class Excalidraw{
 	[Tags("code/dto")]
 	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "88ca0892e541e80785eb95b8fdc5e33df1e6841cf47beee13611a5b8c2994edf", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Ellipse (or circle when width == height) shape element.")]
-	[Concept("excalidraw_diagram_format")]
 	[Concept("diagram_element_model")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public sealed class EllipseElement : Element {
 		/// <summary> Initializes an empty <see cref="EllipseElement"/> for JSON deserialization. </summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes an empty EllipseElement for JSON deserialization.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public EllipseElement() : base(ElementType.ellipse) { }
 
 		/// <summary> Initializes an <see cref="EllipseElement"/> from <paramref name="bounds"/> using <paramref name="context"/> for id/seed. </summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes an EllipseElement from bounds using context for id/seed.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public EllipseElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.ellipse, bounds, context, groupIds) {
 		}
@@ -515,23 +515,23 @@ public static partial class Excalidraw{
 	[Tags("code/dto")]
 	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "938dea4088d89746c8db83fed844daa24fb2b369983d90865ab797e7acfdbf35", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Diamond (rotated square) shape element.")]
-	[Concept("excalidraw_diagram_format")]
 	[Concept("diagram_element_model")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public sealed class DiamondElement : Element {
 		/// <summary> Initializes an empty <see cref="DiamondElement"/> for JSON deserialization. </summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes an empty DiamondElement for JSON deserialization.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public DiamondElement() : base(ElementType.diamond) { }
 
 		/// <summary> Initializes a <see cref="DiamondElement"/> from <paramref name="bounds"/> using <paramref name="context"/> for id/seed. </summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a DiamondElement from bounds using context for id/seed.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public DiamondElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.diamond, bounds, context, groupIds) {
 		}
@@ -550,24 +550,24 @@ public static partial class Excalidraw{
 	[Tags("code/dto")]
 	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "14d176b2956813fd19adb4f4bebaeccb963a622777e739e9b5449a5d4daa57c7", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Base class for elements composed of an ordered array of points: lines and arrows.")]
-	[Concept("excalidraw_diagram_format")]
 	[Concept("diagram_element_model")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public class LinearElement : Element {
 
 		/// <summary> Initializes an empty <see cref="LinearElement"/> for JSON deserialization. </summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes an empty LinearElement for JSON deserialization.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		protected LinearElement(ElementType type) : base(type) { }
 
 		/// <summary> Initializes a <see cref="LinearElement"/> with full styling and optional endpoint bindings. </summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a LinearElement with full styling and optional endpoint bindings.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		protected LinearElement(string id
 			, ElementType elementType
 			, string? frameId
@@ -595,8 +595,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a LinearElement from bounds using context for id/seed.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public LinearElement(ElementType ElementType
 			, ElementBounds bounds
 			, IHaveSequence<int> context, List<string> groupIds
@@ -617,16 +617,16 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Type of Arrowhead at the Line Start")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public Arrowhead? startArrowhead { get; set; }
 
 		/// <summary> Type of <see cref="Arrowhead"/> at the Line End </summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Type of Arrowhead at the Line End")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public Arrowhead? endArrowhead { get; set; }
 
 		/// <summary>Gets or sets the label.</summary>
@@ -634,8 +634,8 @@ public static partial class Excalidraw{
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Gets or sets the label.")]
 		[Obsolete("In earlier Versions, excalidraw stored the Label here use " + nameof(boundElements), true)]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public string? label { get; set; }
 
 		/// <summary> Ordered array of [x, y] point pairs in element-local coordinates. </summary>
@@ -646,8 +646,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Ordered array of [x, y] point pairs in element-local coordinates.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public List<double[]> points { get; set; } = new();
 
 		///// <summary> The last point that was committed to the <see cref="points"/> array during interactive creation. </summary>
@@ -663,8 +663,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Arrow endpoint binding to the element at the start of the line.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public PointBinding? startBinding { get; set; }
 
 		/// <summary> Arrow endpoint binding to the element at the end of the line.
@@ -673,8 +673,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Arrow endpoint binding to the element at the end of the line.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public PointBinding? endBinding { get; set; }
 
 	}
@@ -691,8 +691,8 @@ public static partial class Excalidraw{
 	[Tags("code/dto")]
 	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "6156d6936db61eab6bdb9dca528e237dee22cff4153682c2ea1e16775886813f", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Undirected straight or curved line through two or more points.")]
-	[Concept("excalidraw_diagram_format")]
 	[Concept("diagram_element_model")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public sealed class LineElement : LinearElement {
 
 		/// <summary>
@@ -702,24 +702,24 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("When `true`, the last point is connected back to the first to close the polyline into a polygon.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public bool polygon { get; set; }
 
 		/// <summary> Initializes an empty <see cref="LineElement"/> for JSON deserialization. </summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes an empty LineElement for JSON deserialization.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public LineElement() : base(ElementType.line) { }
 
 		/// <summary> Initializes a <see cref="LineElement"/> with full styling parameters. </summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a LineElement with full styling parameters.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public LineElement(string Id
 			, string? FrameId
 			, double X
@@ -740,8 +740,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a new instance of LineElement with the specified bounds, context and groupIds.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public LineElement(ElementBounds bounds
 			, IHaveSequence<int> context, List<string> groupIds
 			//, string? Label
@@ -764,24 +764,24 @@ public static partial class Excalidraw{
 	[Tags("code/dto")]
 	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "0505b14edc4bc1c1311dcf294b40ab6c8fdaa9ba194687a4c150edb0ea6dd091", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Directed arrow with optional endpoint bindings and arrowhead decorations.")]
-	[Concept("excalidraw_diagram_format")]
 	[Concept("diagram_element_model")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public sealed class Arrow : LinearElement {
 
 		/// <summary>Initializes a new instance of <see cref="Arrow"/>.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a new instance of Arrow.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public Arrow() : base(ElementType.arrow) { }
 
 		/// <summary>Initializes a new instance of <see cref="Arrow"/> with the specified <paramref name="Id"/>, <paramref name="FrameId"/>, <paramref name="X"/>, <paramref name="Y"/>, <paramref name="StrokeWidth"/>, <paramref name="StrokeStyle"/>, <paramref name="StrokeColor"/>, <paramref name="Opacity"/>, <paramref name="StartArrowhead"/>, <paramref name="EndArrowhead"/>, <paramref name="StartElementId"/> and <paramref name="EndElementId"/>.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a new instance of Arrow with the specified Id, FrameId, X, Y, StrokeWidth, StrokeStyle, StrokeColor, Opacity, StartArrowhead, EndArrowhead, StartElementId and EndElementId.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public Arrow(string Id
 			, string? FrameId
 			, double X
@@ -805,8 +805,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a new instance of Arrow with the specified bounds, context, groupIds, StartArrowhead, EndArrowhead, StartElementId and EndElementId.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public Arrow(ElementBounds bounds
 			, IHaveSequence<int> context, List<string> groupIds
 			, Arrowhead? StartArrowhead
@@ -824,8 +824,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("When `true`, the arrow uses 90-degree elbow routing instead of straight or curved segments.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public bool elbowed { get; set; }
 
 	}
@@ -842,23 +842,23 @@ public static partial class Excalidraw{
 	[Tags("code/dto")]
 	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "d2b2929eba28461799f197b2bdbbeac7fefc7de99d62c69a696d6c476e4f8c88", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Freehand stroke captured from pointer input.")]
-	[Concept("excalidraw_diagram_format")]
 	[Concept("diagram_element_model")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public sealed class FreedrawElement : Element {
 		/// <summary>Initializes a new instance of <see cref="FreedrawElement"/>.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a new instance of FreedrawElement.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public FreedrawElement() : base(ElementType.freedraw) { }
 
 		/// <summary>Initializes a new instance of <see cref="FreedrawElement"/> with the specified <paramref name="bounds"/>, <paramref name="context"/> and <paramref name="groupIds"/>.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a new instance of FreedrawElement with the specified bounds, context and groupIds.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public FreedrawElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.freedraw, bounds, context, groupIds) {
 		}
@@ -870,8 +870,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Ordered array of [x, y] points in canvas coordinates tracing the stroke.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public List<double[]> points { get; set; } = new();
 
 		/// <summary>
@@ -882,8 +882,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Per-point stylus pressure values (0.0–1.0) corresponding to each entry in points.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public List<double> pressures { get; set; } = new();
 
 		/// <summary>
@@ -893,8 +893,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("When `true`, pressure is algorithmically simulated rather than read from the pointer device.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public bool simulatePressure { get; set; }
 	}
 
@@ -910,24 +910,24 @@ public static partial class Excalidraw{
 	[Tags("code/dto")]
 	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "9d258720f987f3053db79b3fd54f36d42dddb115cc01097b07d1197e76076842", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Text label element, either standalone or bound to a container shape.")]
-	[Concept("excalidraw_diagram_format")]
 	[Concept("diagram_element_model")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public sealed class TextElement : Element {
 
 		/// <summary>Initializes a new instance of <see cref="TextElement"/>.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a new instance of TextElement.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public TextElement() : base(ElementType.text) { }
 
 		/// <summary>Initializes a new instance of <see cref="TextElement"/> with the specified <paramref name="bounds"/>, <paramref name="context"/> and <paramref name="groupIds"/>.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a new instance of TextElement with the specified bounds, context and groupIds.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public TextElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.text, bounds, context, groupIds) {
 		}
@@ -936,8 +936,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Display text content (may be wrapped).")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public string text { get; set; }
 
 		/// <summary> The full, unwrapped text before container-width wrapping is applied. </summary>
@@ -947,16 +947,16 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("The full, unwrapped text before container-width wrapping is applied.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public string originalText { get; set; }
 
 		/// <summary>Font size in pixels. JSON key: `"fontSize"`.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Font size in pixels.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public double fontSize { get; set; }
 
 		/// <summary> Numeric font family ID matching the `FONT_FAMILY` constant. </summary>
@@ -966,8 +966,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Numeric font family ID matching the `FONT_FAMILY` constant.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public FontFamily fontFamily { get; set; }
 
 		/// <summary> Horizontal text alignment: `"left"`, `"center"`, or `"right"`.
@@ -975,8 +975,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Horizontal text alignment: `\"left\"`, `\"center\"`, or `\"right\"`.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public TextAlign textAlign { get; set; }
 
 		/// <summary> Vertical text alignment within the bounding box or container:
@@ -985,8 +985,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Vertical text alignment within the bounding box or container: `\"top\"`, `\"middle\"`, or `\"bottom\"`.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public VerticalAlign verticalAlign { get; set; }
 
 		/// <summary> ID of the container shape this text is bound to,
@@ -995,8 +995,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("ID of the container shape this text is bound to, or `null` for standalone text.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public string? containerId { get; set; }
 
 		/// <summary>
@@ -1006,8 +1006,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("When `true`, the container shape resizes to fit the text.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public bool autoResize { get; set; }
 
 		/// <summary>
@@ -1017,16 +1017,16 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Unitless line-height multiplier (W3C convention).")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public double lineHeight { get; set; }
 
 		/// <summary> Position of the first Text Line; typ: FontSize </summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Position of the first Text Line; typ: FontSize")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public double baseline { get ; set ; }
 	}
 
@@ -1042,24 +1042,24 @@ public static partial class Excalidraw{
 	[Tags("code/dto")]
 	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "82c53954ef1b74088f6c78273b3757ae25c986679cc0ab47354eda9a5714c712", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Raster image whose binary content is stored in the document-level `files` map keyed by fileId.")]
-	[Concept("excalidraw_diagram_format")]
 	[Concept("diagram_element_model")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public sealed class ImageElement : Element {
 
 		/// <summary>Initializes a new instance of <see cref="ImageElement"/>.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a new instance of ImageElement.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public ImageElement() : base(ElementType.image) { }
 
 		/// <summary>Initializes a new instance of <see cref="ImageElement"/> with the specified <paramref name="bounds"/>, <paramref name="context"/> and <paramref name="groupIds"/>.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a new instance of ImageElement with the specified bounds, context and groupIds.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public ImageElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.image, bounds, context, groupIds) {
 		}
@@ -1070,8 +1070,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("SHA-1 FileId referencing the binary data in `ExcalidrawDocument.files`.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public string? fileId { get; set; }
 
 		/// <summary>
@@ -1081,8 +1081,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Load/persistence state of the image binary data.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public string status { get; set; }
 
 		/// <summary>
@@ -1093,8 +1093,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Two-element array [scaleX, scaleY] in the range [-1, 1].")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public double[] scale { get; set; }
 
 		/// <summary>
@@ -1104,8 +1104,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Active crop rectangle applied to the image, or `null` if uncropped.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public ImageCrop? crop { get; set; }
 	}
 
@@ -1122,39 +1122,39 @@ public static partial class Excalidraw{
 	[Tags("code/dto")]
 	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "cae8b3242cc04c5e5d7f8bfa4302b37a40adff0836b5c7c5fc5720bf5ac7edfe", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Crop rectangle applied to an image element")]
-	[Concept("excalidraw_diagram_format")]
 	[Concept("diagram_element_model")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public sealed class ImageCrop {
 		/// <summary>Left offset of the crop rectangle in natural image pixels. JSON key: `"x"`.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Left offset of the crop rectangle in natural image pixels.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public double x { get; set; }
 
 		/// <summary>Top offset of the crop rectangle in natural image pixels. JSON key: `"y"`.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Top offset of the crop rectangle in natural image pixels.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public double y { get; set; }
 
 		/// <summary>Width of the crop rectangle in natural image pixels. JSON key: `"width"`.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Width of the crop rectangle in natural image pixels.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public double width { get; set; }
 
 		/// <summary>Height of the crop rectangle in natural image pixels. JSON key: `"height"`.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Height of the crop rectangle in natural image pixels.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public double height { get; set; }
 
 		/// <summary>
@@ -1164,8 +1164,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Full intrinsic width of the source image in pixels (before any scaling).")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public double naturalWidth { get; set; }
 
 		/// <summary>
@@ -1175,8 +1175,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Full intrinsic height of the source image in pixels (before any scaling).")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public double naturalHeight { get; set; }
 	}
 
@@ -1193,23 +1193,23 @@ public static partial class Excalidraw{
 	[Tags("code/dto")]
 	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "d5ca03d313d97389d4947ac505e8a4c4f45f9c7a96be236d4fa4617fcfae4841", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Named frame that visually groups and clips its child elements.")]
-	[Concept("excalidraw_diagram_format")]
 	[Concept("diagram_element_model")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public sealed class FrameElement : Element {
 		/// <summary>Initializes a new instance of <see cref="FrameElement"/>.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a new instance of FrameElement.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public FrameElement() : base(ElementType.frame) { }
 
 		/// <summary>Initializes a new instance of <see cref="FrameElement"/> with the specified <paramref name="id"/>, <paramref name="x"/>, <paramref name="y"/> and <paramref name="Name"/>.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a new instance of FrameElement with the specified id, x, y and Name.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public FrameElement(string id
 			, double x
 			, double y
@@ -1222,8 +1222,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a new instance of FrameElement with the specified bounds, context and groupIds.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public FrameElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.frame, bounds, context, groupIds) {
 		}
@@ -1232,8 +1232,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Human-readable label displayed in the frame's header, or `null`.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public string? name { get; set; }
 	}
 
@@ -1250,23 +1250,23 @@ public static partial class Excalidraw{
 	[Tags("code/dto")]
 	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "10c4a0f483a16d480a9390e11a8f784a4480a7c3634a8510d6f87a75d327ece4", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("AI-generated magic frame.")]
-	[Concept("excalidraw_diagram_format")]
 	[Concept("diagram_element_model")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public sealed class MagicFrameElement : Element {
 		/// <summary>Initializes a new instance of <see cref="MagicFrameElement"/>.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a new instance of MagicFrameElement.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public MagicFrameElement() : base(ElementType.magicframe) { }
 
 		/// <summary>Initializes a new instance of <see cref="MagicFrameElement"/> with the specified <paramref name="bounds"/>, <paramref name="context"/> and <paramref name="groupIds"/>.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a new instance of MagicFrameElement with the specified bounds, context and groupIds.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public MagicFrameElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.magicframe, bounds, context, groupIds) {
 		}
@@ -1275,8 +1275,8 @@ public static partial class Excalidraw{
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Human-readable label displayed in the frame's header, or `null`.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public string? name { get; set; }
 	}
 
@@ -1292,24 +1292,24 @@ public static partial class Excalidraw{
 	[Tags("code/dto")]
 	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "2e2a47aad35618e502f2cda987731c182412386040f86a8c122ab61ef55595b2", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Embeds an external web resource (URL) rendered as an interactive widget.")]
-	[Concept("excalidraw_diagram_format")]
 	[Concept("diagram_element_model")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public sealed class EmbeddableElement : Element {
 
 		/// <summary>Initializes a new instance of <see cref="EmbeddableElement"/>.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a new instance of EmbeddableElement.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public EmbeddableElement() : base(ElementType.embeddable) { }
 
 		/// <summary>Initializes a new instance of <see cref="EmbeddableElement"/> with the specified <paramref name="bounds"/>, <paramref name="context"/> and <paramref name="groupIds"/>.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a new instance of EmbeddableElement with the specified bounds, context and groupIds.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public EmbeddableElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.embeddable, bounds, context, groupIds) {
 		}
@@ -1329,23 +1329,23 @@ public static partial class Excalidraw{
 	[Tags("code/dto")]
 	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "50ec4d2b1ff0046f8f2a9885aaa32409bce0655928bba636fa1923386a389d0c", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Inline iframe for arbitrary HTML content directly on the canvas.")]
-	[Concept("excalidraw_diagram_format")]
 	[Concept("diagram_element_model")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public sealed class IFrameElement : Element {
 		/// <summary>Initializes a new instance of <see cref="IFrameElement"/>.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a new instance of IFrameElement.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public IFrameElement() : base(ElementType.iframe) { }
 
 		/// <summary>Initializes a new instance of <see cref="IFrameElement"/> with the specified <paramref name="bounds"/>, <paramref name="context"/> and <paramref name="groupIds"/>.</summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Initializes a new instance of IFrameElement with the specified bounds, context and groupIds.")]
-		[Concept("excalidraw_diagram_format")]
 		[Concept("diagram_element_model")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public IFrameElement(ElementBounds bounds, IHaveSequence<int> context, List<string> groupIds)
 			: base(ElementType.iframe, bounds, context, groupIds) {
 		}

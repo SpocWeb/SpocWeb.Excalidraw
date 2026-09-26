@@ -14,7 +14,7 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 [Tags("code/dto")]
 [DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", Stale = false, Path = "ExcaliDraw/Excalidraw.Document.cs", Since = "2026-08-22")]
 [System.ComponentModel.Description("Partial class hosting the Excalidraw scene document and clipboard types.")]
-[Concept("excalidraw_diagram_format")]
+[Concept("Technology\\IT\\Data\\File_Format.md")]
 static partial class Excalidraw {
 
 	/// <summary> Root object for an `.excalidraw` scene file (schema version 2). </summary>
@@ -41,21 +41,21 @@ static partial class Excalidraw {
 	[Tags("code/dto")]
 	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "7906218b504544b3aed851ec0827813c54ea8d612383d023c12a2341efb454a2", Stale = false, Path = "ExcaliDraw/Excalidraw.Document.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Root object for an `.excalidraw` scene file (schema version 2).")]
-	[Concept("excalidraw_diagram_format")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public sealed class Document {
 
 		/// <summary> Format discriminator. Always `"excalidraw"` for scene files. </summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Format discriminator.")]
-		[Concept("excalidraw_diagram_format")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public string type { get; set; } = "excalidraw";
 
 		/// <summary> Schema version number, currently always `2`. </summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Schema version number, currently always `2`.")]
-		[Concept("excalidraw_diagram_format")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public int version { get; set; } = 2;
 
 		/// <summary> Origin URL of the Excalidraw application that produced this file </summary>
@@ -65,7 +65,7 @@ static partial class Excalidraw {
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Origin URL of the Excalidraw application that produced this file")]
-		[Concept("excalidraw_diagram_format")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public string source { get; set; } = "https://excalidraw.com";
 
 		//public Document(AppState AppState) { appState = AppState; }
@@ -77,7 +77,7 @@ static partial class Excalidraw {
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("All non-deleted canvas elements.")]
-		[Concept("excalidraw_diagram_format")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public List<Element> elements { get; set; } = new();
 
 		/// <summary> Serializable subset of editor <see cref="AppState"/> </summary>
@@ -87,7 +87,7 @@ static partial class Excalidraw {
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Serializable subset of editor AppState")]
-		[Concept("excalidraw_diagram_format")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public AppState appState { get; set; }
 
 		/// <summary> Map of FileId → binary file data for all <see cref="ImageElement"/>s </summary>
@@ -97,7 +97,7 @@ static partial class Excalidraw {
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Map of FileId → binary file data for all ImageElements")]
-		[Concept("excalidraw_diagram_format")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public Dictionary<string, BinaryFileData> files { get; set; } = new();
 	}
 
@@ -115,14 +115,14 @@ static partial class Excalidraw {
 	[Tags("code/dto")]
 	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "a6ccdd4824f49a12a5e5779b1929ceec8be10e27839735e165e1e743670ed7c9", Stale = false, Path = "ExcaliDraw/Excalidraw.Document.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Clipboard-format variant produced when copying selected elements.")]
-	[Concept("excalidraw_diagram_format")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public sealed class Clipboard {
 
 		/// <summary> Format discriminator. Always `"excalidraw/clipboard"`. </summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Format discriminator.")]
-		[Concept("excalidraw_diagram_format")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public string type { get; set; } = "excalidraw/clipboard";
 
 		/// <summary>
@@ -132,14 +132,14 @@ static partial class Excalidraw {
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("The copied canvas elements.")]
-		[Concept("excalidraw_diagram_format")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public List<Element> elements { get; set; } = new();
 
 		/// <summary> Binary file data for any <see cref="ImageElement"/>s in <see cref="elements"/>. </summary>
 		[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 		[Tags("code/dto")]
 		[System.ComponentModel.Description("Binary file data for any ImageElements in elements.")]
-		[Concept("excalidraw_diagram_format")]
+		[Concept("Technology\\IT\\Data\\File_Format.md")]
 		public Dictionary<string, BinaryFileData> files { get; set; } = new();
 	}
 }

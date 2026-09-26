@@ -22,14 +22,14 @@ using System.ComponentModel;
 [Tags("code/json_serialization", "code/enum_conversion")]
 [DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "2bec9cc2474af270007ab0ff7d64dae4a4c7ac6a3e7f54a84bb1843eb4750047", Stale = false, Path = "ExcaliDraw/SnakeCaseEnumConverter.cs", Since = "2026-08-22")]
 [System.ComponentModel.Description("Newtonsoft.Json converter that...")]
-[Concept("excalidraw_diagram_format")]
+[Concept("Technology\\IT\\Data\\File_Format.md")]
 public sealed class SnakeCaseEnumConverter : JsonConverter {
 
 	/// <summary>Handles any enum type.</summary>
 	[Facets(Layer = "infrastructure", Status = "active", Complexity = 3)]
 	[Tags("code/json_serialization", "code/enum_conversion")]
 	[System.ComponentModel.Description("Handles any enum type.")]
-	[Concept("excalidraw_diagram_format")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public override bool CanConvert(Type objectType)
 		=> objectType.IsEnum
 		   || (Nullable.GetUnderlyingType(objectType)?.IsEnum ?? false);
@@ -38,7 +38,7 @@ public sealed class SnakeCaseEnumConverter : JsonConverter {
 	[Facets(Layer = "infrastructure", Status = "active", Complexity = 3)]
 	[Tags("code/json_serialization", "code/enum_conversion")]
 	[System.ComponentModel.Description("Writes the snake_case string for the enum value.")]
-	[Concept("excalidraw_diagram_format")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer) {
 		var enumType = value.GetType();
 		var memberName = Enum.GetName(enumType, value)
@@ -56,7 +56,7 @@ public sealed class SnakeCaseEnumConverter : JsonConverter {
 	[Facets(Layer = "infrastructure", Status = "active", Complexity = 3)]
 	[Tags("code/json_serialization", "code/enum_conversion")]
 	[System.ComponentModel.Description("Reads a snake_case string and returns the matching enum value.")]
-	[Concept("excalidraw_diagram_format")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public override object? ReadJson(JsonReader reader, Type objectType, object existingValue
 		, JsonSerializer serializer) {
 		var underlyingType = Nullable.GetUnderlyingType(objectType) ?? objectType;

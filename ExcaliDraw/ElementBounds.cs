@@ -15,13 +15,13 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 [Tags("code/geometry")]
 [DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "071b8c55dca145d8bca4ac3eef758d87b7cfd6e8dd5b36d792209dcc0284bd0c", Stale = false, Path = "ExcaliDraw/ElementBounds.cs", Since = "2026-08-22")]
 [System.ComponentModel.Description("Similar to Rectangle but with AngleRadians  Initializes an ElementBounds with position, size and angleRad.")]
-[Concept("excalidraw_diagram_format")]
+[Concept("Technology\\IT\\Data\\File_Format.md")]
 public record struct ElementBounds {
 	/// <summary>Initializes a new instance of <see cref="ElementBounds"/> with the specified <paramref name="x"/>, <paramref name="y"/>, <paramref name="width"/>, <paramref name="height"/> and <paramref name="angleRad"/>.</summary>
 	[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 	[Tags("code/geometry")]
 	[System.ComponentModel.Description("Initializes a new instance of ElementBounds with the specified x, y, width, height and angleRad.")]
-	[Concept("excalidraw_diagram_format")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public ElementBounds(double x, double y, double width, double height, double angleRad) {
 		X = x;
 		Y = y;
@@ -35,25 +35,25 @@ public record struct ElementBounds {
 	[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 	[Tags("code/geometry")]
 	[System.ComponentModel.Description("Gets or sets the x.")]
-	[Concept("excalidraw_diagram_format")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public double X { get; set; }
 	/// <summary>Gets or sets the y.</summary>
 	[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 	[Tags("code/geometry")]
 	[System.ComponentModel.Description("Gets or sets the y.")]
-	[Concept("excalidraw_diagram_format")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public double Y { get; set; }
 	/// <summary>Gets or sets the width.</summary>
 	[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 	[Tags("code/geometry")]
 	[System.ComponentModel.Description("Gets or sets the width.")]
-	[Concept("excalidraw_diagram_format")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public double Width { get; set; }
 	/// <summary>Gets or sets the height.</summary>
 	[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 	[Tags("code/geometry")]
 	[System.ComponentModel.Description("Gets or sets the height.")]
-	[Concept("excalidraw_diagram_format")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public double Height { get; set; }
 
 	/// <summary> Rotation Angle, also used to determine the Bounding Box </summary>
@@ -69,6 +69,6 @@ public record struct ElementBounds {
 	[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 	[Tags("code/geometry")]
 	[System.ComponentModel.Description("Rotation Angle, also used to determine the Bounding Box")]
-	[Concept("excalidraw_diagram_format")]
+	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public double AngleRadians { get; set; }
 }
