@@ -39,7 +39,7 @@ public static partial class Excalidraw{
 	/// </remarks>
 	[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 	[Tags("code/dto")]
-	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "00dd43a41bb2f6dc3a49516a6087b402fc7d1bf4ac21534f92776bf278557879", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-09-28T16:37:05Z", Digest = "47fd5c483bd72aad07e657d1a011cc860cbed0bc3060a2c8777ed73cdfb8e0e7", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Graphic Element Base-Class of type  Properties shared by every Excalidraw element regardless of type.")]
 	[Concept("diagram_element_model")]
 	[Concept("Technology\\IT\\Data\\File_Format.md")]
@@ -548,7 +548,7 @@ public static partial class Excalidraw{
 	/// </remarks>
 	[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 	[Tags("code/dto")]
-	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "14d176b2956813fd19adb4f4bebaeccb963a622777e739e9b5449a5d4daa57c7", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-09-28T16:37:05Z", Digest = "670243f94e0be06ec464c8b6f5eeea2900b1e479bd96414f79c82b95fb94f912", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Base class for elements composed of an ordered array of points: lines and arrows.")]
 	[Concept("diagram_element_model")]
 	[Concept("Technology\\IT\\Data\\File_Format.md")]
@@ -689,7 +689,7 @@ public static partial class Excalidraw{
 	/// </remarks>
 	[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 	[Tags("code/dto")]
-	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "6156d6936db61eab6bdb9dca528e237dee22cff4153682c2ea1e16775886813f", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-09-28T16:37:05Z", Digest = "fd4382cfd165dfe054736950cfc9f494ecf4bd47c9d963094bc735faf8d863f7", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Undirected straight or curved line through two or more points.")]
 	[Concept("diagram_element_model")]
 	[Concept("Technology\\IT\\Data\\File_Format.md")]
@@ -840,7 +840,7 @@ public static partial class Excalidraw{
 	/// </remarks>
 	[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 	[Tags("code/dto")]
-	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "d2b2929eba28461799f197b2bdbbeac7fefc7de99d62c69a696d6c476e4f8c88", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-09-28T16:37:05Z", Digest = "33f448746054d78916b9c033ca67e749dafac7ab34dfe93014c4e8a8e7318ccc", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Freehand stroke captured from pointer input.")]
 	[Concept("diagram_element_model")]
 	[Concept("Technology\\IT\\Data\\File_Format.md")]
@@ -908,7 +908,7 @@ public static partial class Excalidraw{
 	/// </remarks>
 	[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 	[Tags("code/dto")]
-	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "9d258720f987f3053db79b3fd54f36d42dddb115cc01097b07d1197e76076842", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-09-28T16:37:05Z", Digest = "1f473ae9c575da2f99c07c1660870b6416c56d6743c8554625700f17f86a72c5", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Text label element, either standalone or bound to a container shape.")]
 	[Concept("diagram_element_model")]
 	[Concept("Technology\\IT\\Data\\File_Format.md")]
@@ -1040,7 +1040,7 @@ public static partial class Excalidraw{
 	/// </remarks>
 	[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 	[Tags("code/dto")]
-	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "82c53954ef1b74088f6c78273b3757ae25c986679cc0ab47354eda9a5714c712", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-09-28T16:37:05Z", Digest = "ee2be44e8d7a771b8f29d59a8ad4467ea68395222863b0d9b15fefa7ea262b91", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Raster image whose binary content is stored in the document-level `files` map keyed by fileId.")]
 	[Concept("diagram_element_model")]
 	[Concept("Technology\\IT\\Data\\File_Format.md")]
@@ -1120,7 +1120,7 @@ public static partial class Excalidraw{
 	/// </remarks>
 	[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 	[Tags("code/dto")]
-	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "cae8b3242cc04c5e5d7f8bfa4302b37a40adff0836b5c7c5fc5720bf5ac7edfe", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-09-28T16:37:05Z", Digest = "11cac3c79c418c5b2ced96c9a7f8c6e817fc18ceb391707524f490cdd2710fbd", Stale = false, Path = "ExcaliDraw/Excalidraw.elements.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Crop rectangle applied to an image element")]
 	[Concept("diagram_element_model")]
 	[Concept("Technology\\IT\\Data\\File_Format.md")]

@@ -39,7 +39,7 @@ static partial class Excalidraw {
 	/// </remarks>
 	[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 	[Tags("code/dto")]
-	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "7906218b504544b3aed851ec0827813c54ea8d612383d023c12a2341efb454a2", Stale = false, Path = "ExcaliDraw/Excalidraw.Document.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-09-28T16:37:05Z", Digest = "d340d463dffee437b80bfc6b3b3c4cd906a4f1789d36a43b49eb13504d59adab", Stale = false, Path = "ExcaliDraw/Excalidraw.Document.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Root object for an `.excalidraw` scene file (schema version 2).")]
 	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public sealed class Document {
@@ -113,7 +113,7 @@ static partial class Excalidraw {
 	/// </remarks>
 	[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 	[Tags("code/dto")]
-	[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "a6ccdd4824f49a12a5e5779b1929ceec8be10e27839735e165e1e743670ed7c9", Stale = false, Path = "ExcaliDraw/Excalidraw.Document.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-09-28T16:37:05Z", Digest = "ada016d1604fd4c940b0b1e4cf4e6b11303aee485ca8d380b7f1bef7659d25f1", Stale = false, Path = "ExcaliDraw/Excalidraw.Document.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Clipboard-format variant produced when copying selected elements.")]
 	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public sealed class Clipboard {
