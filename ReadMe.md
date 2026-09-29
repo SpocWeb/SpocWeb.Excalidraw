@@ -15,6 +15,13 @@ digest:
       mtime: "2026-06-09T16:08:50Z"
       digest: "e1623107bf1d964a526b588adc259035fbc65d746201544be5e5926fddd0dbb9"
   folders: {}
+related:
+  - path: ../_Matthias/Code/NET/_org.structs/SpreadSheet/App.xaml.cs
+    shared-tags: [code/entry_point]
+  - path: ../_Matthias/Code/NET/_root/Testing/RegExp/Editor
+    shared-tags: [code/entry_point]
+  - path: ../_Matthias/Code/NET/_root/Testing/RegExp/RegulExer
+    shared-tags: [code/entry_point]
 ---
 # SpocWeb.Excalidraw
 
