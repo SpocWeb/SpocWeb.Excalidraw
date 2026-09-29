@@ -19,7 +19,7 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// </remarks>
 [Facets(Layer = "infrastructure", Status = "active", Complexity = 4)]
 [Tags("code/json_serialization", "code/polymorphic_deserialization")]
-[DocState(Pass = 2, MTime = "2026-09-28T23:28:09Z", Digest = "c728a93534bbc928efdb16ff218990fa8bc23cd93b3fdd598f4ca8de91f8987e", Stale = false, Path = "ExcaliDraw/ExcalidrawElementConverter.cs", Since = "2026-08-22")]
+[DocState(Pass = 2, MTime = "2026-09-29T01:08:25Z", Digest = "c728a93534bbc928efdb16ff218990fa8bc23cd93b3fdd598f4ca8de91f8987e", Stale = false, Path = "ExcaliDraw/ExcalidrawElementConverter.cs", Since = "2026-08-22")]
 [System.ComponentModel.Description("Custom Newtonsoft JsonConverter that reads the `\"type\"` discriminator from each element token and instantiates the correct Element subclass before populating it. Write is intentionally disabled; the default serializer handles output.")]
 [Concept("Technology\\IT\\Data\\File_Format.md")]
 public sealed class ExcalidrawElementConverter : JsonConverter<Excalidraw.Element> {

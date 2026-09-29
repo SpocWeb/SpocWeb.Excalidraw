@@ -20,7 +20,7 @@ using System.ComponentModel;
 /// </remarks>
 [Facets(Layer = "infrastructure", Status = "active", Complexity = 3)]
 [Tags("code/json_serialization", "code/enum_conversion")]
-[DocState(Pass = 2, MTime = "2026-09-28T23:28:09Z", Digest = "2bec9cc2474af270007ab0ff7d64dae4a4c7ac6a3e7f54a84bb1843eb4750047", Stale = false, Path = "ExcaliDraw/SnakeCaseEnumConverter.cs", Since = "2026-08-22")]
+[DocState(Pass = 2, MTime = "2026-09-29T01:08:25Z", Digest = "2bec9cc2474af270007ab0ff7d64dae4a4c7ac6a3e7f54a84bb1843eb4750047", Stale = false, Path = "ExcaliDraw/SnakeCaseEnumConverter.cs", Since = "2026-08-22")]
 [System.ComponentModel.Description("Newtonsoft.Json converter that...")]
 [Concept("Technology\\IT\\Data\\File_Format.md")]
 public sealed class SnakeCaseEnumConverter : JsonConverter {

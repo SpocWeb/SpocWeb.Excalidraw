@@ -13,7 +13,7 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// </remarks>
 [Facets(Layer = "domain", Status = "active", Complexity = 2)]
 [Tags("code/geometry")]
-[DocState(Pass = 2, MTime = "2026-09-28T23:28:00Z", Digest = "880c54a30908bc90805c49ba428f75447f46c076878a58e68bb4b81ad131bdaf", Stale = false, Path = "ExcaliDraw/ElementBounds.cs", Since = "2026-08-22")]
+[DocState(Pass = 2, MTime = "2026-09-29T01:08:20Z", Digest = "880c54a30908bc90805c49ba428f75447f46c076878a58e68bb4b81ad131bdaf", Stale = false, Path = "ExcaliDraw/ElementBounds.cs", Since = "2026-08-22")]
 [System.ComponentModel.Description("Similar to Rectangle but with AngleRadians Initializes an ElementBounds with position, size and angleRad.")]
 [Concept("Technology\\IT\\Data\\File_Format.md")]
 public record struct ElementBounds {

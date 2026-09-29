@@ -30,7 +30,7 @@ static partial class Excalidraw {
 	/// </remarks>
 	[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 	[Tags("code/dto")]
-	[DocState(Pass = 2, MTime = "2026-09-28T23:28:08Z", Digest = "4853623e5e0e9a2f9d0ff8cd08f4f5ffa977c876a1d083e3f1219b75d3b11245", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-09-29T01:08:25Z", Digest = "4853623e5e0e9a2f9d0ff8cd08f4f5ffa977c876a1d083e3f1219b75d3b11245", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Corner-rounding configuration attached to any closed shape element. Serializes to `{ \"type\": number, \"value\"?: number }`. Source: `_ExcalidrawElementBase.roundness` in types.ts. Algorithm used to compute the corner radius. RoundnessType for values.")]
 	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public sealed class Roundness {
@@ -64,7 +64,7 @@ static partial class Excalidraw {
 	/// </remarks>
 	[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 	[Tags("code/dto")]
-	[DocState(Pass = 2, MTime = "2026-09-28T23:28:08Z", Digest = "0aa270a8eec5f47a19c4c7eee4fd2f4d84a9c41b72cead9eea41009ae7e9071d", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-09-29T01:08:25Z", Digest = "0aa270a8eec5f47a19c4c7eee4fd2f4d84a9c41b72cead9eea41009ae7e9071d", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Reference from a container element to a bound arrow or text element. ID of the bound element (arrow or text).")]
 	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public sealed class BoundElement {
@@ -96,7 +96,7 @@ static partial class Excalidraw {
 	/// </remarks>
 	[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 	[Tags("code/dto")]
-	[DocState(Pass = 2, MTime = "2026-09-28T23:28:08Z", Digest = "a0e3851a0df1aafec8af0ff7af631a72a7785eee2d0a7ffec2a668c5c88c1182", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-09-29T01:08:25Z", Digest = "a0e3851a0df1aafec8af0ff7af631a72a7785eee2d0a7ffec2a668c5c88c1182", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("binding that attaches an arrow tip to a specific point on a bindable Shape.")]
 	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public sealed class PointBinding {
@@ -177,7 +177,7 @@ static partial class Excalidraw {
 	/// </remarks>
 	[Facets(Layer = "domain", Status = "active", Complexity = 1)]
 	[Tags("code/dto")]
-	[DocState(Pass = 2, MTime = "2026-09-28T23:28:08Z", Digest = "e7b913753cd5693c492afc2407c50dbcb0f803bf15ec79dfaa6d71e8ca691933", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-09-29T01:08:25Z", Digest = "e7b913753cd5693c492afc2407c50dbcb0f803bf15ec79dfaa6d71e8ca691933", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Binary file entry stored in the document-level `files` map. Keyed by a SHA-1 FileId string. Source: `BinaryFileData` in excalidraw/types.ts. MIME type of the file, e.g. `\"image/png\"`, `\"image/svg+xml\"`. JSON key: `\"mimeType\"`.")]
 	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public sealed class BinaryFileData {
@@ -262,7 +262,7 @@ static partial class Excalidraw {
 	/// </remarks>
 	[Facets(Layer = "domain", Status = "active", Complexity = 2)]
 	[Tags("code/dto")]
-	[DocState(Pass = 2, MTime = "2026-09-28T23:28:08Z", Digest = "f5fa927f27542fa4f5847cab76180e18ed3e022fd1dbc929a1533a706e8f3075", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
+	[DocState(Pass = 2, MTime = "2026-09-29T01:08:25Z", Digest = "f5fa927f27542fa4f5847cab76180e18ed3e022fd1dbc929a1533a706e8f3075", Stale = false, Path = "ExcaliDraw/Excalidraw.model.cs", Since = "2026-08-22")]
 	[System.ComponentModel.Description("Serializable subset of editor application state written to disk. Background colour of the canvas viewport (CSS colour string). JSON key: `\"viewBackgroundColor\"`.")]
 	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public sealed class AppState {

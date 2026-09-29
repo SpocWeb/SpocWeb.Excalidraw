@@ -13,7 +13,7 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// </remarks>
 [Facets(Layer = "infrastructure", Status = "active", Complexity = 1)]
 [Tags("code/interface")]
-[DocState(Pass = 2, MTime = "2026-09-28T23:28:09Z", Digest = "35bd8afa8faaa7560a9dc1374fb54e9e6c6880a5bcd3bca5aeefdeff8380c614", Stale = false, Path = "ExcaliDraw/IHaveSequence.cs", Since = "2026-08-22")]
+[DocState(Pass = 2, MTime = "2026-09-29T01:08:25Z", Digest = "35bd8afa8faaa7560a9dc1374fb54e9e6c6880a5bcd3bca5aeefdeff8380c614", Stale = false, Path = "ExcaliDraw/IHaveSequence.cs", Since = "2026-08-22")]
 [System.ComponentModel.Description("Contract for objects that carry a monotonically incrementing integer sequence counter. Gets or sets the sequence.")]
 [Concept("Technology\\IT\\Data\\File_Format.md")]
 public interface IHaveSequence<T> {
@@ -37,7 +37,7 @@ public interface IHaveSequence<T> {
 /// </remarks>
 [Facets(Layer = "infrastructure", Status = "active", Complexity = 2)]
 [Tags("code/id_generation", "code/extension_method")]
-[DocState(Pass = 2, MTime = "2026-09-28T23:28:09Z", Digest = "e99a69a46c95c04d677f1d51d6f78911b16f464c9d22ada4655d977314383e43", Stale = false, Path = "ExcaliDraw/IHaveSequence.cs", Since = "2026-08-22")]
+[DocState(Pass = 2, MTime = "2026-09-29T01:08:25Z", Digest = "e99a69a46c95c04d677f1d51d6f78911b16f464c9d22ada4655d977314383e43", Stale = false, Path = "ExcaliDraw/IHaveSequence.cs", Since = "2026-08-22")]
 [System.ComponentModel.Description("Extension helpers for IHaveSequence that generate Excalidraw-compatible ids and seeds. Returns a deterministic-looking positive sequence id string.")]
 [Concept("Technology\\IT\\Data\\File_Format.md")]
 public static class IHaveSequence {
