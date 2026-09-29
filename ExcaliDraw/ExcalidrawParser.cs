@@ -17,7 +17,7 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// </remarks>
 [Facets(Layer = "infrastructure", Status = "active", Complexity = 3)]
 [Tags("code/json_serialization", "code/parsing")]
-[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "986d7710d0fabee2cf133d6cc2ff2c7f4173539c2480d8716e1fc0785b5dbea2", Stale = false, Path = "ExcaliDraw/ExcalidrawParser.cs", Since = "2026-08-22")]
+[DocState(Pass = 2, MTime = "2026-09-28T23:28:09Z", Digest = "986d7710d0fabee2cf133d6cc2ff2c7f4173539c2480d8716e1fc0785b5dbea2", Stale = false, Path = "ExcaliDraw/ExcalidrawParser.cs", Since = "2026-08-22")]
 [System.ComponentModel.Description("Serializes and parses Excalidraw scene and clipboard documents to and from JSON.")]
 [Concept("Technology\\IT\\Data\\File_Format.md")]
 public static class ExcalidrawParser {
@@ -30,7 +30,7 @@ public static class ExcalidrawParser {
 	/// </summary>
 	[Facets(Layer = "infrastructure", Status = "active", Complexity = 2)]
 	[Tags("code/json_serialization")]
-	[System.ComponentModel.Description("Builds new JsonSerializerSettings instance configured for Excalidraw:   - camelCase contract resolver,   - null-ignoring,    - polymorphic element converter.")]
+	[System.ComponentModel.Description("Builds new JsonSerializerSettings instance configured for Excalidraw: - camelCase contract resolver, - null-ignoring, - polymorphic element converter.")]
 	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public static JsonSerializerSettings ExcalidrawSettings() => new() {
 			ContractResolver = new CamelCasePropertyNamesContractResolver()

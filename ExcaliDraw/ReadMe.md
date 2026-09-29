@@ -8,7 +8,7 @@ tags:
   - code/dto
   - code/json_serialization
   - code/parsing
-description: "Excalidraw data model, parser, serializer, and JSON conversion utilities."
+description: "Excalidraw data model, parser, serializer, and JSON conversion utilities. All types reside in the `org.SpocWeb.PptxToJson.ExcaliDraw` namespace."
 digest:
   local-classes:
     AppState:

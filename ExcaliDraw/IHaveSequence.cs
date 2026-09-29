@@ -13,8 +13,8 @@ namespace org.SpocWeb.PptxToJson.ExcaliDraw;
 /// </remarks>
 [Facets(Layer = "infrastructure", Status = "active", Complexity = 1)]
 [Tags("code/interface")]
-[DocState(Pass = 2, MTime = "2026-08-30T21:01:40Z", Digest = "35bd8afa8faaa7560a9dc1374fb54e9e6c6880a5bcd3bca5aeefdeff8380c614", Stale = false, Path = "ExcaliDraw/IHaveSequence.cs", Since = "2026-08-22")]
-[System.ComponentModel.Description("Contract for objects that carry a monotonically incrementing integer sequence counter.")]
+[DocState(Pass = 2, MTime = "2026-09-28T23:28:09Z", Digest = "35bd8afa8faaa7560a9dc1374fb54e9e6c6880a5bcd3bca5aeefdeff8380c614", Stale = false, Path = "ExcaliDraw/IHaveSequence.cs", Since = "2026-08-22")]
+[System.ComponentModel.Description("Contract for objects that carry a monotonically incrementing integer sequence counter. Gets or sets the sequence.")]
 [Concept("Technology\\IT\\Data\\File_Format.md")]
 public interface IHaveSequence<T> {
 	/// <summary>Gets or sets the sequence.</summary>
@@ -36,16 +36,16 @@ public interface IHaveSequence<T> {
 /// updated: 2026-05-19
 /// </remarks>
 [Facets(Layer = "infrastructure", Status = "active", Complexity = 2)]
-[Tags("code/extension_method", "code/id_generation")]
-[DocState(Pass = 2, MTime = "2026-09-28T16:37:05Z", Digest = "e99a69a46c95c04d677f1d51d6f78911b16f464c9d22ada4655d977314383e43", Stale = false, Path = "ExcaliDraw/IHaveSequence.cs", Since = "2026-08-22")]
-[System.ComponentModel.Description("Extension helpers for IHaveSequence that generate Excalidraw-compatible ids and seeds.")]
+[Tags("code/id_generation", "code/extension_method")]
+[DocState(Pass = 2, MTime = "2026-09-28T23:28:09Z", Digest = "e99a69a46c95c04d677f1d51d6f78911b16f464c9d22ada4655d977314383e43", Stale = false, Path = "ExcaliDraw/IHaveSequence.cs", Since = "2026-08-22")]
+[System.ComponentModel.Description("Extension helpers for IHaveSequence that generate Excalidraw-compatible ids and seeds. Returns a deterministic-looking positive sequence id string.")]
 [Concept("Technology\\IT\\Data\\File_Format.md")]
 public static class IHaveSequence {
 	/// <summary>Returns the next hex-formatted sequence ID for <paramref name="context"/><br/>
 	/// by incrementing its counter and formatting it as <c>{prefix}-{sequence:x8}</c>.</summary>
 	[Facets(Layer = "infrastructure", Status = "active", Complexity = 2)]
 	[Tags("code/id_generation")]
-	[System.ComponentModel.Description("Returns the next hex-formatted sequence ID for context  by incrementing its counter and formatting it as  {prefix}-{sequence:x8} .")]
+	[System.ComponentModel.Description("Returns the next hex-formatted sequence ID for context by incrementing its counter and formatting it as {prefix}-{sequence:x8}.")]
 	[Concept("Technology\\IT\\Data\\File_Format.md")]
 	public static string NextId(this IHaveSequence<int> context, string prefix) {
 		context.Sequence++;
