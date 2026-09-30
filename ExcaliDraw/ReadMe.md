@@ -126,6 +126,59 @@ digest:
       mtime: "2026-06-09T16:08:50Z"
       digest: "e162f6cdc78dd6bbfa78fa4b555ae715009dfea3f7e35bfd49f43b6ed8636459"
   folders: {}
+dv_has_:
+  sub_:
+    folders: 0
+    files: 11
+    units: 43
+    facet_:
+      layer_:
+        domain: 37
+        infrastructure: 6
+      status_:
+        active: 43
+      complexity_:
+        "1": 30
+        "2": 9
+        "3": 3
+        "4": 1
+    tag_:
+      code_:
+        dto: 26
+        json_serialization: 3
+        id_generation: 1
+        polymorphic_deserialization: 1
+        enum: 9
+        enum_parsing: 1
+        enum_conversion: 1
+        string_conversion: 1
+        geometry: 1
+        caching: 1
+    concept_:
+      diagram_element_model: 15
+      "Technology\\IT\\Data\\File_Format.md": 43
+has_sub_folders: 0
+has_sub_files: 11
+has_sub_units: 43
+has_sub_facet_layer_domain: 37
+has_sub_facet_layer_infrastructure: 6
+has_sub_facet_status_active: 43
+has_sub_facet_complexity_1: 30
+has_sub_facet_complexity_2: 9
+has_sub_facet_complexity_3: 3
+has_sub_facet_complexity_4: 1
+has_sub_tag_code_dto: 26
+has_sub_tag_code_json_serialization: 3
+has_sub_tag_code_id_generation: 1
+has_sub_tag_code_polymorphic_deserialization: 1
+has_sub_tag_code_enum: 9
+has_sub_tag_code_enum_parsing: 1
+has_sub_tag_code_enum_conversion: 1
+has_sub_tag_code_string_conversion: 1
+has_sub_tag_code_geometry: 1
+has_sub_tag_code_caching: 1
+has_sub_concept_diagram_element_model: 15
+has_sub_concept_technology_it_data_file_format_md: 43
 ---
 # ExcaliDraw
 
